@@ -1,0 +1,335 @@
+/* Discovery Era Theme */
+/* Based on the metallic, sleek Discovery album cover with iridescent visors */
+
+/* ===== DISCOVERY ERA THEME VARIABLES ===== */
+:root {
+    --theme-bg-primary: var(--discovery-bg-primary);
+    --theme-bg-secondary: var(--discovery-bg-secondary);
+    --theme-bg-tertiary: var(--discovery-bg-tertiary);
+    --theme-primary: var(--discovery-gold-primary);
+    --theme-secondary: var(--discovery-gold-secondary);
+    --theme-accent: var(--discovery-gold-accent);
+    --theme-text-primary: var(--discovery-text-primary);
+    --theme-text-secondary: var(--discovery-text-secondary);
+    --theme-text-muted: var(--discovery-text-muted);
+    
+    /* Iridescent gradient for visor effect */
+    --theme-iridescent: linear-gradient(90deg, #FF69B4, #FF8C00, #FFD700, #00FF00, #00BFFF, #8A2BE2);
+    --theme-metallic: linear-gradient(135deg, #FFD700 0%, #FFB347 50%, #B8860B 100%);
+    --theme-glow: 0 0 20px rgba(255, 215, 0, 0.4);
+    --theme-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+}
+
+/* ===== GLOBAL THEME OVERRIDE ===== */
+body, html {
+    background: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+    font-family: var(--font-inter) !important;
+}
+
+/* ===== STEAM UI CONTAINERS ===== */
+.SteamUI, .steamui {
+    background: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+    font-family: var(--font-inter) !important;
+}
+
+/* ===== PANELS AND CONTAINERS ===== */
+.steamui_Container, .steamui_Panel, .steamui_Modal {
+    background: var(--theme-bg-secondary) !important;
+    border: 1px solid var(--theme-primary) !important;
+    border-radius: var(--radius-medium) !important;
+    box-shadow: var(--theme-shadow) !important;
+    backdrop-filter: blur(10px) !important;
+    transition: var(--transition-smooth) !important;
+}
+
+.steamui_Container:hover, .steamui_Panel:hover, .steamui_Modal:hover {
+    box-shadow: var(--theme-glow) !important;
+    transform: translateY(-2px) !important;
+    border-color: var(--theme-secondary) !important;
+}
+
+/* ===== BUTTONS ===== */
+.btnv6_blue_hoverfade, .btnv6_blue_steamui, .btnv6_blue_steamui__blue, .btnv6_secondary_hoverfade {
+    background: var(--theme-metallic) !important;
+    color: var(--theme-bg-primary) !important;
+    border: 2px solid var(--theme-secondary) !important;
+    border-radius: var(--radius-medium) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    box-shadow: var(--theme-shadow) !important;
+    transition: var(--transition-smooth) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.btnv6_blue_hoverfade::before, .btnv6_blue_steamui::before, .btnv6_blue_steamui__blue::before, .btnv6_secondary_hoverfade::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: var(--theme-iridescent) !important;
+    opacity: 0.3 !important;
+    transition: left 0.6s ease-in-out !important;
+}
+
+.btnv6_blue_hoverfade:hover::before, .btnv6_blue_steamui:hover::before, .btnv6_blue_steamui__blue:hover::before, .btnv6_secondary_hoverfade:hover::before {
+    left: 100% !important;
+}
+
+.btnv6_blue_hoverfade:hover, .btnv6_blue_steamui:hover, .btnv6_blue_steamui__blue:hover, .btnv6_secondary_hoverfade:hover {
+    background: var(--theme-iridescent) !important;
+    box-shadow: var(--theme-glow) !important;
+    transform: translateY(-3px) scale(1.02) !important;
+    border-color: var(--theme-primary) !important;
+}
+
+/* ===== LINKS ===== */
+a {
+    color: var(--theme-primary) !important;
+    text-decoration: none !important;
+    transition: var(--transition-medium) !important;
+    font-weight: 500 !important;
+}
+
+a:hover {
+    color: var(--theme-secondary) !important;
+    text-shadow: 0 0 8px var(--theme-primary) !important;
+    transform: translateX(2px) !important;
+}
+
+/* ===== TEXT ELEMENTS ===== */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--theme-text-primary) !important;
+    font-weight: 600 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ===== INPUT FIELDS ===== */
+input, textarea, select {
+    background: var(--theme-bg-secondary) !important;
+    color: var(--theme-text-primary) !important;
+    border: 1px solid var(--theme-bg-tertiary) !important;
+    border-radius: var(--radius-small) !important;
+    transition: var(--transition-fast) !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--theme-primary) !important;
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2) !important;
+    background: var(--theme-bg-tertiary) !important;
+}
+
+/* ===== SCROLLBARS ===== */
+::-webkit-scrollbar {
+    width: 12px !important;
+    background: var(--theme-bg-secondary) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--theme-metallic) !important;
+    border-radius: var(--radius-small) !important;
+    border: 2px solid var(--theme-bg-secondary) !important;
+    box-shadow: var(--theme-shadow) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--theme-iridescent) !important;
+    box-shadow: var(--theme-glow) !important;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+    background: var(--theme-primary) !important;
+    color: var(--theme-bg-primary) !important;
+}
+
+::-moz-selection {
+    background: var(--theme-primary) !important;
+    color: var(--theme-bg-primary) !important;
+}
+
+/* ===== FOCUS STATES ===== */
+*:focus {
+    outline: 2px solid var(--theme-primary) !important;
+    outline-offset: 2px !important;
+    box-shadow: var(--theme-shadow) !important;
+}
+
+/* ===== LIBRARY GAME GRID ===== */
+.library_GameGridItem {
+    background: var(--theme-bg-secondary) !important;
+    border: 2px solid var(--theme-bg-tertiary) !important;
+    border-radius: var(--radius-medium) !important;
+    overflow: hidden !important;
+    position: relative !important;
+    transition: var(--transition-smooth) !important;
+    box-shadow: var(--theme-shadow) !important;
+}
+
+.library_GameGridItem::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: var(--theme-iridescent) !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease-in-out !important;
+    z-index: 1 !important;
+}
+
+.library_GameGridItem:hover {
+    transform: translateY(-5px) scale(1.02) !important;
+    border-color: var(--theme-primary) !important;
+    box-shadow: var(--theme-glow) !important;
+}
+
+.library_GameGridItem:hover::before {
+    opacity: 0.1 !important;
+}
+
+/* ===== PROGRESS BARS ===== */
+.steamui_ProgressBar {
+    background: var(--theme-bg-tertiary) !important;
+    border-radius: var(--radius-small) !important;
+    overflow: hidden !important;
+}
+
+.steamui_ProgressBar__fill {
+    background: var(--theme-metallic) !important;
+    box-shadow: var(--theme-shadow) !important;
+    transition: var(--transition-smooth) !important;
+}
+
+.steamui_ProgressBar__fill:hover {
+    background: var(--theme-iridescent) !important;
+    box-shadow: var(--theme-glow) !important;
+}
+
+/* ===== STATUS INDICATORS ===== */
+.steamui_StatusIndicator--online {
+    color: var(--theme-primary) !important;
+    text-shadow: 0 0 8px var(--theme-primary) !important;
+}
+
+.steamui_StatusIndicator--away {
+    color: var(--theme-secondary) !important;
+    text-shadow: 0 0 8px var(--theme-secondary) !important;
+}
+
+.steamui_StatusIndicator--offline {
+    color: var(--theme-text-muted) !important;
+}
+
+/* ===== NOTIFICATIONS ===== */
+.steamui_Notification {
+    background: var(--theme-bg-secondary) !important;
+    border: 1px solid var(--theme-primary) !important;
+    border-radius: var(--radius-medium) !important;
+    box-shadow: var(--theme-shadow) !important;
+    transition: var(--transition-smooth) !important;
+}
+
+.steamui_Notification:hover {
+    box-shadow: var(--theme-glow) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ===== TOOLTIPS ===== */
+.steamui_Tooltip {
+    background: var(--theme-bg-secondary) !important;
+    color: var(--theme-text-primary) !important;
+    border: 1px solid var(--theme-primary) !important;
+    border-radius: var(--radius-small) !important;
+    box-shadow: var(--theme-shadow) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* ===== DROPDOWNS ===== */
+.steamui_Dropdown {
+    background: var(--theme-bg-secondary) !important;
+    border: 1px solid var(--theme-primary) !important;
+    border-radius: var(--radius-medium) !important;
+    box-shadow: var(--theme-shadow) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.steamui_Dropdown__item:hover {
+    background: var(--theme-bg-tertiary) !important;
+    color: var(--theme-primary) !important;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes discovery-glow {
+    0%, 100% {
+        box-shadow: var(--theme-shadow);
+    }
+    50% {
+        box-shadow: var(--theme-glow);
+    }
+}
+
+@keyframes iridescent-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ===== ANIMATED ELEMENTS ===== */
+.discovery-animated {
+    animation: discovery-glow 3s ease-in-out infinite !important;
+}
+
+.discovery-iridescent {
+    background: var(--theme-iridescent) !important;
+    background-size: 200% 200% !important;
+    animation: iridescent-shift 4s ease-in-out infinite !important;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .steamui_Container, .steamui_Panel, .steamui_Modal {
+        border-radius: var(--radius-small) !important;
+    }
+    
+    .btnv6_blue_hoverfade, .btnv6_blue_steamui, .btnv6_blue_steamui__blue, .btnv6_secondary_hoverfade {
+        font-size: 13px !important;
+        padding: var(--spacing-xs) var(--spacing-sm) !important;
+    }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-contrast: high) {
+    :root {
+        --theme-primary: #FFD700;
+        --theme-secondary: #FFB347;
+        --theme-text-primary: #FFFFFF;
+        --theme-text-secondary: #F0F0F0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .discovery-animated, .discovery-iridescent {
+        animation: none !important;
+    }
+    
+    .steamui_Container:hover, .steamui_Panel:hover, .steamui_Modal:hover {
+        transform: none !important;
+    }
+    
+    .btnv6_blue_hoverfade:hover, .btnv6_blue_steamui:hover, .btnv6_blue_steamui__blue:hover, .btnv6_secondary_hoverfade:hover {
+        transform: none !important;
+    }
+} 

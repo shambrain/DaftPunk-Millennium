@@ -1,0 +1,9 @@
+# Assets Directory
+
+This directory is for theme assets such as:
+- banner.png (theme banner image)
+- preview.png (theme preview image)
+- icons/ (theme icons)
+- fonts/ (custom fonts if needed)
+
+Place your theme images here and update the paths in theme.json accordingly. 

@@ -1,0 +1,24 @@
+/* Daft Punk Millennium Collection - Hide URL Bar */
+.url_bar,
+.url-bar,
+.address_bar,
+.address-bar,
+.browser_address_bar,
+.browser-address-bar {
+    display: none !important;
+}
+
+/* Alternative selectors for URL bar */
+.steamui_StoreHeader_AddressBar,
+.store_header_address_bar,
+.store-header-address-bar {
+    display: none !important;
+}
+
+/* Hide URL bar container */
+.url_bar_container,
+.url-bar-container,
+.address_bar_container,
+.address-bar-container {
+    display: none !important;
+} 

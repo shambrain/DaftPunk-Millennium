@@ -1,0 +1,239 @@
+/* Daft Punk Smooth Animations */
+/* Fluid and smooth transitions for the Daft Punk theme */
+
+/* Smooth Transition Variables */
+:root {
+    --dp-transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --dp-transition-fluid: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --dp-transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Smooth Button Transitions */
+.gpfocus .btnv6_blue_hoverfade, 
+.gpfocus .btnv6_blue_steamui,
+.gpfocus .btnv6_blue_steamui__blue {
+    transition: all var(--dp-transition-smooth) !important;
+    transform-origin: center !important;
+}
+
+.gpfocus .btnv6_blue_hoverfade:hover,
+.gpfocus .btnv6_blue_steamui:hover,
+.gpfocus .btnv6_blue_steamui__blue:hover {
+    transform: translateY(-3px) scale(1.02) !important;
+    transition: all var(--dp-transition-bounce) !important;
+}
+
+/* Smooth Panel Transitions */
+.gpfocus .steamui_Container,
+.gpfocus .steamui_Panel,
+.gpfocus .steamui_Modal {
+    transition: all var(--dp-transition-smooth) !important;
+    transform-origin: center !important;
+}
+
+.gpfocus .steamui_Container:hover,
+.gpfocus .steamui_Panel:hover,
+.gpfocus .steamui_Modal:hover {
+    transform: scale(1.01) !important;
+    transition: all var(--dp-transition-fluid) !important;
+}
+
+/* Smooth Game Grid Transitions */
+.gpfocus .library_GameGridItem {
+    transition: all var(--dp-transition-smooth) !important;
+    transform-origin: center !important;
+}
+
+.gpfocus .library_GameGridItem:hover {
+    transform: scale(1.05) translateY(-5px) !important;
+    transition: all var(--dp-transition-bounce) !important;
+}
+
+/* Smooth Link Transitions */
+a, .gpfocus a {
+    transition: all var(--dp-transition-smooth) !important;
+    transform-origin: left center !important;
+}
+
+a:hover, .gpfocus a:hover {
+    transform: translateX(3px) scale(1.02) !important;
+    transition: all var(--dp-transition-bounce) !important;
+}
+
+/* Smooth Input Field Transitions */
+.gpfocus input[type="text"],
+.gpfocus input[type="search"],
+.gpfocus .steamui_TextInput {
+    transition: all var(--dp-transition-smooth) !important;
+}
+
+.gpfocus input[type="text"]:focus,
+.gpfocus input[type="search"]:focus,
+.gpfocus .steamui_TextInput:focus {
+    transform: scale(1.02) !important;
+    transition: all var(--dp-transition-bounce) !important;
+}
+
+/* Smooth Scrollbar Transitions */
+.gpfocus ::-webkit-scrollbar-thumb {
+    transition: all var(--dp-transition-smooth) !important;
+}
+
+.gpfocus ::-webkit-scrollbar-thumb:hover {
+    transform: scale(1.1) !important;
+    transition: all var(--dp-transition-bounce) !important;
+}
+
+/* Smooth Progress Bar Transitions */
+.gpfocus .steamui_ProgressBar__fill {
+    transition: all var(--dp-transition-smooth) !important;
+}
+
+/* Smooth Focus Transitions */
+*:focus {
+    transition: all var(--dp-transition-smooth) !important;
+}
+
+/* Smooth Text Transitions */
+.gpfocus .daftpunk-gold,
+.gpfocus .daftpunk-cyan,
+.gpfocus .daftpunk-purple,
+.gpfocus .daftpunk-orange {
+    transition: all var(--dp-transition-smooth) !important;
+}
+
+/* Smooth Accent Element Transitions */
+.gpfocus .daftpunk-accent {
+    transition: all var(--dp-transition-smooth) !important;
+    transform-origin: center !important;
+}
+
+.gpfocus .daftpunk-accent:hover {
+    transform: scale(1.05) !important;
+    transition: all var(--dp-transition-bounce) !important;
+}
+
+/* Smooth Animation Classes */
+@keyframes smooth-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes smooth-scale-in {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes smooth-slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Smooth Loading Animations */
+.gpfocus .steamui_Loading {
+    animation: smooth-fade-in 0.6s ease-out !important;
+}
+
+.gpfocus .steamui_Modal {
+    animation: smooth-scale-in 0.4s ease-out !important;
+}
+
+.gpfocus .steamui_Panel {
+    animation: smooth-slide-in 0.5s ease-out !important;
+}
+
+/* Smooth Hover Effects */
+.gpfocus .steamui-button,
+.gpfocus .steamui-link {
+    transition: all var(--dp-transition-smooth) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.gpfocus .steamui-button::before,
+.gpfocus .steamui-link::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 215, 0, 0.2),
+        transparent
+    ) !important;
+    transition: left var(--dp-transition-fluid) !important;
+}
+
+.gpfocus .steamui-button:hover::before,
+.gpfocus .steamui-link:hover::before {
+    left: 100% !important;
+}
+
+/* Smooth Color Transitions */
+.gpfocus * {
+    transition: color var(--dp-transition-smooth), 
+                background-color var(--dp-transition-smooth),
+                border-color var(--dp-transition-smooth),
+                box-shadow var(--dp-transition-smooth) !important;
+}
+
+/* Smooth Transform Transitions */
+.gpfocus .steamui-transform {
+    transition: transform var(--dp-transition-smooth) !important;
+}
+
+/* Smooth Opacity Transitions */
+.gpfocus .steamui-opacity {
+    transition: opacity var(--dp-transition-smooth) !important;
+}
+
+/* Smooth Border Transitions */
+.gpfocus .steamui-border {
+    transition: border var(--dp-transition-smooth) !important;
+}
+
+/* Smooth Shadow Transitions */
+.gpfocus .steamui-shadow {
+    transition: box-shadow var(--dp-transition-smooth) !important;
+}
+
+/* Smooth Background Transitions */
+.gpfocus .steamui-background {
+    transition: background var(--dp-transition-smooth) !important;
+}
+
+/* Smooth Text Shadow Transitions */
+.gpfocus .steamui-text-shadow {
+    transition: text-shadow var(--dp-transition-smooth) !important;
+}
+
+/* Smooth Filter Transitions */
+.gpfocus .steamui-filter {
+    transition: filter var(--dp-transition-smooth) !important;
+}
+
+/* Smooth Backdrop Filter Transitions */
+.gpfocus .steamui-backdrop {
+    transition: backdrop-filter var(--dp-transition-smooth) !important;
+} 

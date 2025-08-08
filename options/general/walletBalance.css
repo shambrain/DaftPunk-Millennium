@@ -1,0 +1,15 @@
+/* Daft Punk Millennium Collection - Hide Wallet Balance */
+.wallet_balance,
+.wallet-balance,
+[data-wallet-balance],
+.wallet_balance_container {
+    display: none !important;
+}
+
+/* Alternative selectors for wallet balance */
+.user_wallet_balance,
+.user-wallet-balance,
+.wallet_amount,
+.wallet-amount {
+    display: none !important;
+} 

@@ -1,0 +1,88 @@
+/* Daft Punk Millennium Collection - Compact Layout */
+:root {
+    --dp-spacing-compact: 8px;
+    --dp-padding-compact: 12px;
+    --dp-margin-compact: 6px;
+    --dp-border-radius-compact: 4px;
+}
+
+/* Compact spacing for panels */
+.steamui_Panel,
+.steamui_Modal {
+    padding: var(--dp-padding-compact) !important;
+    margin: var(--dp-margin-compact) !important;
+    border-radius: var(--dp-border-radius-compact) !important;
+}
+
+/* Compact game grid */
+.appgrid_AppTileContainer_2wxOc {
+    margin: var(--dp-margin-compact) !important;
+    padding: var(--dp-spacing-compact) !important;
+    border-radius: var(--dp-border-radius-compact) !important;
+}
+
+/* Compact navigation */
+.steamui_HeaderNavItem_2Kj7A {
+    padding: var(--dp-spacing-compact) var(--dp-padding-compact) !important;
+    margin: 0 var(--dp-margin-compact) !important;
+}
+
+/* Compact buttons */
+.btnv6_blue_hoverfade,
+.btnv6_lightblue_blue_hoverfade,
+.btnv6_grey_blue_hoverfade {
+    padding: var(--dp-spacing-compact) var(--dp-padding-compact) !important;
+    margin: var(--dp-margin-compact) !important;
+    border-radius: var(--dp-border-radius-compact) !important;
+}
+
+/* Compact input fields */
+input, textarea, select {
+    padding: var(--dp-spacing-compact) !important;
+    margin: var(--dp-margin-compact) !important;
+    border-radius: var(--dp-border-radius-compact) !important;
+}
+
+/* Compact scrollbars */
+::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: var(--dp-border-radius-compact) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: var(--dp-border-radius-compact) !important;
+}
+
+/* Compact spacing for containers */
+.steamui_Container {
+    padding: var(--dp-padding-compact) !important;
+    margin: var(--dp-margin-compact) !important;
+}
+
+/* Compact list items */
+li {
+    margin: var(--dp-margin-compact) 0 !important;
+    padding: var(--dp-spacing-compact) !important;
+}
+
+/* Compact table cells */
+td, th {
+    padding: var(--dp-spacing-compact) !important;
+    margin: 0 !important;
+}
+
+/* Compact form elements */
+.form-group {
+    margin: var(--dp-margin-compact) 0 !important;
+    padding: var(--dp-spacing-compact) !important;
+}
+
+/* Compact status indicators */
+.steamui_StatusIndicator_1Y6sa {
+    padding: var(--dp-spacing-compact) !important;
+    margin: var(--dp-margin-compact) !important;
+    border-radius: var(--dp-border-radius-compact) !important;
+} 

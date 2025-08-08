@@ -1,0 +1,124 @@
+/* Daft Punk Orange Accent Colors */
+/* Retro orange styling */
+
+/* Orange Color Variables */
+:root {
+    --dp-orange-primary: #FF6B35;         /* Retro orange */
+    --dp-orange-secondary: #FF4500;       /* Darker orange */
+    --dp-orange-accent: #FFE4B5;          /* Light orange */
+    --dp-orange-glow: 0 0 20px var(--dp-orange-primary);
+    --dp-orange-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+    --dp-gradient-orange: linear-gradient(135deg, var(--dp-orange-primary) 0%, var(--dp-orange-secondary) 100%);
+}
+
+/* Orange Accent Links */
+a, .gpfocus a {
+    color: var(--dp-orange-primary) !important;
+}
+
+a:hover, .gpfocus a:hover {
+    color: var(--dp-orange-accent) !important;
+    text-shadow: var(--dp-orange-glow) !important;
+}
+
+/* Orange Accent Buttons */
+.gpfocus .btnv6_blue_hoverfade:hover,
+.gpfocus .btnv6_blue_steamui:hover,
+.gpfocus .btnv6_blue_steamui__blue:hover {
+    background: var(--dp-gradient-orange) !important;
+    box-shadow: var(--dp-orange-glow) !important;
+    border-color: var(--dp-orange-primary) !important;
+}
+
+/* Orange Accent Text */
+.gpfocus .daftpunk-orange {
+    color: var(--dp-orange-primary) !important;
+    text-shadow: var(--dp-orange-glow) !important;
+    font-weight: bold !important;
+}
+
+/* Orange Accent Borders */
+.gpfocus .steamui_Container:hover,
+.gpfocus .steamui_Panel:hover,
+.gpfocus .steamui_Modal:hover {
+    border-color: var(--dp-orange-primary) !important;
+    box-shadow: var(--dp-orange-shadow) !important;
+}
+
+/* Orange Accent Progress Bars */
+.gpfocus .steamui_ProgressBar__fill:hover {
+    background: var(--dp-gradient-orange) !important;
+    box-shadow: var(--dp-orange-glow) !important;
+}
+
+/* Orange Accent Scrollbars */
+.gpfocus ::-webkit-scrollbar-thumb:hover {
+    background: var(--dp-gradient-orange) !important;
+    box-shadow: var(--dp-orange-glow) !important;
+}
+
+/* Orange Accent Focus States */
+*:focus {
+    outline-color: var(--dp-orange-primary) !important;
+    box-shadow: var(--dp-orange-shadow) !important;
+}
+
+/* Orange Accent Selection */
+::selection {
+    background: var(--dp-orange-primary) !important;
+    color: var(--dp-bg-primary) !important;
+}
+
+::-moz-selection {
+    background: var(--dp-orange-primary) !important;
+    color: var(--dp-bg-primary) !important;
+}
+
+/* Orange Accent Elements */
+.gpfocus .daftpunk-accent {
+    background: var(--dp-gradient-orange) !important;
+    color: var(--dp-bg-primary) !important;
+    border: 2px solid var(--dp-orange-primary) !important;
+    box-shadow: var(--dp-orange-shadow) !important;
+}
+
+/* Orange Accent Game Grid */
+.gpfocus .library_GameGridItem:hover {
+    border-color: var(--dp-orange-primary) !important;
+    box-shadow: var(--dp-orange-glow) !important;
+}
+
+/* Orange Accent Input Fields */
+.gpfocus input[type="text"]:focus,
+.gpfocus input[type="search"]:focus,
+.gpfocus .steamui_TextInput:focus {
+    border-color: var(--dp-orange-primary) !important;
+    box-shadow: var(--dp-orange-shadow) !important;
+}
+
+/* Orange Accent Status Indicators */
+.gpfocus .steamui_StatusIndicator--online {
+    color: var(--dp-orange-primary) !important;
+    text-shadow: var(--dp-orange-glow) !important;
+}
+
+/* Orange Accent Animations */
+@keyframes orange-pulse {
+    0%, 100% {
+        box-shadow: var(--dp-orange-shadow);
+    }
+    50% {
+        box-shadow: var(--dp-orange-glow);
+    }
+}
+
+.gpfocus .daftpunk-pulse {
+    animation: orange-pulse 3s ease-in-out infinite;
+}
+
+/* Orange Accent Global Override */
+.SteamUI, .steamui {
+    --dp-accent-primary: var(--dp-orange-primary);
+    --dp-accent-secondary: var(--dp-orange-secondary);
+    --dp-accent-accent: var(--dp-orange-accent);
+} 

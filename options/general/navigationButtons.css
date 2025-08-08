@@ -1,0 +1,11 @@
+/* Daft Punk Millennium Collection - Hide Navigation Buttons */
+.steamui_HeaderNavItem_2Kj7A {
+    display: none !important;
+}
+
+/* Alternative: Hide specific navigation items */
+.steamui_HeaderNavItem_2Kj7A[data-nav-item="store"],
+.steamui_HeaderNavItem_2Kj7A[data-nav-item="library"],
+.steamui_HeaderNavItem_2Kj7A[data-nav-item="community"] {
+    display: none !important;
+} 

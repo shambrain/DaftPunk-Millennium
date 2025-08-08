@@ -1,0 +1,107 @@
+/* Daft Punk Millennium Collection - Spacious Layout */
+:root {
+    --dp-spacing-spacious: 16px;
+    --dp-padding-spacious: 24px;
+    --dp-margin-spacious: 12px;
+    --dp-border-radius-spacious: 12px;
+}
+
+/* Spacious spacing for panels */
+.steamui_Panel,
+.steamui_Modal {
+    padding: var(--dp-padding-spacious) !important;
+    margin: var(--dp-margin-spacious) !important;
+    border-radius: var(--dp-border-radius-spacious) !important;
+}
+
+/* Spacious game grid */
+.appgrid_AppTileContainer_2wxOc {
+    margin: var(--dp-margin-spacious) !important;
+    padding: var(--dp-spacing-spacious) !important;
+    border-radius: var(--dp-border-radius-spacious) !important;
+}
+
+/* Spacious navigation */
+.steamui_HeaderNavItem_2Kj7A {
+    padding: var(--dp-spacing-spacious) var(--dp-padding-spacious) !important;
+    margin: 0 var(--dp-margin-spacious) !important;
+}
+
+/* Spacious buttons */
+.btnv6_blue_hoverfade,
+.btnv6_lightblue_blue_hoverfade,
+.btnv6_grey_blue_hoverfade {
+    padding: var(--dp-spacing-spacious) var(--dp-padding-spacious) !important;
+    margin: var(--dp-margin-spacious) !important;
+    border-radius: var(--dp-border-radius-spacious) !important;
+}
+
+/* Spacious input fields */
+input, textarea, select {
+    padding: var(--dp-spacing-spacious) !important;
+    margin: var(--dp-margin-spacious) !important;
+    border-radius: var(--dp-border-radius-spacious) !important;
+}
+
+/* Spacious scrollbars */
+::-webkit-scrollbar {
+    width: 16px !important;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: var(--dp-border-radius-spacious) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: var(--dp-border-radius-spacious) !important;
+}
+
+/* Spacious spacing for containers */
+.steamui_Container {
+    padding: var(--dp-padding-spacious) !important;
+    margin: var(--dp-margin-spacious) !important;
+}
+
+/* Spacious list items */
+li {
+    margin: var(--dp-margin-spacious) 0 !important;
+    padding: var(--dp-spacing-spacious) !important;
+}
+
+/* Spacious table cells */
+td, th {
+    padding: var(--dp-spacing-spacious) !important;
+    margin: 0 !important;
+}
+
+/* Spacious form elements */
+.form-group {
+    margin: var(--dp-margin-spacious) 0 !important;
+    padding: var(--dp-spacing-spacious) !important;
+}
+
+/* Spacious status indicators */
+.steamui_StatusIndicator_1Y6sa {
+    padding: var(--dp-spacing-spacious) !important;
+    margin: var(--dp-margin-spacious) !important;
+    border-radius: var(--dp-border-radius-spacious) !important;
+}
+
+/* Spacious content areas */
+.content-area {
+    padding: var(--dp-padding-spacious) !important;
+    margin: var(--dp-margin-spacious) !important;
+}
+
+/* Spacious headers */
+h1, h2, h3, h4, h5, h6 {
+    margin: var(--dp-margin-spacious) 0 !important;
+    padding: var(--dp-spacing-spacious) 0 !important;
+}
+
+/* Spacious paragraphs */
+p {
+    margin: var(--dp-margin-spacious) 0 !important;
+    padding: var(--dp-spacing-spacious) 0 !important;
+    line-height: 1.6 !important;
+} 

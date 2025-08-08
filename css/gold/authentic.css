@@ -1,0 +1,88 @@
+/* Daft Punk Authentic Gold Intensity */
+/* Default gold styling matching Daft Punk's iconic helmet color */
+
+:root {
+    /* Authentic Daft Punk Gold Colors */
+    --dp-gold-primary: #FFD700;           /* Discovery era gold */
+    --dp-gold-secondary: #B8860B;         /* Darker gold for contrast */
+    --dp-gold-accent: #FFF8DC;            /* Light gold for highlights */
+    --dp-gold-helmet: #FFB347;            /* Helmet gold from photos */
+    
+    /* Authentic Gold Gradients */
+    --dp-gradient-gold: linear-gradient(135deg, var(--dp-gold-primary) 0%, var(--dp-gold-secondary) 100%);
+    --dp-gradient-helmet: linear-gradient(45deg, var(--dp-gold-helmet) 0%, var(--dp-gold-primary) 50%, var(--dp-gold-secondary) 100%);
+    
+    /* Authentic Gold Shadows and Glows */
+    --dp-shadow-gold: 0 0 10px rgba(255, 215, 0, 0.3);
+    --dp-glow-gold: 0 0 20px var(--dp-gold-primary);
+    --dp-glow-helmet: 0 0 30px var(--dp-gold-helmet);
+}
+
+/* Authentic Gold Buttons */
+.gpfocus .btnv6_blue_hoverfade, 
+.gpfocus .btnv6_blue_steamui,
+.gpfocus .btnv6_blue_steamui__blue {
+    background: var(--dp-gradient-helmet) !important;
+    color: var(--dp-bg-primary) !important;
+    border: 2px solid var(--dp-gold-secondary) !important;
+    box-shadow: var(--dp-shadow-gold) !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.gpfocus .btnv6_blue_hoverfade:hover,
+.gpfocus .btnv6_blue_steamui:hover,
+.gpfocus .btnv6_blue_steamui__blue:hover {
+    box-shadow: var(--dp-glow-gold) !important;
+    transform: translateY(-3px) scale(1.02) !important;
+}
+
+/* Authentic Gold Text */
+.gpfocus .daftpunk-gold {
+    color: var(--dp-gold-primary) !important;
+    text-shadow: var(--dp-glow-gold) !important;
+    font-weight: bold !important;
+}
+
+/* Authentic Gold Borders */
+.gpfocus .steamui_Container,
+.gpfocus .steamui_Panel,
+.gpfocus .steamui_Modal {
+    border: 2px solid var(--dp-gold-primary) !important;
+    box-shadow: var(--dp-shadow-gold) !important;
+}
+
+/* Authentic Gold Progress Bars */
+.gpfocus .steamui_ProgressBar__fill {
+    background: var(--dp-gradient-helmet) !important;
+    box-shadow: var(--dp-glow-gold) !important;
+}
+
+/* Authentic Gold Scrollbars */
+.gpfocus ::-webkit-scrollbar-thumb {
+    background: var(--dp-gradient-helmet) !important;
+    border: 2px solid var(--dp-gold-secondary) !important;
+    box-shadow: var(--dp-shadow-gold) !important;
+}
+
+.gpfocus ::-webkit-scrollbar-thumb:hover {
+    box-shadow: var(--dp-glow-gold) !important;
+}
+
+/* Authentic Gold Focus States */
+*:focus {
+    outline: 2px solid var(--dp-gold-primary) !important;
+    box-shadow: var(--dp-shadow-gold) !important;
+}
+
+/* Authentic Gold Selection */
+::selection {
+    background: var(--dp-gold-primary) !important;
+    color: var(--dp-bg-primary) !important;
+}
+
+::-moz-selection {
+    background: var(--dp-gold-primary) !important;
+    color: var(--dp-bg-primary) !important;
+} 

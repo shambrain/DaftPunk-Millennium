@@ -1,0 +1,159 @@
+/* Daft Punk Millennium Theme - WebKit Compatibility */
+/* Steam WebKit specific styling */
+
+/* WebKit Scrollbars */
+::-webkit-scrollbar {
+    width: 12px;
+    background: var(--dp-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dp-gradient-gold);
+    border-radius: 6px;
+    border: 1px solid var(--dp-gold-secondary);
+    box-shadow: var(--dp-shadow-gold);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dp-gradient-cyber);
+    box-shadow: var(--dp-glow-cyan);
+    transform: scale(1.1);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dp-bg-secondary);
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--dp-bg-secondary);
+}
+
+/* WebKit Selection */
+::selection {
+    background: var(--dp-gold-primary);
+    color: var(--dp-bg-primary);
+}
+
+::-moz-selection {
+    background: var(--dp-gold-primary);
+    color: var(--dp-bg-primary);
+}
+
+/* WebKit Focus */
+*:focus {
+    outline: 2px solid var(--dp-gold-primary);
+    outline-offset: 2px;
+    box-shadow: var(--dp-shadow-gold);
+}
+
+/* WebKit Input Styling */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* WebKit Button Styling */
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* WebKit Text Rendering */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* WebKit Backdrop Filter Support */
+@supports (backdrop-filter: blur(10px)) {
+    .steamui_Container,
+    .steamui_Panel,
+    .steamui_Modal {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}
+
+/* WebKit Animation Support */
+@supports (animation: name) {
+    .daftpunk-animated {
+        animation: daftpunk-glow 3s ease-in-out infinite;
+    }
+    
+    .daftpunk-pulse {
+        animation: daftpunk-cyber-pulse 4s ease-in-out infinite;
+    }
+}
+
+/* WebKit Transform Support */
+@supports (transform: translateY(0)) {
+    .gpfocus .btnv6_blue_hoverfade:hover,
+    .gpfocus .btnv6_blue_steamui:hover,
+    .gpfocus .btnv6_blue_steamui__blue:hover {
+        transform: translateY(-3px) scale(1.02);
+    }
+}
+
+/* WebKit Filter Support */
+@supports (filter: blur(0)) {
+    .steamui-blur {
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+    }
+}
+
+/* WebKit Grid Support */
+@supports (display: grid) {
+    .steamui-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+}
+
+/* WebKit Flexbox Support */
+@supports (display: flex) {
+    .steamui-flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* WebKit Custom Properties Support */
+@supports (--custom: property) {
+    :root {
+        --dp-gold-primary: #FFD700;
+        --dp-gold-secondary: #B8860B;
+        --dp-cyan-primary: #00FFFF;
+        --dp-bg-primary: #0A0A0A;
+        --dp-bg-secondary: #1A1A1A;
+    }
+}
+
+/* WebKit Media Query Support */
+@media (-webkit-min-device-pixel-ratio: 2) {
+    .steamui-high-dpi {
+        background-image: url('assets/high-dpi.png');
+    }
+}
+
+/* WebKit Print Styles */
+@media print {
+    .steamui-no-print {
+        display: none !important;
+    }
+    
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+} 

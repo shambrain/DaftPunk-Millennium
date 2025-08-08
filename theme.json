@@ -1,0 +1,183 @@
+{
+    "version": "2.0.0",
+    "name": "Daft Punk Millennium Collection",
+    "description": "Seven distinct Daft Punk-inspired Steam themes with unique layouts, color schemes, and animations based on iconic album covers",
+    "author": "DaftPunk-Millennium",
+    "github": {
+        "owner": "DaftPunk-Millennium",
+        "repo_name": "DaftPunk-Millennium"
+    },
+    "tags": ["Daft Punk", "Retro", "Futuristic", "Modular", "Dark", "Customizable", "Collection"],
+    "header_image": "https://raw.githubusercontent.com/DaftPunk-Millennium/DaftPunk-Millennium/main/assets/banner.png",
+    "splash_image": "https://raw.githubusercontent.com/DaftPunk-Millennium/DaftPunk-Millennium/main/assets/preview.png",
+    "RootColors": "./css/root.css",
+    "Steam-WebKit": "./webkit.css",
+    "Conditions": {
+        "Theme Selection": {
+            "description": "Choose your preferred Daft Punk theme",
+            "default": "Discovery Era",
+            "tab": "Theme",
+            "section": "Selection",
+            "values": {
+                "Discovery Era": {
+                    "TargetCss": { "affects": [".*"], "src": "css/themes/discovery-era.css" },
+                    "TargetJs": { "affects": [".*"], "src": "js/themes/discovery-era.js" }
+                },
+                "Get Lucky Disco": {
+                    "TargetCss": { "affects": [".*"], "src": "css/themes/get-lucky-disco.css" },
+                    "TargetJs": { "affects": [".*"], "src": "js/themes/get-lucky-disco.js" }
+                },
+                "Cyan Visor": {
+                    "TargetCss": { "affects": [".*"], "src": "css/themes/cyan-visor.css" },
+                    "TargetJs": { "affects": [".*"], "src": "js/themes/cyan-visor.js" }
+                },
+                "Tron Legacy": {
+                    "TargetCss": { "affects": [".*"], "src": "css/themes/tron-legacy.css" },
+                    "TargetJs": { "affects": [".*"], "src": "js/themes/tron-legacy.js" }
+                },
+                "Neon Glow": {
+                    "TargetCss": { "affects": [".*"], "src": "css/themes/neon-glow.css" },
+                    "TargetJs": { "affects": [".*"], "src": "js/themes/neon-glow.js" }
+                },
+                "Cosmic Voyager": {
+                    "TargetCss": { "affects": [".*"], "src": "css/themes/cosmic-voyager.css" },
+                    "TargetJs": { "affects": [".*"], "src": "js/themes/cosmic-voyager.js" }
+                },
+                "Classic Discovery": {
+                    "TargetCss": { "affects": [".*"], "src": "css/themes/classic-discovery.css" },
+                    "TargetJs": { "affects": [".*"], "src": "js/themes/classic-discovery.js" }
+                }
+            }
+        },
+        "Animation Intensity": {
+            "description": "Choose animation intensity level",
+            "default": "Medium",
+            "tab": "Theme",
+            "section": "Animations",
+            "values": {
+                "None": {},
+                "Subtle": {
+                    "TargetCss": { "affects": [".*"], "src": "css/animations/subtle.css" }
+                },
+                "Medium": {
+                    "TargetCss": { "affects": [".*"], "src": "css/animations/medium.css" }
+                },
+                "Intense": {
+                    "TargetCss": { "affects": [".*"], "src": "css/animations/intense.css" }
+                }
+            }
+        },
+        "Layout Style": {
+            "description": "Choose layout arrangement",
+            "default": "Compact",
+            "tab": "Theme",
+            "section": "Layout",
+            "values": {
+                "Compact": {
+                    "TargetCss": { "affects": [".*"], "src": "css/layouts/compact.css" }
+                },
+                "Spacious": {
+                    "TargetCss": { "affects": [".*"], "src": "css/layouts/spacious.css" }
+                },
+                "Minimal": {
+                    "TargetCss": { "affects": [".*"], "src": "css/layouts/minimal.css" }
+                }
+            }
+        },
+        "Typography": {
+            "description": "Choose font family for optimal readability",
+            "default": "Inter",
+            "tab": "Theme",
+            "section": "Typography",
+            "values": {
+                "Inter": {
+                    "TargetCss": { "affects": [".*"], "src": "css/typography/inter.css" }
+                },
+                "Roboto": {
+                    "TargetCss": { "affects": [".*"], "src": "css/typography/roboto.css" }
+                },
+                "Source Sans Pro": {
+                    "TargetCss": { "affects": [".*"], "src": "css/typography/source-sans-pro.css" }
+                },
+                "Open Sans": {
+                    "TargetCss": { "affects": [".*"], "src": "css/typography/open-sans.css" }
+                }
+            }
+        },
+        "General - Navigation buttons": {
+            "description": "Hide Navigation buttons",
+            "default": "no",
+            "tab": "General",
+            "section": "Titlebar",
+            "values": {
+                "no": {},
+                "yes": {
+                    "TargetCss": { "affects": ["^Steam$"], "src": "options/general/navigationButtons.css" }
+                }
+            }
+        },
+        "General - Wallet balance": {
+            "description": "Hide wallet balance",
+            "default": "no",
+            "tab": "General",
+            "section": "Userpannel",
+            "values": {
+                "no": {},
+                "yes": {
+                    "TargetCss": { "affects": ["^Steam$"], "src": "options/general/walletBalance.css" }
+                }
+            }
+        },
+        "Library - Game cover shiny effect": {
+            "description": "Hide shiny effect on game covers",
+            "default": "no",
+            "tab": "Library",
+            "section": "Home",
+            "values": {
+                "no": {},
+                "yes": {
+                    "TargetCss": { "affects": ["^Steam$"], "src": "options/library/home/shinyEffect.css" }
+                }
+            }
+        },
+        "Library - Bigger banner": {
+            "description": "Bigger banner on the game page",
+            "default": "no",
+            "tab": "Library",
+            "section": "Gamepage",
+            "values": {
+                "no": {},
+                "yes": {
+                    "TargetCss": { "affects": ["^Steam$"], "src": "options/library/gamepage/biggerBanner.css" }
+                }
+            }
+        },
+        "Store - URL bar": {
+            "description": "Hide URL bar",
+            "default": "no",
+            "tab": "Store",
+            "section": "Other",
+            "values": {
+                "no": {},
+                "yes": {
+                    "TargetCss": { "affects": ["^Steam$"], "src": "options/store/urlBar.css" }
+                }
+            }
+        }
+    },
+    "Patches": [
+        {
+            "MatchRegexString": ".*",
+            "TargetCss": "css/core/base.css"
+        },
+        {
+            "MatchRegexString": "^Steam$",
+            "TargetCss": "css/core/steam-ui.css",
+            "TargetJs": "js/core/steam-ui.js"
+        },
+        {
+            "MatchRegexString": "^Daft Punk Millennium Collection",
+            "TargetCss": "options/settings.css"
+        }
+    ]
+} 
