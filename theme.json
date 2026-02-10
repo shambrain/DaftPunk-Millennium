@@ -1,7 +1,7 @@
 {
     "version": "2.0.0",
     "name": "Daft Punk Millennium Collection",
-    "description": "Seven distinct Daft Punk-inspired Steam themes with unique layouts, color schemes, and animations based on iconic album covers",
+    "description": "Eight distinct Daft Punk-inspired Steam themes with unique layouts, color schemes, and animations based on iconic album covers",
     "author": "DaftPunk-Millennium",
     "github": {
         "owner": "DaftPunk-Millennium",
@@ -46,6 +46,10 @@
                 "Classic Discovery": {
                     "TargetCss": { "affects": [".*"], "src": "css/themes/classic-discovery.css" },
                     "TargetJs": { "affects": [".*"], "src": "js/themes/classic-discovery.js" }
+                },
+                "Recall Harmony": {
+                    "TargetCss": { "affects": [".*"], "src": "css/themes/recall-harmony.css" },
+                    "TargetJs": { "affects": [".*"], "src": "js/themes/recall-harmony.js" }
                 }
             }
         },

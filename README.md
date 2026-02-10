@@ -4,7 +4,7 @@ An authentic Daft Punk-inspired Steam theme collection with retro-futuristic aes
 
 ## ✨ Features
 
-### 🎨 **Seven Distinct Daft Punk Themes**
+### 🎨 **Eight Distinct Daft Punk Themes**
 - **🎵 Discovery Era** - Metallic, sleek design with iridescent effects
 - **🎵 Get Lucky Disco** - Vibrant retro-futuristic disco with neon lights and sparkles
 - **🎵 Cyan Visor** - Cyan visor aesthetic with pink glow and scanline effects
@@ -12,6 +12,7 @@ An authentic Daft Punk-inspired Steam theme collection with retro-futuristic aes
 - **🎵 Neon Glow** - Vibrant pinks, purples, and blues with neon particle effects
 - **🎵 Cosmic Voyager** - Space nebula aesthetic with cosmic glows and floating particles
 - **🎵 Classic Discovery** - Retro-futuristic with classic blue gradients and vintage grid patterns
+- **🎵 Recall Harmony** - Balanced violet/cyan ambience with calm glows and high readability
 
 ### 🎛️ **Comprehensive Customization Options**
 - **Animation Intensity**: None, Subtle, Medium, Intense
@@ -38,14 +39,15 @@ DaftPunk-Millennium/
 │   ├── core/
 │   │   ├── base.css             # Global base styles
 │   │   └── steam-ui.css         # Steam UI core styles
-│   ├── themes/                  # 7 distinct theme files
+│   ├── themes/                  # 8 distinct theme files
 │   │   ├── discovery-era.css
 │   │   ├── get-lucky-disco.css
 │   │   ├── cyan-visor.css
 │   │   ├── tron-legacy.css
 │   │   ├── neon-glow.css
 │   │   ├── cosmic-voyager.css
-│   │   └── classic-discovery.css
+│   │   ├── classic-discovery.css
+│   │   └── recall-harmony.css
 │   ├── animations/              # Animation intensity options
 │   │   ├── subtle.css
 │   │   ├── medium.css
@@ -63,14 +65,15 @@ DaftPunk-Millennium/
 ├── js/
 │   ├── core/
 │   │   └── steam-ui.js         # Steam UI core JavaScript
-│   └── themes/                  # 7 theme JavaScript files
+│   └── themes/                  # 8 theme JavaScript files
 │       ├── discovery-era.js
 │       ├── get-lucky-disco.js
 │       ├── cyan-visor.js
 │       ├── tron-legacy.js
 │       ├── neon-glow.js
 │       ├── cosmic-voyager.js
-│       └── classic-discovery.js
+│       ├── classic-discovery.js
+│       └── recall-harmony.js
 ├── options/                     # User customization options
 │   ├── general/
 │   │   ├── navigationButtons.css
@@ -111,6 +114,9 @@ Space nebula aesthetic with cosmic glows and floating particles. Features nebula
 ### 🎵 Classic Discovery
 Retro-futuristic design with classic blue gradients and vintage grid patterns. Features classic Discovery album aesthetics with modern UI enhancements.
 
+### 🎵 Recall Harmony
+A balanced violet/cyan palette focused on calm contrast, smooth gradients, and readable low-glow UI surfaces.
+
 ## 🛠️ Installation
 
 ### Prerequisites
@@ -128,7 +134,7 @@ Retro-futuristic design with classic blue gradients and vintage grid patterns. F
 ## ⚙️ Configuration
 
 ### Theme Selection
-Choose from 7 distinct Daft Punk themes, each with unique:
+Choose from 8 distinct Daft Punk themes, each with unique:
 - Color palettes
 - Animation styles
 - Layout arrangements
