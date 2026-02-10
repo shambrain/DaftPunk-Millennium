@@ -1,0 +1,49 @@
+/* Recall Harmony Theme - calm violet/cyan gradient with balanced contrast */
+
+:root {
+    --dp-primary: #8b7dff;
+    --dp-secondary: #69f0ff;
+    --dp-accent: #c7a8ff;
+    --dp-surface: rgba(11, 14, 28, 0.88);
+}
+
+/* Global surfaces */
+body,
+._3xRRJfD2xy95i9NhJxLTp0,
+._2Dd4T78PcCTUVgOtDGFY5j {
+    background: radial-gradient(circle at 20% 20%, rgba(105, 240, 255, 0.12), transparent 50%),
+                radial-gradient(circle at 80% 10%, rgba(139, 125, 255, 0.18), transparent 42%),
+                linear-gradient(140deg, #090b16, #10172c 50%, #161130);
+}
+
+/* Main cards */
+.Panel,
+.BasicUI .DialogContent,
+._2vHlnP4xP5qE4M2x8h9G1Q {
+    background: var(--dp-surface);
+    border: 1px solid rgba(199, 168, 255, 0.25);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Focus and active states */
+:focus-visible,
+.gpfocus,
+.gpfocuswithin {
+    outline: 2px solid var(--dp-secondary);
+    outline-offset: 1px;
+}
+
+/* Links and buttons */
+a,
+button,
+.DialogButton {
+    transition: color 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+a:hover,
+button:hover,
+.DialogButton:hover {
+    color: var(--dp-secondary);
+    border-color: rgba(105, 240, 255, 0.45);
+    box-shadow: 0 0 14px rgba(105, 240, 255, 0.25);
+}
