@@ -1,0 +1,234 @@
+/**
+ * Daft Punk Millennium Collection CSS - Base Styles
+ * @description This file provides base styling for all Daft Punk themes
+ * [Steam, Settings, Properties, Popups, Dialogs, ...]
+ * Based on Steam 2.0 Modular by Von-Amadeus
+ */
+
+/* =============================================================================
+   BASE CSS VARIABLES (Will be overridden by theme files)
+   ============================================================================= */
+
+/* NOTE: Color variables are now defined in individual theme files to prevent conflicts */
+
+/* =============================================================================
+   GAMELIST PANEL STYLING
+   ============================================================================= */
+
+/* HIDE GAMELIST CONTAINER */
+._9sPoVBFyE_vE87mnZJ5aB {
+   flex-shrink: 0;
+   display: flex;
+   flex-direction: row;
+   min-width: 2px !important;
+   width: 272px;
+   max-width: min(50%, 100% - 400px);
+   position: relative;
+}
+
+/* GAMELIST SPLITTER */
+._276E6ijBpjMA2_iTxNhhjc {
+   width: 1px;
+   background-color: var(--splitter-color);
+   min-width: 1px;
+}
+
+/* GAMELIST BACKGROUND */
+._3x1HklzyDs4TEjACrRO2tB {
+   background-image: var(--gamelist-gradient);
+}
+
+._2TKEazUUS3TlniZfpc8OOe {
+   height: auto;
+   background-color: inherit;
+   box-shadow: none;
+}
+
+/* HIDE GAMELIST SVG ICONS */
+._1ooROmAgkhoBH_o65yl9dJ svg {
+   display: none;
+}
+
+/* =============================================================================
+   MAIN CONTENT AREA STYLING
+   ============================================================================= */
+
+/* GAMES BACKGROUND */
+._3Sb2o_mQ30IDRh0C72QUUu {
+   background-image: var(--games-gradient);
+}
+
+/* GAMES SCROLLBAR */
+._2AUVZlzQq67qe3yhLZsPPB::-webkit-scrollbar {
+   background: var(--search-bg);
+}
+
+/* HEADER */
+._3Z7VQ1IMk4E3HsHvrkLNgo {
+   background: none;
+   background-image: var(--secondary-gradient) !important;
+}
+
+/* FOOTER */
+._3vCzSrrXZzZjVJFZNg9SGu {
+   background: none !important;
+   background-image: var(--footer-gradient) !important;
+}
+
+/* =============================================================================
+   HIDE NEWS/ACTIVITY PANEL
+   ============================================================================= */
+
+/* HIDE NEWSLIST */
+._17uEBe5Ri8TMsnfELvs8-N {
+   display: none !important;
+}
+
+._5wILZhsLODVwGfcJ0hKmJ {
+   display: none !important;
+}
+
+/* =============================================================================
+   DOWNLOADS SECTION STYLING
+   ============================================================================= */
+
+/* DOWNLOADS BACKGROUND */
+._1l0LmmqDUXH19SjfELddn7 {
+   background-image: var(--downloads-gradient);
+}
+
+._3Mbhnlk1Go2j8yCdjthzc7.IbePLaw-vSvhG1GTenYFg._2KB3yVOsiRCK9qK6mwKl9c {
+   background-color: var(--search-bg);
+}
+
+/* =============================================================================
+   INTERACTIVE ELEMENTS (BUTTONS, DROPDOWNS, etc.)
+   ============================================================================= */
+
+/* HEADER DROPDOWNS AND INTERACTIVE ELEMENTS */
+button.DialogButton, 
+.DesktopUI .title-area-icon:hover, 
+.friendsui-container .title-area-icon:hover, 
+.DesktopUI .PP7LM0Ow1K5qkR8WElLpt, 
+._3qIuY9S_vXm3IQS-uE9SRS .PP7LM0Ow1K5qkR8WElLpt, 
+._1ABCOz8DSrl-YJdh1xD-m0, 
+._1ABCOz8DSrl-YJdh1xD-m0._1dDpSuaJBGZzS41s0SPk4c, 
+span._3nqxIgL0a0DbPZHRZRzWsp,
+._1-vlriAtKYDViAEunue4VO._2DpXjzK3WWsOtUWUrcuOG7, 
+._1Hye7o1wYIfc9TE9QKRW4T, 
+._3LLH_F43MTu6UtG4Z3kudv,
+._2mL2HfT5AkDXRi1YBnRWKa:focus,
+._3pSPluBgf0NeR1kkCLWMhR.eNLOx4LVceeMwRvTVWh3,
+._2sYIghGVXJr6tsQVvcryy8 {
+   background: none !important;
+   background-image: var(--dropdown-hover) !important;
+   border-radius: 5px;
+   transition: all 0.3s ease;
+}
+
+/* HOVER STATES FOR LIGHTER ELEMENTS */
+.DesktopUI ._1n7Wloe5jZ6fSuvV18NNWI:hover, 
+.DesktopUI ._1n7Wloe5jZ6fSuvV18NNWI._18z-3vkWndCBO5WJgFldRK, 
+._3qIuY9S_vXm3IQS-uE9SRS ._1n7Wloe5jZ6fSuvV18NNWI:hover, 
+._3qIuY9S_vXm3IQS-uE9SRS ._1n7Wloe5jZ6fSuvV18NNWI._18z-3vkWndCBO5WJgFldRK, 
+._1-vlriAtKYDViAEunue4VO:not(._2DpXjzK3WWsOtUWUrcuOG7):hover {
+   background: none !important;
+   background-image: var(--dropdown-light) !important;
+   border-radius: 5px;
+}        
+
+/* =============================================================================
+   GAME PROPERTIES AND DIALOGS
+   ============================================================================= */
+
+/* GAMES PROPERTIES */
+._30-E9De2BTSA_LQAluUDUI, 
+._2kwFFHckg8jvnwJfg9-la8, 
+.xSTLmzylFJdIfak7ZdhuA {
+   background-image: var(--properties-gradient) !important;
+}
+
+.CFTLX2wIKOK3hNV-fS7_V.DesktopUI, 
+.DesktopUI .CFTLX2wIKOK3hNV-fS7_V, 
+._2YFL1GU5xTFr76S8Kw008E, 
+._1SVX5nVvig2xLYfeiThU-8, 
+._1SVX5nVvig2xLYfeiThU-8 > div, 
+._34dlBrUZP054ElsvOp5hQm ._1-ooPvEW2c6SHuhnz6SK3t .NP3DlSRiWZygPWZSLSVX, 
+._3e--AJv1pErMz7ete-Hprz, 
+._3vCzSrrXZzZjVJFZNg9SGu, 
+.RGNMWtyj73_-WdhflrmuY ._2CmrnGY-Amtd83ScJkFvx2 {
+   background-image: var(--footer-gradient);
+}
+
+/* =============================================================================
+   SEARCH BAR STYLING
+   ============================================================================= */
+
+/* SEARCHBAR */
+._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K {
+   background: var(--search-bg);
+}
+
+/* =============================================================================
+   HIDE DRAGGABLE GAME PANELS
+   ============================================================================= */
+
+/* Draggable games panel */
+._3IWn-2rn7x98o5fDd0rAxb._2_dwxMdH27kBf-gQ3Wrk7z._3PAPBHNnHiNjIQiBr7Ya3t.-D43EUFy_hOQ6W8fjUSV3._3QGgg01wbY6hijd0UIbfaj.Focusable {
+  display: none !important;
+}
+
+/* =============================================================================
+   MANUAL TOGGLE CONTAINER SPACING
+   ============================================================================= */
+
+/* Removed manual toggle container styles - no longer needed */
+
+/* =============================================================================
+   ADDITIONAL STEAM UI ENHANCEMENTS
+   ============================================================================= */
+
+/* Enhanced focus states */
+.gpfocus, 
+.gpfocuswithin, 
+.Focusable:focus {
+   background-image: var(--dropdown-hover) !important;
+   border-radius: 5px;
+   transition: all 0.3s ease;
+}
+
+/* Improved readability for text elements */
+._1VNuYHM6BPBOJspC6zPf5r,
+._3oavRVhIS9tC3vBsFT4Ggi,
+._17M8gvakqjyaw_cLo6ntdl {
+   color: #ffffff;
+   text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+   transition: background-image 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+}
+
+/* Special hover effects for game tiles */
+._1VNuYHM6BPBOJspC6zPf5r:hover {
+   transform: scale(1.02);
+   filter: brightness(1.1);
+}
+
+/* =============================================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================================= */
+
+/* Ensure proper layout on smaller screens */
+@media (max-width: 1200px) {
+   ._9sPoVBFyE_vE87mnZJ5aB {
+       width: 200px;
+   }
+}
+
+@media (max-width: 900px) {
+   ._9sPoVBFyE_vE87mnZJ5aB {
+       width: 150px;
+   }
+} 

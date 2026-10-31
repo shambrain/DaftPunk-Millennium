@@ -1,0 +1,42 @@
+/**
+ * Discovery Era Theme - Gold and Orange gradients with black accents
+ * Part of Daft Punk Millennium Collection
+ * Based on Steam 2.0 Modular by Von-Amadeus
+ */
+
+/* =============================================================================
+   DISCOVERY ERA THEME COLORS
+   ============================================================================= */
+
+:root {
+  /* Discovery Era Theme - Gold and Black */
+  --primary-gradient: linear-gradient(270deg, #FFD700 0%, #FF8C00 50%, #000000 100%);
+  --secondary-gradient: linear-gradient(225deg, #FFD700 0%, #FF8C00 30%, #000000 100%);
+  --gamelist-gradient: linear-gradient(270deg, #2A1810 0%, #1A1100 100%);
+  --games-gradient: linear-gradient(225deg, #3A2500 0%, #1F1500 30%, #0A0500 100%);
+  --downloads-gradient: linear-gradient(225deg, #2A1800 0%, #1A1000 100%);
+  --dropdown-hover: linear-gradient(270deg, #FFD700AA 0%, #FF8C00AA 100%);
+  --dropdown-light: linear-gradient(270deg, #FFE55DAD 0%, #FFBF5DA5 100%);
+  --properties-gradient: linear-gradient(270deg, #2A1810 0%, #1A1100 100%);
+  --footer-gradient: linear-gradient(225deg, #000000 0%, #1F1500 50%, #0A0500 100%);
+  --splitter-color: #2A1810C9;
+  --search-bg: #1A1100;
+}
+
+/* Import base styles AFTER defining variables */
+@import url("../libraryroot.custom.css");
+
+/* Discovery Era specific enhancements */
+._3Z7VQ1IMk4E3HsHvrkLNgo {
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+._3vCzSrrXZzZjVJFZNg9SGu {
+  box-shadow: 0 -2px 8px rgba(255, 140, 0, 0.2);
+}
+
+/* Golden glow effect for hover states */
+._1VNuYHM6BPBOJspC6zPf5r:hover {
+  box-shadow: 0 4px 16px rgba(255, 215, 0, 0.4);
+  filter: brightness(1.1) saturate(1.2);
+} 

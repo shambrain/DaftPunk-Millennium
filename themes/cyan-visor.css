@@ -1,0 +1,61 @@
+/**
+ * Cyan Visor Theme - Cyan, turquoise, and teal gradients
+ * Part of Daft Punk Millennium Collection
+ * Based on Steam 2.0 Modular by Von-Amadeus
+ */
+
+/* =============================================================================
+   CYAN VISOR THEME COLORS
+   ============================================================================= */
+
+:root {
+  /* Cyan Visor Theme - Cyan and Teal */
+  --primary-gradient: linear-gradient(270deg, #00FFFF 0%, #00CED1 50%, #008B8B 100%);
+  --secondary-gradient: linear-gradient(225deg, #00FFFF 0%, #20B2AA 30%, #2F4F4F 100%);
+  --gamelist-gradient: linear-gradient(270deg, #0A1A1A 0%, #001414 100%);
+  --games-gradient: linear-gradient(225deg, #003333 0%, #001A1A 30%, #000505 100%);
+  --downloads-gradient: linear-gradient(225deg, #002828 0%, #001414 100%);
+  --dropdown-hover: linear-gradient(270deg, #00FFFFAA 0%, #00CED1AA 100%);
+  --dropdown-light: linear-gradient(270deg, #AFEEEEAA 0%, #B0E0E6A5 100%);
+  --properties-gradient: linear-gradient(270deg, #0A1A1A 0%, #001414 100%);
+  --footer-gradient: linear-gradient(225deg, #000000 0%, #001A1A 50%, #000505 100%);
+  --splitter-color: #0A1A1AC9;
+  --search-bg: #001414;
+}
+
+/* Import base styles AFTER defining variables */
+@import url("../libraryroot.custom.css");
+
+/* Cyan visor-specific enhancements */
+._3Z7VQ1IMk4E3HsHvrkLNgo {
+  box-shadow: 0 2px 8px rgba(0, 255, 255, 0.4);
+}
+
+._3vCzSrrXZzZjVJFZNg9SGu {
+  box-shadow: 0 -2px 8px rgba(0, 206, 209, 0.3);
+}
+
+/* Cyan glow effect */
+._1VNuYHM6BPBOJspC6zPf5r:hover {
+  box-shadow: 0 4px 16px rgba(0, 255, 255, 0.6);
+  filter: brightness(1.1) saturate(1.4);
+}
+
+/* Scanline effect for visor aesthetic */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.scanline-effect::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00FFFF, transparent);
+  animation: scanline 3s linear infinite;
+  pointer-events: none;
+  z-index: 1000;
+} 

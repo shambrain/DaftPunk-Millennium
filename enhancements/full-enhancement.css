@@ -1,0 +1,205 @@
+/**
+ * Full Enhancement Configuration
+ * Complete UI overhaul with all enhancements combined
+ * Part of Daft Punk Millennium Collection
+ */
+
+/* Import all enhancement modules */
+@import url("standard.css");
+@import url("rounded-corners.css");
+@import url("enhanced-highlights.css");
+
+/* Additional full enhancement features */
+
+/* Advanced Steam background coverage */
+.DesktopUI,
+.SteamUI,
+.gamepadui_Shell_Container,
+.gamepadui_Shell_Panel {
+  background: var(--games-gradient) !important;
+}
+
+/* Complete chat system theming */
+.chatentry_chatroom,
+.chatentry_user,
+.chat_dialog,
+.chatentry_textarea,
+.chatentry_inputcontainer,
+.chat_messagepanel,
+.chat_userlist,
+.friendsui-container {
+  background: var(--gamelist-gradient) !important;
+  border: 1px solid var(--dropdown-hover);
+  border-radius: 12px;
+}
+
+/* Chat messages with theme colors */
+.chat_messagepanel .chatmsg {
+  background: var(--search-bg) !important;
+  border-left: 4px solid var(--dropdown-hover);
+  padding: 8px 12px;
+  margin: 4px 0;
+  border-radius: 8px;
+}
+
+/* Chat input enhancements */
+.chatentry_textarea {
+  background: var(--search-bg) !important;
+  border: 2px solid var(--dropdown-hover) !important;
+  color: #ffffff !important;
+  border-radius: 16px !important;
+  padding: 12px 16px;
+  font-size: 14px;
+}
+
+.chatentry_textarea:focus {
+  border-color: var(--dropdown-light) !important;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+  transform: scale(1.01);
+}
+
+/* Advanced game library enhancements */
+._1VNuYHM6BPBOJspC6zPf5r {
+  background: var(--gamelist-gradient) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px !important;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+._1VNuYHM6BPBOJspC6zPf5r:hover {
+  background: var(--dropdown-hover) !important;
+  border: 2px solid var(--dropdown-light) !important;
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 4px rgba(255, 255, 255, 0.1);
+  transform: scale(1.05) translateY(-4px) rotateX(2deg);
+  filter: brightness(1.3) saturate(1.2);
+}
+
+/* Enhanced dropdown and context menus */
+.DropDownMenu,
+.contextmenu,
+.popup,
+.menu {
+  background: var(--gamelist-gradient) !important;
+  border: 2px solid var(--dropdown-hover) !important;
+  border-radius: 16px !important;
+  box-shadow: 
+    0 16px 48px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+/* Menu items with advanced effects */
+.contextmenu .contextmenu_item:hover,
+.DropDownMenu .dropdown_item:hover {
+  background: var(--dropdown-hover) !important;
+  color: #ffffff !important;
+  border-radius: 8px;
+  margin: 4px;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Advanced scrollbar styling */
+::-webkit-scrollbar {
+  width: 16px;
+  background: var(--search-bg);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dropdown-hover);
+  border-radius: 8px;
+  border: 2px solid var(--search-bg);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dropdown-light);
+  box-shadow: 
+    0 0 16px var(--dropdown-hover),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Enhanced notification and alert styling */
+.notification,
+.alert,
+.toast {
+  background: var(--gamelist-gradient) !important;
+  border: 2px solid var(--dropdown-hover) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+/* Advanced button styling */
+button.DialogButton,
+.DesktopUI .title-area-icon {
+  background: var(--gamelist-gradient) !important;
+  border: 1px solid var(--dropdown-hover) !important;
+  border-radius: 12px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button.DialogButton:hover,
+.DesktopUI .title-area-icon:hover {
+  background: var(--dropdown-light) !important;
+  border: 2px solid var(--dropdown-hover) !important;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.3),
+    0 0 0 3px rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Advanced search field styling */
+._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K {
+  background: var(--search-bg) !important;
+  border: 2px solid var(--dropdown-hover) !important;
+  border-radius: 24px !important;
+  padding: 12px 20px;
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+}
+
+._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K:focus {
+  border-color: var(--dropdown-light) !important;
+  box-shadow: 
+    0 0 0 4px rgba(255, 255, 255, 0.1),
+    0 8px 24px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+/* Advanced animations and effects */
+@keyframes advanced-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 var(--dropdown-hover);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(255, 255, 255, 0.1);
+    transform: scale(1.02);
+  }
+}
+
+.advanced-pulse {
+  animation: advanced-pulse 3s infinite;
+}
+
+/* Performance optimizations */
+* {
+  will-change: transform, opacity, background;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+} 

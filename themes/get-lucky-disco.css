@@ -1,0 +1,62 @@
+/**
+ * Get Lucky Disco Theme - Hot pink, violet, and purple gradients
+ * Part of Daft Punk Millennium Collection
+ * Based on Steam 2.0 Modular by Von-Amadeus
+ */
+
+/* =============================================================================
+   GET LUCKY DISCO THEME COLORS
+   ============================================================================= */
+
+:root {
+  /* Get Lucky Disco Theme - Hot Pink and Purple */
+  --primary-gradient: linear-gradient(270deg, #FF1493 0%, #DA70D6 50%, #8A2BE2 100%);
+  --secondary-gradient: linear-gradient(225deg, #FF69B4 0%, #DA70D6 30%, #4B0082 100%);
+  --gamelist-gradient: linear-gradient(270deg, #2A0A1A 0%, #1A0014 100%);
+  --games-gradient: linear-gradient(225deg, #3A1828 0%, #2A0A1A 30%, #0A0005 100%);
+  --downloads-gradient: linear-gradient(225deg, #2A1020 0%, #1A0A14 100%);
+  --dropdown-hover: linear-gradient(270deg, #FF69B4AA 0%, #DA70D6AA 100%);
+  --dropdown-light: linear-gradient(270deg, #FFB6C1AD 0%, #DDA0DDAA 100%);
+  --properties-gradient: linear-gradient(270deg, #2A0A1A 0%, #1A0014 100%);
+  --footer-gradient: linear-gradient(225deg, #000000 0%, #2A0A1A 50%, #0A0005 100%);
+  --splitter-color: #2A0A1AC9;
+  --search-bg: #1A0014;
+}
+
+/* Import base styles AFTER defining variables */
+@import url("../libraryroot.custom.css");
+
+/* Disco-specific enhancements */
+._3Z7VQ1IMk4E3HsHvrkLNgo {
+  box-shadow: 0 2px 8px rgba(255, 20, 147, 0.4);
+}
+
+._3vCzSrrXZzZjVJFZNg9SGu {
+  box-shadow: 0 -2px 8px rgba(218, 112, 214, 0.3);
+}
+
+/* Pink disco glow effect */
+._1VNuYHM6BPBOJspC6zPf5r:hover {
+  box-shadow: 0 4px 16px rgba(255, 105, 180, 0.5);
+  filter: brightness(1.2) saturate(1.3);
+}
+
+/* Sparkle animation for disco effect */
+@keyframes disco-sparkle {
+  0%, 100% { 
+    filter: brightness(1) hue-rotate(0deg); 
+  }
+  25% { 
+    filter: brightness(1.3) hue-rotate(90deg); 
+  }
+  50% { 
+    filter: brightness(1.1) hue-rotate(180deg); 
+  }
+  75% { 
+    filter: brightness(1.3) hue-rotate(270deg); 
+  }
+}
+
+.disco-sparkle {
+  animation: disco-sparkle 4s ease-in-out infinite;
+} 

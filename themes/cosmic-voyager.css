@@ -1,0 +1,69 @@
+/**
+ * Cosmic Voyager Theme - Purple, violet, and deep purple gradients
+ * Part of Daft Punk Millennium Collection
+ * Based on Steam 2.0 Modular by Von-Amadeus
+ */
+
+/* =============================================================================
+   COSMIC VOYAGER THEME COLORS
+   ============================================================================= */
+
+:root {
+  /* Cosmic Voyager Theme - Purple and Violet */
+  --primary-gradient: linear-gradient(270deg, #9932CC 0%, #8A2BE2 50%, #4B0082 100%);
+  --secondary-gradient: linear-gradient(225deg, #9932CC 0%, #663399 30%, #301934 100%);
+  --gamelist-gradient: linear-gradient(270deg, #1A0A1A 0%, #140014 100%);
+  --games-gradient: linear-gradient(225deg, #330A33 0%, #1A051A 30%, #050205 100%);
+  --downloads-gradient: linear-gradient(225deg, #280A28 0%, #140514 100%);
+  --dropdown-hover: linear-gradient(270deg, #9932CCAA 0%, #8A2BE2AA 100%);
+  --dropdown-light: linear-gradient(270deg, #DDA0DDAA 0%, #D8BFD8A5 100%);
+  --properties-gradient: linear-gradient(270deg, #1A0A1A 0%, #140014 100%);
+  --footer-gradient: linear-gradient(225deg, #000000 0%, #1A051A 50%, #050205 100%);
+  --splitter-color: #1A0A1AC9;
+  --search-bg: #140014;
+}
+
+/* Import base styles AFTER defining variables */
+@import url("../libraryroot.custom.css");
+
+/* Cosmic-specific enhancements */
+._3Z7VQ1IMk4E3HsHvrkLNgo {
+  box-shadow: 0 2px 8px rgba(153, 50, 204, 0.5);
+}
+
+._3vCzSrrXZzZjVJFZNg9SGu {
+  box-shadow: 0 -2px 8px rgba(138, 43, 226, 0.4);
+}
+
+/* Cosmic purple glow effect */
+._1VNuYHM6BPBOJspC6zPf5r:hover {
+  box-shadow: 0 4px 16px rgba(153, 50, 204, 0.7);
+  filter: brightness(1.2) saturate(1.4);
+}
+
+/* Starfield animation for cosmic effect */
+@keyframes starfield {
+  0% { 
+    background-position: 0 0, 10px 10px, 20px 20px; 
+  }
+  100% { 
+    background-position: 100px 100px, 110px 110px, 120px 120px; 
+  }
+}
+
+.cosmic-starfield::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(1px 1px at 20px 30px, rgba(153, 50, 204, 0.7), transparent),
+    radial-gradient(1px 1px at 40px 70px, rgba(138, 43, 226, 0.6), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(75, 0, 130, 0.5), transparent);
+  background-size: 100px 100px, 120px 120px, 140px 140px;
+  animation: starfield 20s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+} 

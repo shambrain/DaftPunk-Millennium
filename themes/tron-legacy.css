@@ -1,0 +1,60 @@
+/**
+ * Tron Legacy Theme - Electric blue and deep blue gradients
+ * Part of Daft Punk Millennium Collection
+ * Based on Steam 2.0 Modular by Von-Amadeus
+ */
+
+/* =============================================================================
+   TRON LEGACY THEME COLORS
+   ============================================================================= */
+
+:root {
+  /* Tron Legacy Theme - Electric Blue */
+  --primary-gradient: linear-gradient(270deg, #00BFFF 0%, #0080FF 50%, #0040FF 100%);
+  --secondary-gradient: linear-gradient(225deg, #00BFFF 0%, #0080FF 30%, #001133 100%);
+  --gamelist-gradient: linear-gradient(270deg, #0A0A1A 0%, #000014 100%);
+  --games-gradient: linear-gradient(225deg, #001A33 0%, #000A1A 30%, #000005 100%);
+  --downloads-gradient: linear-gradient(225deg, #001428 0%, #000A14 100%);
+  --dropdown-hover: linear-gradient(270deg, #00BFFFAA 0%, #0080FFAA 100%);
+  --dropdown-light: linear-gradient(270deg, #87CEEBAA 0%, #B0C4DEA5 100%);
+  --properties-gradient: linear-gradient(270deg, #0A0A1A 0%, #000014 100%);
+  --footer-gradient: linear-gradient(225deg, #000000 0%, #000A1A 50%, #000005 100%);
+  --splitter-color: #0A0A1AC9;
+  --search-bg: #000014;
+}
+
+/* Import base styles AFTER defining variables */
+@import url("../libraryroot.custom.css");
+
+/* Tron-specific enhancements */
+._3Z7VQ1IMk4E3HsHvrkLNgo {
+  box-shadow: 0 2px 8px rgba(0, 191, 255, 0.5);
+  border-bottom: 1px solid rgba(0, 191, 255, 0.3);
+}
+
+._3vCzSrrXZzZjVJFZNg9SGu {
+  box-shadow: 0 -2px 8px rgba(0, 128, 255, 0.4);
+  border-top: 1px solid rgba(0, 128, 255, 0.3);
+}
+
+/* Electric blue glow effect */
+._1VNuYHM6BPBOJspC6zPf5r:hover {
+  box-shadow: 0 4px 16px rgba(0, 191, 255, 0.7);
+  filter: brightness(1.2) saturate(1.5);
+}
+
+/* Grid pattern overlay for Tron effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(rgba(0, 191, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 191, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: -1;
+} 

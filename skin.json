@@ -1,0 +1,101 @@
+{
+  "name": "Daft Punk Millennium Collection",
+  "author": "Daft Punk Millennium",
+  "description": "Seven distinct Daft Punk-inspired Steam themes with unique gradient colors and layouts based on iconic album covers. Features modular design with toggleable friends panel and font customization.",
+  "header_image": "https://i.imgur.com/sCCMnkG.png",
+  "splash_image": "https://i.imgur.com/sCCMnkG.png",
+  "tags": [
+    "Daft Punk",
+    "Retro-Futuristic", 
+    "Customizable",
+    "Animated",
+    "Dark Theme",
+    "Modular",
+    "Gradient Colors",
+    "Font Customization"
+  ],
+  "version": "2.1.0", 
+  "github": {
+    "owner": "DaftPunk-Millennium",
+    "repo_name": "DaftPunk-Millennium"
+  },
+  "Steam-WebKit": "webkit.css",
+  "UseDefaultPatches": true,
+  "Conditions": {
+    "Theme Selection": {
+      "description": "Choose your preferred Daft Punk theme gradient",
+      "default": "Discovery Era",
+      "tab": "Theme",
+      "section": "Selection",
+      "values": {
+        "Discovery Era": {
+          "TargetCss": { "affects": [".*"], "src": "themes/discovery-era.css" }
+        },
+        "Get Lucky Disco": {
+          "TargetCss": { "affects": [".*"], "src": "themes/get-lucky-disco.css" }
+        },
+        "Cyan Visor": {
+          "TargetCss": { "affects": [".*"], "src": "themes/cyan-visor.css" }
+        },
+        "Tron Legacy": {
+          "TargetCss": { "affects": [".*"], "src": "themes/tron-legacy.css" }
+        },
+        "Neon Glow": {
+          "TargetCss": { "affects": [".*"], "src": "themes/neon-glow.css" }
+        },
+        "Cosmic Voyager": {
+          "TargetCss": { "affects": [".*"], "src": "themes/cosmic-voyager.css" }
+        },
+        "Classic Discovery": {
+          "TargetCss": { "affects": [".*"], "src": "themes/classic-discovery.css" }
+        }
+      }
+    },
+    "Font Family": {
+      "description": "Choose your preferred font family for the Steam interface",
+      "default": "System Default",
+      "tab": "Appearance",
+      "section": "Typography",
+      "values": {
+        "System Default": {
+          "TargetCss": { "affects": [".*"], "src": "fonts/system-default.css" }
+        },
+        "Roboto": {
+          "TargetCss": { "affects": [".*"], "src": "fonts/roboto.css" }
+        },
+        "Inter": {
+          "TargetCss": { "affects": [".*"], "src": "fonts/inter.css" }
+        },
+        "JetBrains Mono": {
+          "TargetCss": { "affects": [".*"], "src": "fonts/jetbrains-mono.css" }
+        },
+        "Fira Code": {
+          "TargetCss": { "affects": [".*"], "src": "fonts/fira-code.css" }
+        },
+        "Poppins": {
+          "TargetCss": { "affects": [".*"], "src": "fonts/poppins.css" }
+        }
+      }
+    },
+    "UI Enhancements": {
+      "description": "Additional UI improvements and visual enhancements",
+      "default": "Standard",
+      "tab": "Appearance", 
+      "section": "Interface",
+      "values": {
+        "Standard": {
+          "TargetCss": { "affects": [".*"], "src": "enhancements/standard.css" }
+        },
+        "Rounded Corners": {
+          "TargetCss": { "affects": [".*"], "src": "enhancements/rounded-corners.css" }
+        },
+        "Enhanced Highlights": {
+          "TargetCss": { "affects": [".*"], "src": "enhancements/enhanced-highlights.css" }
+        },
+        "Full Enhancement": {
+          "TargetCss": { "affects": [".*"], "src": "enhancements/full-enhancement.css" }
+        }
+      }
+    }
+  }
+} 

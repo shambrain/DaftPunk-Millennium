@@ -1,0 +1,88 @@
+/**
+ * Rounded Corners Enhancement Configuration
+ * Modern rounded UI elements for a softer, contemporary look
+ * Part of Daft Punk Millennium Collection
+ */
+
+/* Global rounded corners */
+* {
+  border-radius: 8px !important;
+}
+
+/* Specific rounded corner adjustments */
+.DialogButton,
+button,
+input,
+select,
+textarea {
+  border-radius: 12px !important;
+}
+
+/* Game tiles and library elements */
+._1VNuYHM6BPBOJspC6zPf5r,
+.game-tile,
+.library-item {
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
+/* Panel and container elements */
+._9sPoVBFyE_vE87mnZJ5aB,
+._3x1HklzyDs4TEjACrRO2tB,
+._3Sb2o_mQ30IDRh0C72QUUu {
+  border-radius: 0px !important; /* Keep panels square for better layout */
+}
+
+/* Header and navigation elements */
+._3Z7VQ1IMk4E3HsHvrkLNgo,
+._3vCzSrrXZzZjVJFZNg9SGu {
+  border-radius: 0px !important; /* Keep headers square */
+}
+
+/* Dropdown and menu elements */
+.DropDownMenu,
+.contextmenu,
+.popup {
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Search and input fields */
+._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K,
+.search-input {
+  border-radius: 20px !important;
+}
+
+/* Friends and chat elements */
+.friend-item,
+.chat-message {
+  border-radius: 10px !important;
+}
+
+/* Scrollbars with rounded corners */
+::-webkit-scrollbar {
+  border-radius: 6px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px !important;
+}
+
+/* Modal and dialog windows */
+.modal,
+.dialog {
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
+/* Enhanced hover effects with rounded corners */
+._1VNuYHM6BPBOJspC6zPf5r:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border-radius: 16px !important;
+}
+
+/* Smooth transitions for all rounded elements */
+* {
+  transition: border-radius 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+} 

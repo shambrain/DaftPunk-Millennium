@@ -1,52 +1,77 @@
-/* Daft Punk Millennium Theme - WebKit Compatibility */
-/* Steam WebKit specific styling */
+/* Daft Punk Millennium Collection - WebKit Compatibility */
+/* Steam WebKit specific styling for enhanced browser support */
 
-/* WebKit Scrollbars */
+/* =============================================================================
+   WEBKIT SCROLLBARS
+   ============================================================================= */
+
 ::-webkit-scrollbar {
     width: 12px;
-    background: var(--dp-bg-secondary);
+    background: var(--search-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--dp-gradient-gold);
+    background: var(--dropdown-hover);
     border-radius: 6px;
-    border: 1px solid var(--dp-gold-secondary);
-    box-shadow: var(--dp-shadow-gold);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--dp-gradient-cyber);
-    box-shadow: var(--dp-glow-cyan);
-    transform: scale(1.1);
+    background: var(--dropdown-light);
+    transform: scale(1.05);
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--dp-bg-secondary);
+    background: var(--search-bg);
+    border-radius: 6px;
 }
 
 ::-webkit-scrollbar-corner {
-    background: var(--dp-bg-secondary);
+    background: var(--search-bg);
 }
 
-/* WebKit Selection */
+/* =============================================================================
+   WEBKIT SELECTION
+   ============================================================================= */
+
 ::selection {
-    background: var(--dp-gold-primary);
-    color: var(--dp-bg-primary);
+    background: var(--dropdown-hover);
+    color: #ffffff;
 }
 
 ::-moz-selection {
-    background: var(--dp-gold-primary);
-    color: var(--dp-bg-primary);
+    background: var(--dropdown-hover);
+    color: #ffffff;
 }
 
-/* WebKit Focus */
+/* =============================================================================
+   WEBKIT FOCUS STATES
+   ============================================================================= */
+
 *:focus {
-    outline: 2px solid var(--dp-gold-primary);
+    outline: 2px solid var(--dropdown-hover);
     outline-offset: 2px;
-    box-shadow: var(--dp-shadow-gold);
+    border-radius: 3px;
 }
 
-/* WebKit Input Styling */
+/* Remove focus outline for mouse users */
+*:focus:not(.focus-visible) {
+    outline: none;
+}
+
+/* Enhanced focus for keyboard users */
+.focus-visible {
+    outline: 2px solid var(--dropdown-hover);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+/* =============================================================================
+   WEBKIT INPUT STYLING
+   ============================================================================= */
+
+/* Remove spinner buttons from number inputs */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -57,97 +82,141 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-/* WebKit Button Styling */
+/* Custom search input styling */
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    background: var(--dropdown-hover);
+    border-radius: 50%;
+    cursor: pointer;
+    height: 14px;
+    width: 14px;
+}
+
+/* =============================================================================
+   WEBKIT BUTTON STYLING
+   ============================================================================= */
+
 button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 }
 
-/* WebKit Text Rendering */
+/* =============================================================================
+   WEBKIT TEXT RENDERING
+   ============================================================================= */
+
 * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 }
 
-/* WebKit Backdrop Filter Support */
+/* =============================================================================
+   WEBKIT BACKDROP FILTER SUPPORT
+   ============================================================================= */
+
 @supports (backdrop-filter: blur(10px)) {
     .steamui_Container,
     .steamui_Panel,
-    .steamui_Modal {
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+    .steamui_Modal,
+    ._1VNuYHM6BPBOJspC6zPf5r,
+    ._3oavRVhIS9tC3vBsFT4Ggi {
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
     }
 }
 
-/* WebKit Animation Support */
-@supports (animation: name) {
-    .daftpunk-animated {
+/* =============================================================================
+   WEBKIT ANIMATION SUPPORT
+   ============================================================================= */
+
+@supports (animation: pulse 1s ease-in-out infinite) {
+    .daftpunk-glow {
         animation: daftpunk-glow 3s ease-in-out infinite;
     }
     
     .daftpunk-pulse {
-        animation: daftpunk-cyber-pulse 4s ease-in-out infinite;
+        animation: daftpunk-pulse 2s ease-in-out infinite;
     }
 }
 
-/* WebKit Transform Support */
+@keyframes daftpunk-glow {
+    0%, 100% { filter: brightness(1) saturate(1); }
+    50% { filter: brightness(1.2) saturate(1.3); }
+}
+
+@keyframes daftpunk-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+/* =============================================================================
+   WEBKIT TRANSFORM SUPPORT
+   ============================================================================= */
+
 @supports (transform: translateY(0)) {
     .gpfocus .btnv6_blue_hoverfade:hover,
     .gpfocus .btnv6_blue_steamui:hover,
-    .gpfocus .btnv6_blue_steamui__blue:hover {
-        transform: translateY(-3px) scale(1.02);
+    .gpfocus .btnv6_blue_steamui__blue:hover,
+    ._1VNuYHM6BPBOJspC6zPf5r:hover {
+        transform: translateY(-2px) scale(1.02);
     }
 }
 
-/* WebKit Filter Support */
-@supports (filter: blur(0)) {
-    .steamui-blur {
-        filter: blur(5px);
-        -webkit-filter: blur(5px);
-    }
+/* =============================================================================
+   ICON RENDERING IMPROVEMENTS
+   ============================================================================= */
+
+.icon, 
+.icon-mask, 
+.steamui_HeaderNavItem_2Kj7A::before,
+svg {
+    -webkit-mask-position: center;
+    mask-position: center;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
-/* WebKit Grid Support */
-@supports (display: grid) {
-    .steamui-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-    }
-}
+/* =============================================================================
+   WEBKIT MEDIA QUERY SUPPORT
+   ============================================================================= */
 
-/* WebKit Flexbox Support */
-@supports (display: flex) {
-    .steamui-flex {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-/* WebKit Custom Properties Support */
-@supports (--custom: property) {
-    :root {
-        --dp-gold-primary: #FFD700;
-        --dp-gold-secondary: #B8860B;
-        --dp-cyan-primary: #00FFFF;
-        --dp-bg-primary: #0A0A0A;
-        --dp-bg-secondary: #1A1A1A;
-    }
-}
-
-/* WebKit Media Query Support */
+/* High DPI displays */
 @media (-webkit-min-device-pixel-ratio: 2) {
-    .steamui-high-dpi {
-        background-image: url('assets/high-dpi.png');
+    /* Prefer vector icons and sharper graphics */
+    .icon, .icon-mask, svg {
+        image-rendering: -webkit-optimize-contrast;
     }
 }
 
-/* WebKit Print Styles */
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --dropdown-hover: linear-gradient(270deg, #FFFFFF 0%, #CCCCCC 100%);
+        --dropdown-light: linear-gradient(270deg, #000000 0%, #333333 100%);
+    }
+}
+
+/* =============================================================================
+   WEBKIT PRINT STYLES
+   ============================================================================= */
+
 @media print {
-    .steamui-no-print {
+    .steamui-no-print,
+    .toggle-panel-button,
+    #manual-toggle-container {
         display: none !important;
     }
     
@@ -155,5 +224,74 @@ button {
         background: white !important;
         color: black !important;
         box-shadow: none !important;
+        text-shadow: none !important;
     }
+    
+    .page-break {
+        page-break-after: always;
+    }
+}
+
+/* =============================================================================
+   WEBKIT COMPATIBILITY FIXES
+   ============================================================================= */
+
+/* Fix for WebKit rendering issues */
+.webkit-fix {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+/* Improve performance for complex layouts */
+.gpu-accelerated {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    will-change: transform, opacity;
+}
+
+/* Fix for WebKit blur rendering */
+.webkit-blur-fix {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+} 
+
+/* =============================================================================
+   WEBKIT RESPONSIVE DESIGN
+   ============================================================================= */
+
+/* Removed manual toggle container styles - no longer needed */
+
+/* Enhanced responsive behavior for Steam webkit components */
+@media (max-width: 1200px) {
+  .webkit_html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 900px) {
+  .webkit_html {
+    font-size: 13px;
+  }
+}
+
+/* =============================================================================
+   WEBKIT ACCESSIBILITY ENHANCEMENTS
+   ============================================================================= */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  ::-webkit-scrollbar-thumb {
+    background: var(--dropdown-light);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
 } 

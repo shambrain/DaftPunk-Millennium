@@ -1,0 +1,14 @@
+/**
+ * System Default Font Configuration
+ * Uses the default Steam interface fonts
+ * Part of Daft Punk Millennium Collection
+ */
+
+/* System default - no font overrides */
+/* This file intentionally left minimal to use Steam's default fonts */
+
+body, 
+* {
+  /* Use Steam's default font stack */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+} 
