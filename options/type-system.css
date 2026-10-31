@@ -1,0 +1,8 @@
+/* TYPOGRAPHY — SYSTEM CLEAN
+   Falls back to Steam's own Motiva Sans stack. No font downloads. */
+
+:root {
+  --dp-font-display: "Motiva Sans", "Segoe UI", sans-serif;
+  --dp-font-ui: "Motiva Sans", "Segoe UI", sans-serif;
+  --dp-font-mono: "Consolas", "Courier New", monospace;
+}

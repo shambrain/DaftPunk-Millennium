@@ -1,0 +1,16 @@
+/* DENSITY — SPACIOUS
+   More air around shelves, panels and the game-details stage. */
+
+:root {
+  --dp-space: 1.3;
+  --dp-row-height: 64px;
+  --dp-sidebar-width: 300px;
+}
+
+.LibraryHome {
+  padding: 32px;
+}
+
+.AppDetailsSection {
+  padding: 26px;
+}

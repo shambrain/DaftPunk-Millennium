@@ -1,42 +1,71 @@
-/**
- * Discovery Era Theme - Gold and Orange gradients with black accents
- * Part of Daft Punk Millennium Collection
- * Based on Steam 2.0 Modular by Von-Amadeus
- */
-
-/* =============================================================================
-   DISCOVERY ERA THEME COLORS
-   ============================================================================= */
+/* ERA 01 — DISCOVERY ERA
+   Warm brushed gold over matte black. Editorial uppercase, diagonal hatch,
+   restrained amber glow. The founding Daft Punk material. */
 
 :root {
-  /* Discovery Era Theme - Gold and Black */
-  --primary-gradient: linear-gradient(270deg, #FFD700 0%, #FF8C00 50%, #000000 100%);
-  --secondary-gradient: linear-gradient(225deg, #FFD700 0%, #FF8C00 30%, #000000 100%);
-  --gamelist-gradient: linear-gradient(270deg, #2A1810 0%, #1A1100 100%);
-  --games-gradient: linear-gradient(225deg, #3A2500 0%, #1F1500 30%, #0A0500 100%);
-  --downloads-gradient: linear-gradient(225deg, #2A1800 0%, #1A1000 100%);
-  --dropdown-hover: linear-gradient(270deg, #FFD700AA 0%, #FF8C00AA 100%);
-  --dropdown-light: linear-gradient(270deg, #FFE55DAD 0%, #FFBF5DA5 100%);
-  --properties-gradient: linear-gradient(270deg, #2A1810 0%, #1A1100 100%);
-  --footer-gradient: linear-gradient(225deg, #000000 0%, #1F1500 50%, #0A0500 100%);
-  --splitter-color: #2A1810C9;
-  --search-bg: #1A1100;
+  --dp-void: #060504;
+  --dp-black: #0a0806;
+  --dp-ink: #100c08;
+  --dp-panel: rgba(24, 18, 11, 0.88);
+  --dp-panel-solid: #16110c;
+  --dp-panel-raised: rgba(35, 26, 16, 0.92);
+  --dp-panel-sunken: rgba(12, 9, 6, 0.8);
+  --dp-line: rgba(255, 215, 140, 0.12);
+  --dp-line-strong: rgba(255, 215, 140, 0.26);
+  --dp-text: #fff7e8;
+  --dp-text-soft: #d8c9ae;
+  --dp-text-muted: #a4917a;
+  --dp-text-dim: #746454;
+  --dp-accent: #e8b341;
+  --dp-accent-hi: #ffd97a;
+  --dp-accent-soft: rgba(232, 179, 65, 0.15);
+  --dp-accent-line: rgba(232, 179, 65, 0.5);
+  --dp-secondary: #c9762b;
+  --dp-glow: rgba(232, 179, 65, 0.32);
+  --dp-topbar-bg: linear-gradient(180deg, rgba(28,21,12,.98), rgba(8,6,4,.98));
+  --dp-sidebar-bg: linear-gradient(180deg, rgba(22,16,10,.97), rgba(8,6,4,.99));
+  --dp-wordmark-color: #ffd97a;
+  --dp-wordmark-glow: 0 0 20px rgba(232,179,65,.55);
+  --dp-radius: 6px;
+  --dp-radius-sm: 4px;
+  --dp-radius-lg: 10px;
+  --dp-display-weight: 700;
+  --dp-display-spacing: 0.12em;
 }
 
-/* Import base styles AFTER defining variables */
-@import url("../libraryroot.custom.css");
-
-/* Discovery Era specific enhancements */
-._3Z7VQ1IMk4E3HsHvrkLNgo {
-  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+body.DesktopUI #root,
+body.DesktopUI .Root {
+  background:
+    radial-gradient(900px 520px at 8% -8%, rgba(232, 179, 65, 0.14), transparent 60%),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 9px),
+    linear-gradient(180deg, #0b0906 0%, #060504 100%);
 }
 
-._3vCzSrrXZzZjVJFZNg9SGu {
-  box-shadow: 0 -2px 8px rgba(255, 140, 0, 0.2);
+.LibraryHome,
+._3Sb2o_mQ30IDRh0C72QUUu {
+  background-image:
+    radial-gradient(1200px 400px at 50% -10%, rgba(232, 179, 65, 0.08), transparent 70%),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.026) 0 1px, transparent 1px 12px);
 }
 
-/* Golden glow effect for hover states */
-._1VNuYHM6BPBOJspC6zPf5r:hover {
-  box-shadow: 0 4px 16px rgba(255, 215, 0, 0.4);
-  filter: brightness(1.1) saturate(1.2);
-} 
+.TopBar {
+  background:
+    linear-gradient(180deg, rgba(28, 21, 12, 0.98), rgba(8, 6, 4, 0.98)) !important;
+  box-shadow:
+    inset 0 -1px 0 rgba(232, 179, 65, 0.2),
+    0 1px 0 rgba(0, 0, 0, 0.6);
+}
+
+.LibraryItemBox {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 236, 190, 0.1),
+    0 12px 26px rgba(0, 0, 0, 0.5);
+}
+
+.LibraryItemBox:hover {
+  box-shadow:
+    0 1px 0 rgba(255, 236, 190, 0.16),
+    0 18px 40px rgba(0, 0, 0, 0.6),
+    0 0 0 1px var(--dp-accent-line),
+    0 0 26px -4px var(--dp-glow);
+}

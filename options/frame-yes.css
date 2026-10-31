@@ -1,0 +1,8 @@
+/* VISOR FRAME — ON
+   In-client chrome frame and visor light. The native Windows titlebar is
+   untouched; this only draws inside the Steam web surface. */
+
+:root {
+  --dp-frame-opacity: 1;
+  --dp-frame-color: rgba(255, 255, 255, 0.16);
+}

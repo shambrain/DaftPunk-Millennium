@@ -1,68 +1,98 @@
-/**
- * Classic Discovery Theme - Orange-red and crimson gradients
- * Part of Daft Punk Millennium Collection
- * Based on Steam 2.0 Modular by Von-Amadeus
- */
-
-/* =============================================================================
-   CLASSIC DISCOVERY THEME COLORS
-   ============================================================================= */
+/* ERA 07 — CLASSIC DISCOVERY
+   Silver chrome and antique gold. Matte, high-contrast, editorial. No glow,
+   no ambience: the design equivalent of a brushed aluminium record sleeve. */
 
 :root {
-  /* Classic Discovery Theme - Orange-Red and Crimson */
-  --primary-gradient: linear-gradient(270deg, #FF4500 0%, #FF6347 50%, #8B0000 100%);
-  --secondary-gradient: linear-gradient(225deg, #FF4500 0%, #DC143C 30%, #800000 100%);
-  --gamelist-gradient: linear-gradient(270deg, #1A0A05 0%, #140005 100%);
-  --games-gradient: linear-gradient(225deg, #330A05 0%, #1A0A05 30%, #050202 100%);
-  --downloads-gradient: linear-gradient(225deg, #280A05 0%, #140505 100%);
-  --dropdown-hover: linear-gradient(270deg, #FF4500AA 0%, #FF6347AA 100%);
-  --dropdown-light: linear-gradient(270deg, #FFA07AAA 0%, #F08080AA 100%);
-  --properties-gradient: linear-gradient(270deg, #1A0A05 0%, #140005 100%);
-  --footer-gradient: linear-gradient(225deg, #000000 0%, #1A0A05 50%, #050202 100%);
-  --splitter-color: #1A0A05C9;
-  --search-bg: #140005;
+  --dp-void: #0c0c0e;
+  --dp-black: #101012;
+  --dp-ink: #151518;
+  --dp-panel: rgba(31, 31, 35, 0.94);
+  --dp-panel-solid: #1d1d21;
+  --dp-panel-raised: rgba(43, 43, 48, 0.94);
+  --dp-panel-sunken: rgba(17, 17, 20, 0.9);
+  --dp-line: rgba(255, 255, 255, 0.12);
+  --dp-line-strong: rgba(255, 255, 255, 0.24);
+  --dp-text: #f6f6f7;
+  --dp-text-soft: #d2d3d6;
+  --dp-text-muted: #a0a2a8;
+  --dp-text-dim: #7a7c82;
+  --dp-accent: #d8b26a;
+  --dp-accent-hi: #f2dfb4;
+  --dp-accent-soft: rgba(216, 178, 106, 0.12);
+  --dp-accent-line: rgba(216, 178, 106, 0.46);
+  --dp-secondary: #a8adb5;
+  --dp-glow: rgba(216, 178, 106, 0.16);
+  --dp-topbar-bg: linear-gradient(180deg, #26262b 0%, #131316 55%, #0d0d0f 100%);
+  --dp-sidebar-bg: linear-gradient(180deg, #1a1a1e 0%, #0c0c0e 100%);
+  --dp-wordmark-color: #f2dfb4;
+  --dp-wordmark-glow: none;
+  --dp-radius: 6px;
+  --dp-radius-sm: 4px;
+  --dp-radius-lg: 8px;
+  --dp-display-weight: 700;
+  --dp-display-spacing: 0.16em;
 }
 
-/* Import base styles AFTER defining variables */
-@import url("../libraryroot.custom.css");
-
-/* Classic Discovery-specific enhancements */
-._3Z7VQ1IMk4E3HsHvrkLNgo {
-  box-shadow: 0 2px 8px rgba(255, 69, 0, 0.5);
+body.DesktopUI #root,
+body.DesktopUI .Root {
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.016) 0 1px, transparent 1px 4px),
+    linear-gradient(180deg, #17171a 0%, #0c0c0e 46%, #08080a 100%);
 }
 
-._3vCzSrrXZzZjVJFZNg9SGu {
-  box-shadow: 0 -2px 8px rgba(255, 99, 71, 0.4);
+.LibraryHome,
+._3Sb2o_mQ30IDRh0C72QUUu {
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0, transparent 140px);
 }
 
-/* Orange-red glow effect */
-._1VNuYHM6BPBOJspC6zPf5r:hover {
-  box-shadow: 0 4px 16px rgba(255, 69, 0, 0.6);
-  filter: brightness(1.2) saturate(1.3);
+.TopBar {
+  background:
+    linear-gradient(180deg, #26262b 0%, #131316 55%, #0d0d0f 100%) !important;
+  border-bottom: 1px solid rgba(216, 178, 106, 0.32);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 
-/* Warm glow animation for classic feel */
-@keyframes warm-glow {
-  0%, 100% { 
-    filter: brightness(1) hue-rotate(0deg); 
-  }
-  50% { 
-    filter: brightness(1.3) hue-rotate(10deg); 
-  }
+/* Brushed aluminium sheen on the primary navigation. */
+.SuperNav .MenuButton:hover,
+.SuperNavMenu .MenuButton:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.03));
+  color: #fff;
 }
 
-.warm-glow {
-  animation: warm-glow 3s ease-in-out infinite;
+.SuperNavMenu.Selected .MenuButton,
+.SuperNavMenu .MenuButton.Selected {
+  border-radius: var(--dp-radius-sm);
+  background: linear-gradient(180deg, rgba(242, 223, 180, 0.22), rgba(242, 223, 180, 0.06));
+  box-shadow:
+    inset 0 -1px 0 var(--dp-accent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-/* Classic border accents */
-._1VNuYHM6BPBOJspC6zPf5r,
-button.DialogButton {
-  border: 1px solid rgba(255, 69, 0, 0.2);
-  transition: border-color 0.3s ease;
+.LibraryItemBox {
+  border-radius: var(--dp-radius);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 8px 18px rgba(0, 0, 0, 0.5);
 }
 
-._1VNuYHM6BPBOJspC6zPf5r:hover,
-button.DialogButton:hover {
-  border-color: rgba(255, 69, 0, 0.6);
-} 
+.LibraryItemBox:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1px rgba(242, 223, 180, 0.5),
+    0 12px 26px rgba(0, 0, 0, 0.55);
+}
+
+.PlayButton,
+._3ydigb6zZAjJ0JCDgHwSYA.PlayButton {
+  background: linear-gradient(180deg, #f2dfb4, #d8b26a 58%, #a98a4b);
+  color: #111;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.AppDetailsSection,
+.PlayBar {
+  background: linear-gradient(180deg, rgba(40, 40, 45, 0.8), rgba(22, 22, 26, 0.85));
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}

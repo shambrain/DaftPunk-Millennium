@@ -1,32 +1,94 @@
 {
-  "name": "Daft Punk Millennium Collection",
-  "author": "Daft Punk Millennium",
-  "description": "Seven distinct Daft Punk-inspired Steam themes with unique gradient colors and layouts based on iconic album covers. Features modular design with toggleable friends panel and font customization.",
-  "header_image": "https://i.imgur.com/sCCMnkG.png",
-  "splash_image": "https://i.imgur.com/sCCMnkG.png",
+  "name": "Daft Punk Millennium",
+  "author": "shambrain",
+  "description": "An art-directed retro-futuristic Steam theme: mirrored chrome, visor-light window framing, and seven distinct era variants built on original CSS artwork. No album art, no official affiliation.",
+  "version": "3.0.0",
+  "header_image": "https://raw.githubusercontent.com/shambrain/DaftPunk-Millennium/main/assets/previews/library-discovery.png",
+  "splash_image": "https://raw.githubusercontent.com/shambrain/DaftPunk-Millennium/main/assets/previews/game-details-tron.png",
   "tags": [
     "Daft Punk",
-    "Retro-Futuristic", 
+    "Retro-Futuristic",
+    "Chrome",
+    "Dark",
     "Customizable",
     "Animated",
-    "Dark Theme",
-    "Modular",
-    "Gradient Colors",
-    "Font Customization"
+    "Seven Eras"
   ],
-  "version": "2.1.0", 
   "github": {
-    "owner": "DaftPunk-Millennium",
+    "owner": "shambrain",
     "repo_name": "DaftPunk-Millennium"
   },
-  "Steam-WebKit": "webkit.css",
-  "UseDefaultPatches": true,
+  "Patches": [
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "libraryroot.custom.css"
+    },
+    {
+      "MatchRegexString": "^OverlayBrowser_Browser$",
+      "TargetCss": "libraryroot.custom.css"
+    },
+    {
+      "MatchRegexString": "^SP Overlay:",
+      "TargetCss": "libraryroot.custom.css"
+    },
+    {
+      "MatchRegexString": "Supernav$",
+      "TargetCss": "libraryroot.custom.css"
+    },
+    {
+      "MatchRegexString": "^notificationtoasts_",
+      "TargetCss": "libraryroot.custom.css"
+    },
+    {
+      "MatchRegexString": "^SteamBrowser_Find$",
+      "TargetCss": "libraryroot.custom.css"
+    },
+    {
+      "MatchRegexString": "^OverlayTab\\d+_Find$",
+      "TargetCss": "libraryroot.custom.css"
+    },
+    {
+      "MatchRegexString": "^Steam Big Picture Mode$",
+      "TargetCss": "bigpicture.custom.css"
+    },
+    {
+      "MatchRegexString": "^QuickAccess_",
+      "TargetCss": "bigpicture.custom.css"
+    },
+    {
+      "MatchRegexString": "^MainMenu_",
+      "TargetCss": "bigpicture.custom.css"
+    },
+    {
+      "MatchRegexString": ".friendsui-container",
+      "TargetCss": "friends.custom.css"
+    },
+    {
+      "MatchRegexString": "Menu$",
+      "TargetCss": "libraryroot.custom.css"
+    },
+    {
+      "MatchRegexString": ".ModalDialogPopup",
+      "TargetCss": "libraryroot.custom.css"
+    },
+    {
+      "MatchRegexString": ".FullModalOverlay",
+      "TargetCss": "libraryroot.custom.css"
+    },
+    {
+      "MatchRegexString": "^https:\\/\\/store\\.steampowered\\.com\\/.*",
+      "TargetCss": "webkit.css"
+    },
+    {
+      "MatchRegexString": "^https:\\/\\/steamcommunity\\.com\\/.*",
+      "TargetCss": "webkit.css"
+    }
+  ],
   "Conditions": {
-    "Theme Selection": {
-      "description": "Choose your preferred Daft Punk theme gradient",
+    "Era": {
+      "description": "Seven art directions built from the same chrome-and-light system. Each era changes material, geometry and motion, not just hue.",
       "default": "Discovery Era",
-      "tab": "Theme",
-      "section": "Selection",
+      "tab": "Era",
       "values": {
         "Discovery Era": {
           "TargetCss": { "affects": [".*"], "src": "themes/discovery-era.css" }
@@ -51,51 +113,66 @@
         }
       }
     },
-    "Font Family": {
-      "description": "Choose your preferred font family for the Steam interface",
-      "default": "System Default",
-      "tab": "Appearance",
-      "section": "Typography",
+    "Motion": {
+      "description": "Controls the speed and amount of movement. Always respects the operating system reduced-motion setting.",
+      "default": "Cinematic",
+      "tab": "Motion",
       "values": {
-        "System Default": {
-          "TargetCss": { "affects": [".*"], "src": "fonts/system-default.css" }
+        "Still": {
+          "TargetCss": { "affects": [".*"], "src": "options/motion-still.css" }
         },
-        "Roboto": {
-          "TargetCss": { "affects": [".*"], "src": "fonts/roboto.css" }
+        "Subtle": {
+          "TargetCss": { "affects": [".*"], "src": "options/motion-subtle.css" }
         },
-        "Inter": {
-          "TargetCss": { "affects": [".*"], "src": "fonts/inter.css" }
+        "Cinematic": {
+          "TargetCss": { "affects": [".*"], "src": "options/motion-cinematic.css" }
         },
-        "JetBrains Mono": {
-          "TargetCss": { "affects": [".*"], "src": "fonts/jetbrains-mono.css" }
-        },
-        "Fira Code": {
-          "TargetCss": { "affects": [".*"], "src": "fonts/fira-code.css" }
-        },
-        "Poppins": {
-          "TargetCss": { "affects": [".*"], "src": "fonts/poppins.css" }
+        "Overdrive": {
+          "TargetCss": { "affects": [".*"], "src": "options/motion-overdrive.css" }
         }
       }
     },
-    "UI Enhancements": {
-      "description": "Additional UI improvements and visual enhancements",
+    "Density": {
+      "description": "Changes spacing, row height and panel padding across the library, game details and menus.",
       "default": "Standard",
-      "tab": "Appearance", 
-      "section": "Interface",
+      "tab": "Layout",
       "values": {
+        "Compact": {
+          "TargetCss": { "affects": [".*"], "src": "options/density-compact.css" }
+        },
         "Standard": {
-          "TargetCss": { "affects": [".*"], "src": "enhancements/standard.css" }
+          "TargetCss": { "affects": [".*"], "src": "options/density-standard.css" }
         },
-        "Rounded Corners": {
-          "TargetCss": { "affects": [".*"], "src": "enhancements/rounded-corners.css" }
+        "Spacious": {
+          "TargetCss": { "affects": [".*"], "src": "options/density-spacious.css" }
+        }
+      }
+    },
+    "Visor Frame": {
+      "description": "Draws the in-client chrome frame and visor light around the Steam window. This does not replace the native Windows titlebar.",
+      "default": "yes",
+      "tab": "Layout",
+      "values": {
+        "yes": {
+          "TargetCss": { "affects": [".*"], "src": "options/frame-yes.css" }
         },
-        "Enhanced Highlights": {
-          "TargetCss": { "affects": [".*"], "src": "enhancements/enhanced-highlights.css" }
+        "no": {
+          "TargetCss": { "affects": [".*"], "src": "options/frame-no.css" }
+        }
+      }
+    },
+    "Typography": {
+      "description": "Helmet Display uses the bundled Chakra Petch TTF files. System Clean falls back to Steam's own font stack.",
+      "default": "Helmet Display",
+      "tab": "Typography",
+      "values": {
+        "Helmet Display": {
+          "TargetCss": { "affects": [".*"], "src": "options/type-helmet.css" }
         },
-        "Full Enhancement": {
-          "TargetCss": { "affects": [".*"], "src": "enhancements/full-enhancement.css" }
+        "System Clean": {
+          "TargetCss": { "affects": [".*"], "src": "options/type-system.css" }
         }
       }
     }
   }
-} 
+}

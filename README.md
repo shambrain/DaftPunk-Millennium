@@ -1,206 +1,169 @@
-# 🎵 **Daft Punk Millennium Collection** 🎵
+# Daft Punk Millennium
 
-**Seven distinct Daft Punk-inspired Steam themes with unique gradient colors, font customization, and modern UI enhancements.**
+**An original retro-futuristic Steam theme for [Millennium](https://steambrew.app): mirrored chrome, visor light, seven distinct eras, and a CSS-only architecture.**
 
-[![Version](https://img.shields.io/badge/Version-2.1.0-blue.svg)](https://github.com/DaftPunk-Millennium/DaftPunk-Millennium)
-[![Millennium](https://img.shields.io/badge/Millennium-Compatible-green.svg)](https://steambrew.app)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Discovery Era preview](assets/previews/library-discovery.png)
 
----
-
-## 🌟 **What's New in v2.1.0**
-
-- ✅ **Removed Copied Features**: Cleaned up all borrowed elements from other themes to comply with Millennium guidelines
-- 🔤 **Font Customization**: Choose from 6 different font families including Roboto, Inter, JetBrains Mono, and more
-- 🎨 **UI Enhancement Options**: Multiple enhancement levels from standard to full makeover
-- 🔄 **Rounded Corners**: Modern UI with customizable corner radius
-- 🎯 **Enhanced Highlights**: Theme-specific highlight colors that adapt to each Daft Punk theme
-- 💬 **Steam Chat Integration**: Complete chat system theming with theme-specific colors
-- ⚡ **Performance Optimizations**: Improved animations and reduced motion support
+> Original artwork and CSS. Not affiliated with, endorsed by, or sponsored by Daft Punk or Valve. No album art, portraits, logos or commercial artwork are included.
 
 ---
 
-## ✨ **Features**
+## Status
 
-- **🎯 Clean Design**: Original theme design without any copied features
-- **🎨 Theme Variations**: 7 unique Daft Punk-inspired color schemes
-- **⚙️ Millennium Integration**: Full theme selection through Millennium interface  
-- **🔤 Font Options**: 6 different font families to choose from
-- **🎨 UI Enhancements**: 4 different enhancement levels
-- **👥 Friends Panel Toggle**: Collapsible friends list with persistent state
-- **📱 Responsive Layout**: Adapts to different screen sizes
-- **🌈 Gradient Backgrounds**: Beautiful color transitions throughout the interface
-- **⚡ Smooth Animations**: Elegant transitions and hover effects
-- **🎯 Focus Enhancement**: Improved visual feedback for interactive elements
-- **✨ Theme-Specific Effects**: Unique animations and visual effects for each theme
+| Area | Status |
+| --- | --- |
+| Source and metadata | Implemented |
+| Static validation (JSON/CSS/SVG/TTF/assets) | Passed |
+| Steam + Millennium runtime — library, game details, Friends/Chat, Settings, store shell | Runtime tested |
+| All seven eras rendered in the live client | Visually inspected |
+| Big Picture | Not yet verified |
+| Full chat interaction matrix, DPI/multi-monitor, keyboard-only pass | Not yet verified |
+| Community pages, store checkout | Not yet verified |
+
+Detailed evidence: [VALIDATION_REPORT.md](VALIDATION_REPORT.md) and [AUDIT_REPORT.md](AUDIT_REPORT.md).
 
 ---
 
-## 🚀 **Installation**
+## What it is
 
-1. **Download** or clone this repository
-2. **Copy** the theme folder to your Steam skins directory:
+A complete material system rather than a recolour:
+
+- **Chrome and visor language** — brushed metal gradients, a 1px in-client window frame, a visor light line under the header, and clipped highlight edges.
+- **Seven genuinely different eras** — each changes palette, panel material, geometry, typography and background motif:
+  1. **Discovery Era** — warm gold on matte black, diagonal hatch, editorial uppercase.
+  2. **Get Lucky Disco** — champagne and mirror-ball pink, dot matrix, soft italic display.
+  3. **Cyan Visor** — cold laboratory cyan, scanlines, thin chrome edges.
+  4. **Tron Legacy** — electric blue linework, a perspective grid floor, two-pixel geometry.
+  5. **Neon Glow** — magenta and cyan tubes, pill controls, double neon edges.
+  6. **Cosmic Voyager** — indigo space, static starfield, violet instrumentation.
+  7. **Classic Discovery** — brushed aluminium, antique gold, matte and high-contrast.
+- **Original assets** — twin-helmet mark, compact visor mark, visor light, grid and spectrum SVGs, plus generated preview artwork.
+- **Bundled typography** — Chakra Petch Regular/SemiBold/Bold TTF (SIL OFL 1.1), with a system-font fallback option.
+- **No JavaScript** — no polling, timers, random styling, fixed overlays or MutationObservers. Everything is CSS and documented Millennium configuration.
+
+### In-client framing, not a fake OS titlebar
+
+The frame and visor light are drawn **inside** the Steam web surface with `pointer-events: none`. The native Windows titlebar, dragging, resizing, snapping and multi-monitor behaviour are untouched. Millennium does not replace native OS chrome, and this theme does not claim to.
+
+---
+
+## Requirements
+
+- Windows 10/11
+- Steam desktop client with [Millennium](https://steambrew.app) installed
+- A Millennium version that supports `Patches` and `Conditions` (verified here on Millennium Core 2.30.0; current releases should also work)
+- Steam’s desktop UI (not the mobile app)
+
+The theme was authored and tested against the Steam client with changelist **11146165** (CEF 126).
+
+---
+
+## Installation
+
+1. Download `DaftPunk-Millennium-3.0.0.zip` from the releases page (or clone this repository).
+2. Close Steam.
+3. Extract the folder so that `skin.json` sits directly inside:
+
    ```
-   Steam/steamui/skins/DaftPunk-Millennium/
+   %STEAM%\millennium\themes\DaftPunk-Millennium\skin.json
    ```
-3. **Enable** the skin in Steam through Millennium:
-   - Go to Steam → Settings → Interface → Millennium → Themes
-   - Select "Daft Punk Millennium Collection"
-   - **Choose your preferred theme** from the Theme Selection dropdown
-   - **Select your font** from the Font Family dropdown
-   - **Choose enhancements** from the UI Enhancements dropdown
-   - **Apply** and restart Steam
+
+   On a default Windows install that is:
+
+   ```
+   C:\Program Files (x86)\Steam\millennium\themes\DaftPunk-Millennium\
+   ```
+
+4. Start Steam.
+5. Open **Steam → Settings → Millennium → Themes**, select **Daft Punk Millennium**, and click **Use**.
+6. Configure the era, motion, density, frame and typography from the theme’s settings tabs.
+
+### Rollback
+
+Close Steam, delete the `DaftPunk-Millennium` folder from `%STEAM%\millennium\themes`, and restart. Your previous theme selection remains in Millennium’s config and can be re-enabled from the Themes page.
 
 ---
 
-## ⚙️ **Customization Options**
+## Options
 
-### **🎨 Theme Selection**
-Choose from 7 different Daft Punk themes:
-- **Discovery Era** (Default): Gold and orange gradients
-- **Get Lucky Disco**: Hot pink and purple gradients  
-- **Cyan Visor**: Cyan and teal gradients
-- **Tron Legacy**: Electric blue gradients
-- **Neon Glow**: Bright green gradients
-- **Cosmic Voyager**: Purple and violet gradients
-- **Classic Discovery**: Orange-red and crimson gradients
+Every option below loads a real CSS file and changes the rendered client. No inert controls.
 
-### **🔤 Font Family Options**
-- **System Default**: Uses Steam's default font stack
-- **Roboto**: Modern, clean, and highly readable Google Font
-- **Inter**: Designed specifically for computer screens and UI interfaces
-- **JetBrains Mono**: Modern monospace font designed for developers
-- **Fira Code**: Monospace font with programming ligatures
-- **Poppins**: Modern, geometric sans-serif with rounded characters
+| Option | Values | What it changes |
+| --- | --- | --- |
+| **Era** | Discovery Era (default), Get Lucky Disco, Cyan Visor, Tron Legacy, Neon Glow, Cosmic Voyager, Classic Discovery | Accent, chrome tint, sidebar/top-bar material, radius, display type, background motif |
+| **Motion** | Still, Subtle, Cinematic (default), Overdrive | Transition durations, hover lift, logo/visor animation. OS reduced-motion always wins. |
+| **Density** | Compact, Standard (default), Spacious | Library stage padding and panel padding |
+| **Visor Frame** | yes (default), no | The in-client chrome frame and visor light |
+| **Typography** | Helmet Display (default), System Clean | Chakra Petch TTF files or Steam’s Motiva Sans stack |
 
-### **🎨 UI Enhancement Levels**
-- **Standard**: Basic improvements with theme-specific highlights
-- **Rounded Corners**: Modern rounded UI elements for a softer look
-- **Enhanced Highlights**: Advanced highlight colors and visual feedback
-- **Full Enhancement**: Complete UI overhaul with all features combined
+Changing an option does not leave stale classes or duplicate styles: each choice is a self-contained stylesheet of tokens and scoped rules, and Millennium injects only the selected file.
 
 ---
 
-## 🛠️ **File Structure**
+## Architecture
+
+`skin.json` uses a documented **custom `Patches` list** rather than `UseDefaultPatches`. This is deliberate:
+
+- It reproduces the default Steam window targets (main UI, overlays, notifications, menus, dialogs, Friends, Big Picture).
+- It adds store and community browser targets so those surfaces receive a coherent treatment.
+- It does **not** combine `UseDefaultPatches` with `Patches` or `Steam-WebKit`, which the Millennium docs warn against.
 
 ```
 DaftPunk-Millennium/
-├── skin.json                          # Main configuration with all options
-├── libraryroot.custom.css             # Base styles shared by all themes
-├── libraryroot.custom.js              # Friends panel toggle functionality
-├── webkit.css                         # WebKit compatibility enhancements
-├── themes/                            # Individual theme files
-│   ├── discovery-era.css              # Gold and orange theme
-│   ├── get-lucky-disco.css            # Pink and purple disco theme
-│   ├── cyan-visor.css                 # Cyan visor theme with scanlines
-│   ├── tron-legacy.css                # Electric blue Tron theme
-│   ├── neon-glow.css                  # Bright green neon theme
-│   ├── cosmic-voyager.css             # Purple cosmic theme
-│   └── classic-discovery.css          # Orange-red classic theme
-├── fonts/                             # Font configuration files
-│   ├── system-default.css             # Default Steam fonts
-│   ├── roboto.css                     # Roboto font integration
-│   ├── inter.css                      # Inter font integration
-│   ├── jetbrains-mono.css             # JetBrains Mono integration
-│   ├── fira-code.css                  # Fira Code integration
-│   └── poppins.css                    # Poppins font integration
-├── enhancements/                      # UI enhancement files
-│   ├── standard.css                   # Basic improvements
-│   ├── rounded-corners.css            # Modern rounded corners
-│   ├── enhanced-highlights.css        # Advanced highlight system
-│   └── full-enhancement.css           # Complete UI overhaul
-└── README.md                          # This file
+├── skin.json                  # metadata, patches, seven eras, five option groups
+├── libraryroot.custom.css     # main-window material system
+├── friends.custom.css         # Friends List + detached chat windows
+├── bigpicture.custom.css      # Big Picture token remap
+├── webkit.css                 # store/community browser views
+├── themes/                    # seven era stylesheets
+├── options/                   # motion, density, frame, typography
+├── assets/
+│   ├── fonts/                 # Chakra Petch TTF + OFL
+│   ├── *.svg                  # original marks and motifs
+│   └── previews/              # original design preview artwork
+├── docs/DESIGN_RESEARCH.md
+├── AUDIT_REPORT.md
+└── VALIDATION_REPORT.md
 ```
 
----
+### Selector policy
 
-## 🎯 **How It Works**
+Selectors were checked against the live Steam DOM, including `.TopBar`, `.LibraryHome`, `.LibraryItemBox`, `.GameListEntryContainer`, `.PlayBar`, `.AppDetailsSection`, `.friendsui-container`, `.chatWindow`, `.TitleBar`, `.DialogButton`, `.contextMenuItem`, and the `MillenniumWindow_*` classes. Hashed Steam classes are used only where a stable semantic class is unavailable, and every hashed selector that remains was observed in the installed client.
 
-### **Theme System**
-- **Base Styles**: `libraryroot.custom.css` provides the foundation styling
-- **Theme Files**: Each theme in `/themes/` defines unique color variables
-- **Font Files**: Font configurations in `/fonts/` apply typography choices
-- **Enhancement Files**: UI improvements in `/enhancements/` add visual polish
-- **Millennium Integration**: `skin.json` properly configures all options for Millennium
-- **Dynamic Loading**: All options are loaded based on your selections in Millennium settings
-
-### **Friends Panel Toggle**
-- Click the arrow button on the friends panel to hide/show it
-- State is saved and restored between sessions
-- Provides more space for your game library
-
-### **Enhanced Interactions**
-- Theme-specific hover effects and highlights
-- Smooth transitions for better user experience
-- Improved focus states for keyboard navigation
-- Font-specific optimizations for readability
-- Modern UI elements with rounded corners (optional)
+No `.steamui_*` guesses, no global `* { color: … }` recolouring, no universal SVG fills overrides.
 
 ---
 
-## 🔧 **Advanced Customization**
+## Compatibility and known limits
 
-Each theme uses CSS variables, making it easy to customize colors:
+- **Steam updates can rename generated classes.** Semantic classes are preferred, but Valve can still change the desktop DOM. Report a broken surface with the Steam changelist and a screenshot.
+- **Native Windows titlebar is not replaceable by Millennium.** The theme draws an in-client frame only.
+- **Big Picture** receives a token/typography remap, not a full layout redesign. It has not been runtime-verified here.
+- **Store/community pages** ship their own CSS after theme injection, so the theme uses raised-specificity rules and only changes colour, surfaces and typography. Checkout flows and prices keep their native hierarchy.
+- **Reduced motion** is respected in CSS and in the Overdrive option.
+- **Millennium version differences**: verified against Millennium Core 2.30.0. Newer 3.x releases may change settings rendering or update handling; the theme uses documented `Patches`, `Conditions` and vanilla CSS only.
 
-```css
-:root {
-  --primary-gradient: linear-gradient(270deg, #FFD700 0%, #FF8C00 50%, #000000 100%);
-  --secondary-gradient: linear-gradient(225deg, #FFD700 0%, #FF8C00 30%, #000000 100%);
-  --dropdown-hover: linear-gradient(270deg, #FFD700AA 0%, #FF8C00AA 100%);
-  /* ... more variables */
-}
+---
+
+## Development checks
+
+From the workspace root:
+
+```powershell
+python _tools\validate_theme.py DaftPunk-Millennium
 ```
 
-You can create your own custom theme by copying an existing theme file and modifying the color values.
+The validator checks `skin.json`, every patch/condition target, CSS parse errors, missing `url()` assets, SVG XML, TTF headers/metadata, and reports universal selectors and `.steamui_*` guesses.
+
+Runtime verification used the installed Steam client with `-cef-enable-debugging` and Millennium’s own theme/condition loading. It is not repeated automatically by this repository.
 
 ---
 
-## 🎨 **Theme Previews**
+## License and credits
 
-Each theme provides a unique visual experience:
+- Theme code and original artwork: **MIT** — see [LICENSE](LICENSE).
+- Chakra Petch: **SIL Open Font License 1.1** — see `assets/fonts/OFL.txt`.
+- Built for [Millennium](https://github.com/SteamClientHomebrew/Millennium). Millennium is MIT-licensed; no Millennium code is bundled.
+- Design research references are listed in [docs/DESIGN_RESEARCH.md](docs/DESIGN_RESEARCH.md). No third-party artwork is shipped.
 
-- **Discovery Era**: Classic gold and black with warm tones
-- **Get Lucky Disco**: Vibrant pink and purple with sparkle effects
-- **Cyan Visor**: Cool cyan with futuristic scanline animations
-- **Tron Legacy**: Electric blue with grid pattern overlays
-- **Neon Glow**: Bright green with pulsing neon effects
-- **Cosmic Voyager**: Deep purple with starfield animations
-- **Classic Discovery**: Warm orange-red with classic styling
-
----
-
-## 🤝 **Contributing**
-
-Contributions are welcome! Please feel free to:
-- Report bugs or issues
-- Suggest new features or improvements
-- Submit pull requests with enhancements
-- Create additional themes or fonts
-
----
-
-## 📜 **License**
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 **Acknowledgments**
-
-- **Millennium Team** for the amazing theming framework
-- **Steam Community** for inspiration and feedback
-- **Daft Punk** for the musical inspiration behind the themes
-- **Google Fonts** for providing excellent typography options
-
----
-
-## 📞 **Support**
-
-If you encounter any issues or have questions:
-1. Check the [Issues](https://github.com/DaftPunk-Millennium/DaftPunk-Millennium/issues) page
-2. Create a new issue with detailed information
-3. Join the [Millennium Discord](https://discord.gg/steambrew) for community support
-
----
-
-**Enjoy your enhanced Steam experience with the Daft Punk Millennium Collection! 🎵✨** 
+Daft Punk is a trademark of its respective owners. This is an unofficial fan-made visual theme.

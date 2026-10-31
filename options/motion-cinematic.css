@@ -1,0 +1,11 @@
+/* MOTION — CINEMATIC (default)
+   The intended pace: 120–380 ms, two-pixel lift, no endless animation. */
+
+:root {
+  --dp-fast: 120ms;
+  --dp-mid: 200ms;
+  --dp-slow: 380ms;
+  --dp-hover-lift: -2px;
+  --dp-star-duration: 0s;
+  --dp-shimmer: 0;
+}

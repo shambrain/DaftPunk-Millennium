@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 260" width="520" height="260" role="img" aria-labelledby="dpMarkTitle">
+  <title id="dpMarkTitle">Daft Punk Millennium original twin-helmet mark</title>
+  <defs>
+    <linearGradient id="dpChrome" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.28" stop-color="#c9ced7"/>
+      <stop offset="0.52" stop-color="#7c828d"/>
+      <stop offset="0.74" stop-color="#e7ebf1"/>
+      <stop offset="1" stop-color="#5a606a"/>
+    </linearGradient>
+    <linearGradient id="dpGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff2c9"/>
+      <stop offset="0.42" stop-color="#e8b341"/>
+      <stop offset="1" stop-color="#9c6a1f"/>
+    </linearGradient>
+    <linearGradient id="dpVisor" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0a0a0c"/>
+      <stop offset="0.5" stop-color="#17171c"/>
+      <stop offset="1" stop-color="#050506"/>
+    </linearGradient>
+    <linearGradient id="dpCyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#b8fbfd"/>
+      <stop offset="1" stop-color="#4fe3ee"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left helmet: gold visor -->
+  <g>
+    <path d="M54 196c-14 0-24-11-24-25v-63c0-52 42-86 96-86s96 34 96 86v63c0 14-10 25-24 25z"
+          fill="url(#dpChrome)" stroke="#0b0b0e" stroke-width="4"/>
+    <path d="M34 118h188v34c0 8-6 14-14 14H48c-8 0-14-6-14-14z" fill="url(#dpVisor)"/>
+    <path d="M48 128h160M48 138h160M48 148h160" stroke="url(#dpGold)" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="38" cy="140" r="15" fill="url(#dpChrome)" stroke="#0b0b0e" stroke-width="3"/>
+    <circle cx="218" cy="140" r="15" fill="url(#dpChrome)" stroke="#0b0b0e" stroke-width="3"/>
+    <path d="M64 52c18-16 42-24 66-24M64 52c18-16 42-24 66-24" stroke="#ffffff" stroke-opacity="0.55" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M126 84h0" stroke="#0b0b0e"/>
+    <rect x="122" y="48" width="12" height="20" rx="6" fill="#0b0b0e" opacity="0.55"/>
+  </g>
+
+  <!-- Right helmet: cyan visor -->
+  <g>
+    <path d="M264 196c-14 0-24-11-24-25v-63c0-52 42-86 96-86s96 34 96 86v63c0 14-10 25-24 25z"
+          fill="url(#dpChrome)" stroke="#0b0b0e" stroke-width="4"/>
+    <path d="M244 118h188v34c0 8-6 14-14 14H258c-8 0-14-6-14-14z" fill="url(#dpVisor)"/>
+    <path d="M258 128h160M258 138h160M258 148h160" stroke="url(#dpCyan)" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="248" cy="140" r="15" fill="url(#dpChrome)" stroke="#0b0b0e" stroke-width="3"/>
+    <circle cx="428" cy="140" r="15" fill="url(#dpChrome)" stroke="#0b0b0e" stroke-width="3"/>
+    <path d="M400 52c-18-16-42-24-66-24" stroke="#ffffff" stroke-opacity="0.55" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <rect x="332" y="48" width="12" height="20" rx="6" fill="#0b0b0e" opacity="0.55"/>
+  </g>
+
+  <!-- Spectrum plinth -->
+  <g fill="url(#dpGold)">
+    <rect x="192" y="222" width="5" height="14" rx="2.5"/>
+    <rect x="202" y="214" width="5" height="22" rx="2.5"/>
+    <rect x="212" y="206" width="5" height="30" rx="2.5"/>
+    <rect x="222" y="218" width="5" height="18" rx="2.5"/>
+    <rect x="232" y="200" width="5" height="36" rx="2.5"/>
+    <rect x="242" y="212" width="5" height="24" rx="2.5"/>
+    <rect x="252" y="204" width="5" height="32" rx="2.5"/>
+    <rect x="262" y="216" width="5" height="20" rx="2.5"/>
+    <rect x="272" y="208" width="5" height="28" rx="2.5"/>
+    <rect x="282" y="200" width="5" height="36" rx="2.5"/>
+    <rect x="292" y="214" width="5" height="22" rx="2.5"/>
+    <rect x="302" y="206" width="5" height="30" rx="2.5"/>
+    <rect x="312" y="218" width="5" height="18" rx="2.5"/>
+    <rect x="322" y="210" width="5" height="26" rx="2.5"/>
+  </g>
+</svg>

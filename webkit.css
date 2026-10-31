@@ -1,297 +1,204 @@
-/* Daft Punk Millennium Collection - WebKit Compatibility */
-/* Steam WebKit specific styling for enhanced browser support */
+/* ============================================================================
+   DAFT PUNK MILLENNIUM — STORE & COMMUNITY
+   Injected only into store.steampowered.com and steamcommunity.com browser
+   views. The store ships its own CSS after themes, so surfaces use a raised
+   specificity (`html body ...`) and only colours/materials are changed.
+   Artwork, prices, discounts and checkout hierarchy remain intact.
+   ============================================================================ */
 
-/* =============================================================================
-   WEBKIT SCROLLBARS
-   ============================================================================= */
-
-::-webkit-scrollbar {
-    width: 12px;
-    background: var(--search-bg);
+html body,
+html body.responsive_page {
+  background:
+    radial-gradient(900px 420px at 50% -10%, rgba(232, 179, 65, 0.08), transparent 65%),
+    linear-gradient(180deg, #0a0a0c 0%, #050506 100%) !important;
+  color: #c9cdd4 !important;
+  font-family: var(--dp-font-ui, "Chakra Petch", "Motiva Sans", "Segoe UI", sans-serif) !important;
 }
 
-::-webkit-scrollbar-thumb {
-    background: var(--dropdown-hover);
-    border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
+html body a {
+  color: var(--dp-accent-hi, #ffd97a);
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: var(--dropdown-light);
-    transform: scale(1.05);
+html body a:hover {
+  color: #ffffff;
 }
 
-::-webkit-scrollbar-track {
-    background: var(--search-bg);
-    border-radius: 6px;
+/* Page shells: remove the default blue-grey wash, keep the layout intact. */
+html body .responsive_page_frame,
+html body .responsive_page_content,
+html body .responsive_page_template_content,
+html body .home_page_body_ctn,
+html body .main_content_ctn,
+html body .page_content,
+html body .home_page_content {
+  background: transparent !important;
 }
 
-::-webkit-scrollbar-corner {
-    background: var(--search-bg);
+html body .responsive_page_frame {
+  background:
+    linear-gradient(180deg, rgba(232, 179, 65, 0.05), transparent 240px) !important;
 }
 
-/* =============================================================================
-   WEBKIT SELECTION
-   ============================================================================= */
-
-::selection {
-    background: var(--dropdown-hover);
-    color: #ffffff;
+html body .home_page_body_ctn {
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
 }
 
-::-moz-selection {
-    background: var(--dropdown-hover);
-    color: #ffffff;
+/* Store capsules: chrome edge and an era-coloured hover ring. */
+html body .store_main_capsule,
+html body .store_capsule,
+html body .carousel_container .capsule {
+  border-radius: var(--dp-radius, 8px);
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 10px 24px rgba(0, 0, 0, 0.35);
+  transition: box-shadow 180ms ease;
 }
 
-/* =============================================================================
-   WEBKIT FOCUS STATES
-   ============================================================================= */
-
-*:focus {
-    outline: 2px solid var(--dropdown-hover);
-    outline-offset: 2px;
-    border-radius: 3px;
+html body .store_main_capsule:hover,
+html body .store_capsule:hover {
+  box-shadow:
+    0 0 0 1px var(--dp-accent-line, rgba(232, 179, 65, 0.5)),
+    0 14px 32px rgba(0, 0, 0, 0.45);
 }
 
-/* Remove focus outline for mouse users */
-*:focus:not(.focus-visible) {
-    outline: none;
+html body .store_main_capsule .capsule,
+html body .capsule_image_ctn {
+  border-radius: calc(var(--dp-radius, 8px) - 2px);
 }
 
-/* Enhanced focus for keyboard users */
-.focus-visible {
-    outline: 2px solid var(--dropdown-hover);
-    outline-offset: 2px;
-    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+/* Section headers in the store. */
+html body .home_cluster_ctn .cluster_header,
+html body .home_pagecontent_ctn .section_title,
+html body .home_title,
+html body .main_content_ctn h2 {
+  color: var(--dp-accent-hi, #ffd97a) !important;
+  font-family: var(--dp-font-display, "Chakra Petch", "Motiva Sans", sans-serif) !important;
+  font-weight: var(--dp-display-weight, 700);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-/* =============================================================================
-   WEBKIT INPUT STYLING
-   ============================================================================= */
-
-/* Remove spinner buttons from number inputs */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+html body .home_title_ctn {
+  border-top: 1px solid var(--dp-accent-line, rgba(232, 179, 65, 0.5));
+  padding-top: 10px;
 }
 
-input[type=number] {
-    -moz-appearance: textfield;
+/* Primary purchase buttons only — secondary buttons keep their hierarchy. */
+html body .btn_green_steamui,
+html body .btn_add_to_cart_steamui,
+html body .btnv6_blue_hoverfade.btn_medium {
+  background: linear-gradient(180deg, var(--dp-accent-hi, #ffd97a), var(--dp-accent, #e8b341)) !important;
+  color: #0a0a0c !important;
+  border-radius: var(--dp-radius-sm, 4px);
+  text-shadow: none !important;
 }
 
-/* Custom search input styling */
-input[type="search"]::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-    background: var(--dropdown-hover);
-    border-radius: 50%;
-    cursor: pointer;
-    height: 14px;
-    width: 14px;
+html body .btn_green_steamui:hover,
+html body .btn_add_to_cart_steamui:hover {
+  filter: brightness(1.07);
 }
 
-/* =============================================================================
-   WEBKIT BUTTON STYLING
-   ============================================================================= */
-
-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+html body .btn_grey_white_innerfade,
+html body .btnv6_white_transparent,
+html body .btn_medium {
+  border-radius: var(--dp-radius-sm, 4px);
 }
 
-/* =============================================================================
-   WEBKIT TEXT RENDERING
-   ============================================================================= */
-
-* {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+/* Form fields on store pages. */
+html body input[type="text"],
+html body input[type="search"],
+html body input[type="email"],
+html body input[type="password"],
+html body textarea,
+html body select {
+  background: rgba(9, 9, 12, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  border-radius: var(--dp-radius-sm, 4px);
+  color: #f3f4f6 !important;
 }
 
-/* =============================================================================
-   WEBKIT BACKDROP FILTER SUPPORT
-   ============================================================================= */
-
-@supports (backdrop-filter: blur(10px)) {
-    .steamui_Container,
-    .steamui_Panel,
-    .steamui_Modal,
-    ._1VNuYHM6BPBOJspC6zPf5r,
-    ._3oavRVhIS9tC3vBsFT4Ggi {
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-    }
+html body input:focus,
+html body textarea:focus,
+html body select:focus {
+  border-color: var(--dp-accent-line, rgba(232, 179, 65, 0.5)) !important;
+  box-shadow: 0 0 0 3px var(--dp-accent-soft, rgba(232, 179, 65, 0.16));
+  outline: none;
 }
 
-/* =============================================================================
-   WEBKIT ANIMATION SUPPORT
-   ============================================================================= */
+/* ============================================================================
+   COMMUNITY PAGES
+   ============================================================================ */
 
-@supports (animation: pulse 1s ease-in-out infinite) {
-    .daftpunk-glow {
-        animation: daftpunk-glow 3s ease-in-out infinite;
-    }
-    
-    .daftpunk-pulse {
-        animation: daftpunk-pulse 2s ease-in-out infinite;
-    }
+html body .profile_header,
+html body .profile_header_content,
+html body .profile_customization,
+html body .profile_summary,
+html body .profile_item_links,
+html body .profile_rightcol,
+html body .profile_leftcol {
+  background-color: transparent !important;
 }
 
-@keyframes daftpunk-glow {
-    0%, 100% { filter: brightness(1) saturate(1); }
-    50% { filter: brightness(1.2) saturate(1.3); }
+html body .profile_header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
 }
 
-@keyframes daftpunk-pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.05); opacity: 0.9; }
+html body .profile_customization,
+html body .commentthread_comment,
+html body .commentthread_comment_container,
+html body .workshopItem,
+html body .workshopBrowseItems,
+html body .groupHomeHeader {
+  background: rgba(16, 16, 20, 0.86) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--dp-radius, 8px);
+  color: #c9cdd4;
 }
 
-/* =============================================================================
-   WEBKIT TRANSFORM SUPPORT
-   ============================================================================= */
-
-@supports (transform: translateY(0)) {
-    .gpfocus .btnv6_blue_hoverfade:hover,
-    .gpfocus .btnv6_blue_steamui:hover,
-    .gpfocus .btnv6_blue_steamui__blue:hover,
-    ._1VNuYHM6BPBOJspC6zPf5r:hover {
-        transform: translateY(-2px) scale(1.02);
-    }
+html body .commentthread_comment:hover {
+  border-color: var(--dp-accent-line, rgba(232, 179, 65, 0.5));
 }
 
-/* =============================================================================
-   ICON RENDERING IMPROVEMENTS
-   ============================================================================= */
-
-.icon, 
-.icon-mask, 
-.steamui_HeaderNavItem_2Kj7A::before,
-svg {
-    -webkit-mask-position: center;
-    mask-position: center;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
+html body .workshopItem {
+  overflow: hidden;
 }
 
-/* =============================================================================
-   WEBKIT MEDIA QUERY SUPPORT
-   ============================================================================= */
-
-/* High DPI displays */
-@media (-webkit-min-device-pixel-ratio: 2) {
-    /* Prefer vector icons and sharper graphics */
-    .icon, .icon-mask, svg {
-        image-rendering: -webkit-optimize-contrast;
-    }
+html body .workshopItemTitle,
+html body .commentthread_author_link,
+html body .groupHomeHeader .groupTitle {
+  color: var(--dp-accent-hi, #ffd97a) !important;
 }
 
-/* Reduced motion support */
+html body .apphub_sectionTabs,
+html body .profile_item_links,
+html body .game_page_links {
+  border-color: rgba(255, 255, 255, 0.09) !important;
+}
+
+/* Scrollbars in browser views. */
+html body ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+html body ::-webkit-scrollbar-track {
+  background: #08080a;
+}
+
+html body ::-webkit-scrollbar-thumb {
+  background: #2b2f36;
+  border-radius: 999px;
+  border: 2px solid #08080a;
+}
+
+html body ::-webkit-scrollbar-thumb:hover {
+  background: var(--dp-accent, #e8b341);
+}
+
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-    :root {
-        --dropdown-hover: linear-gradient(270deg, #FFFFFF 0%, #CCCCCC 100%);
-        --dropdown-light: linear-gradient(270deg, #000000 0%, #333333 100%);
-    }
-}
-
-/* =============================================================================
-   WEBKIT PRINT STYLES
-   ============================================================================= */
-
-@media print {
-    .steamui-no-print,
-    .toggle-panel-button,
-    #manual-toggle-container {
-        display: none !important;
-    }
-    
-    * {
-        background: white !important;
-        color: black !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-    
-    .page-break {
-        page-break-after: always;
-    }
-}
-
-/* =============================================================================
-   WEBKIT COMPATIBILITY FIXES
-   ============================================================================= */
-
-/* Fix for WebKit rendering issues */
-.webkit-fix {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-}
-
-/* Improve performance for complex layouts */
-.gpu-accelerated {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    will-change: transform, opacity;
-}
-
-/* Fix for WebKit blur rendering */
-.webkit-blur-fix {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-perspective: 1000;
-    perspective: 1000;
-} 
-
-/* =============================================================================
-   WEBKIT RESPONSIVE DESIGN
-   ============================================================================= */
-
-/* Removed manual toggle container styles - no longer needed */
-
-/* Enhanced responsive behavior for Steam webkit components */
-@media (max-width: 1200px) {
-  .webkit_html {
-    font-size: 14px;
+  html body * {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
   }
 }
-
-@media (max-width: 900px) {
-  .webkit_html {
-    font-size: 13px;
-  }
-}
-
-/* =============================================================================
-   WEBKIT ACCESSIBILITY ENHANCEMENTS
-   ============================================================================= */
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  ::-webkit-scrollbar-thumb {
-    background: var(--dropdown-light);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-  }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-    animation: none !important;
-  }
-} 

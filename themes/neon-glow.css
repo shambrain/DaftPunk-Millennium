@@ -1,63 +1,95 @@
-/**
- * Neon Glow Theme - Bright green and lime gradients
- * Part of Daft Punk Millennium Collection
- * Based on Steam 2.0 Modular by Von-Amadeus
- */
-
-/* =============================================================================
-   NEON GLOW THEME COLORS
-   ============================================================================= */
+/* ERA 05 — NEON GLOW
+   Violet midnight lit by magenta and cyan tubes. Rounded pills, double
+   neon edges, the loudest era — still clipped and legible. */
 
 :root {
-  /* Neon Glow Theme - Bright Green */
-  --primary-gradient: linear-gradient(270deg, #39FF14 0%, #32CD32 50%, #228B22 100%);
-  --secondary-gradient: linear-gradient(225deg, #39FF14 0%, #32CD32 30%, #006400 100%);
-  --gamelist-gradient: linear-gradient(270deg, #0A1A0A 0%, #001400 100%);
-  --games-gradient: linear-gradient(225deg, #0A330A 0%, #051A05 30%, #020502 100%);
-  --downloads-gradient: linear-gradient(225deg, #0A280A 0%, #051405 100%);
-  --dropdown-hover: linear-gradient(270deg, #39FF14AA 0%, #32CD32AA 100%);
-  --dropdown-light: linear-gradient(270deg, #98FB98AA 0%, #90EE90A5 100%);
-  --properties-gradient: linear-gradient(270deg, #0A1A0A 0%, #001400 100%);
-  --footer-gradient: linear-gradient(225deg, #000000 0%, #051A05 50%, #020502 100%);
-  --splitter-color: #0A1A0AC9;
-  --search-bg: #001400;
+  --dp-void: #07020d;
+  --dp-black: #0a0312;
+  --dp-ink: #10051b;
+  --dp-panel: rgba(22, 8, 36, 0.9);
+  --dp-panel-solid: #150827;
+  --dp-panel-raised: rgba(34, 12, 54, 0.94);
+  --dp-panel-sunken: rgba(9, 3, 16, 0.84);
+  --dp-line: rgba(255, 90, 220, 0.18);
+  --dp-line-strong: rgba(255, 90, 220, 0.38);
+  --dp-text: #fdf1ff;
+  --dp-text-soft: #e1c4ef;
+  --dp-text-muted: #ab8cbf;
+  --dp-text-dim: #7d638f;
+  --dp-accent: #ff4fd8;
+  --dp-accent-hi: #ffb3f0;
+  --dp-accent-soft: rgba(255, 79, 216, 0.16);
+  --dp-accent-line: rgba(255, 79, 216, 0.55);
+  --dp-secondary: #4fe3ee;
+  --dp-glow: rgba(255, 79, 216, 0.45);
+  --dp-topbar-bg: linear-gradient(180deg, rgba(32,9,47,.98), rgba(7,2,13,.98));
+  --dp-sidebar-bg: linear-gradient(180deg, rgba(22,8,38,.97), rgba(7,2,13,.99));
+  --dp-wordmark-color: #ffb3f0;
+  --dp-wordmark-glow: 0 0 24px rgba(255,79,216,.65);
+  --dp-radius: 12px;
+  --dp-radius-sm: 8px;
+  --dp-radius-lg: 18px;
+  --dp-display-weight: 700;
+  --dp-display-spacing: 0.08em;
 }
 
-/* Import base styles AFTER defining variables */
-@import url("../libraryroot.custom.css");
-
-/* Neon-specific enhancements */
-._3Z7VQ1IMk4E3HsHvrkLNgo {
-  box-shadow: 0 2px 8px rgba(57, 255, 20, 0.6);
+body.DesktopUI #root,
+body.DesktopUI .Root {
+  background:
+    radial-gradient(800px 500px at 10% -10%, rgba(255, 79, 216, 0.2), transparent 60%),
+    radial-gradient(700px 460px at 95% 5%, rgba(79, 227, 238, 0.14), transparent 62%),
+    linear-gradient(180deg, #0b0314 0%, #060209 100%);
 }
 
-._3vCzSrrXZzZjVJFZNg9SGu {
-  box-shadow: 0 -2px 8px rgba(50, 205, 50, 0.5);
+.LibraryHome,
+._3Sb2o_mQ30IDRh0C72QUUu {
+  background-image:
+    radial-gradient(1000px 340px at 50% -8%, rgba(255, 79, 216, 0.22), transparent 70%);
 }
 
-/* Neon green glow effect */
-._1VNuYHM6BPBOJspC6zPf5r:hover {
-  box-shadow: 0 4px 16px rgba(57, 255, 20, 0.8);
-  filter: brightness(1.3) saturate(1.6);
+.TopBar {
+  background: linear-gradient(180deg, rgba(26, 8, 40, 0.98), rgba(7, 2, 12, 0.98)) !important;
+  box-shadow:
+    inset 0 -1px 0 rgba(255, 79, 216, 0.35),
+    0 0 26px -12px var(--dp-glow);
 }
 
-/* Pulsing neon effect */
-@keyframes neon-pulse {
-  0%, 100% { 
-    filter: brightness(1) drop-shadow(0 0 5px #39FF14); 
-  }
-  50% { 
-    filter: brightness(1.5) drop-shadow(0 0 20px #39FF14); 
-  }
+.SuperNavMenu.Selected .MenuButton,
+.SuperNavMenu .MenuButton.Selected {
+  border-radius: var(--dp-radius-pill);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 179, 240, 0.5),
+    0 0 16px rgba(255, 79, 216, 0.5),
+    0 0 34px -8px rgba(79, 227, 238, 0.4);
 }
 
-.neon-pulse {
-  animation: neon-pulse 2s ease-in-out infinite;
+.PlayButton,
+._3ydigb6zZAjJ0JCDgHwSYA.PlayButton {
+  border-radius: var(--dp-radius-pill);
+  background: linear-gradient(90deg, #ff4fd8, #b44dff 55%, #4fe3ee);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 0 18px rgba(255, 79, 216, 0.6),
+    0 0 40px -10px rgba(79, 227, 238, 0.6);
 }
 
-/* Neon border effect for interactive elements */
-button.DialogButton:hover,
-._1VNuYHM6BPBOJspC6zPf5r:hover {
-  border: 1px solid rgba(57, 255, 20, 0.7);
-  text-shadow: 0 0 10px rgba(57, 255, 20, 0.8);
-} 
+.LibraryItemBox {
+  box-shadow:
+    0 0 0 1px rgba(255, 79, 216, 0.26),
+    0 0 20px -8px rgba(255, 79, 216, 0.45);
+}
+
+.LibraryItemBox:hover {
+  box-shadow:
+    0 0 0 1px rgba(255, 179, 240, 0.7),
+    0 0 22px rgba(255, 79, 216, 0.45),
+    0 0 46px -10px rgba(79, 227, 238, 0.5);
+}
+
+.AppDetailsSection,
+.PlayBar {
+  border-color: rgba(255, 79, 216, 0.26);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 0 24px -12px rgba(255, 79, 216, 0.5);
+}

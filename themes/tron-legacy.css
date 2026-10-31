@@ -1,60 +1,98 @@
-/**
- * Tron Legacy Theme - Electric blue and deep blue gradients
- * Part of Daft Punk Millennium Collection
- * Based on Steam 2.0 Modular by Von-Amadeus
- */
-
-/* =============================================================================
-   TRON LEGACY THEME COLORS
-   ============================================================================= */
+/* ERA 04 — TRON LEGACY
+   Absolute black, electric blue and white linework. Two-pixel edges,
+   perspective grid floor, angular brackets, no softness. */
 
 :root {
-  /* Tron Legacy Theme - Electric Blue */
-  --primary-gradient: linear-gradient(270deg, #00BFFF 0%, #0080FF 50%, #0040FF 100%);
-  --secondary-gradient: linear-gradient(225deg, #00BFFF 0%, #0080FF 30%, #001133 100%);
-  --gamelist-gradient: linear-gradient(270deg, #0A0A1A 0%, #000014 100%);
-  --games-gradient: linear-gradient(225deg, #001A33 0%, #000A1A 30%, #000005 100%);
-  --downloads-gradient: linear-gradient(225deg, #001428 0%, #000A14 100%);
-  --dropdown-hover: linear-gradient(270deg, #00BFFFAA 0%, #0080FFAA 100%);
-  --dropdown-light: linear-gradient(270deg, #87CEEBAA 0%, #B0C4DEA5 100%);
-  --properties-gradient: linear-gradient(270deg, #0A0A1A 0%, #000014 100%);
-  --footer-gradient: linear-gradient(225deg, #000000 0%, #000A1A 50%, #000005 100%);
-  --splitter-color: #0A0A1AC9;
-  --search-bg: #000014;
+  --dp-void: #000305;
+  --dp-black: #010609;
+  --dp-ink: #020b12;
+  --dp-panel: rgba(3, 14, 22, 0.9);
+  --dp-panel-solid: #030f18;
+  --dp-panel-raised: rgba(6, 24, 36, 0.94);
+  --dp-panel-sunken: rgba(0, 6, 10, 0.85);
+  --dp-line: rgba(120, 200, 255, 0.18);
+  --dp-line-strong: rgba(120, 200, 255, 0.42);
+  --dp-text: #eef8ff;
+  --dp-text-soft: #b7d8ee;
+  --dp-text-muted: #7ba1bb;
+  --dp-text-dim: #4f7288;
+  --dp-accent: #5fb6ff;
+  --dp-accent-hi: #d6efff;
+  --dp-accent-soft: rgba(95, 182, 255, 0.14);
+  --dp-accent-line: rgba(95, 182, 255, 0.6);
+  --dp-secondary: #2f7bff;
+  --dp-glow: rgba(95, 182, 255, 0.4);
+  --dp-topbar-bg: linear-gradient(180deg, rgba(2,16,26,.99), rgba(0,3,5,.99));
+  --dp-sidebar-bg: linear-gradient(180deg, rgba(3,17,28,.98), rgba(0,3,5,.99));
+  --dp-wordmark-color: #d6efff;
+  --dp-wordmark-glow: 0 0 24px rgba(95,182,255,.7);
+  --dp-radius: 2px;
+  --dp-radius-sm: 1px;
+  --dp-radius-lg: 3px;
+  --dp-display-weight: 600;
+  --dp-display-spacing: 0.22em;
 }
 
-/* Import base styles AFTER defining variables */
-@import url("../libraryroot.custom.css");
-
-/* Tron-specific enhancements */
-._3Z7VQ1IMk4E3HsHvrkLNgo {
-  box-shadow: 0 2px 8px rgba(0, 191, 255, 0.5);
-  border-bottom: 1px solid rgba(0, 191, 255, 0.3);
+body.DesktopUI #root,
+body.DesktopUI .Root {
+  background:
+    radial-gradient(1000px 500px at 50% 120%, rgba(47, 123, 255, 0.2), transparent 60%),
+    linear-gradient(180deg, #01070b 0%, #000305 100%);
 }
 
-._3vCzSrrXZzZjVJFZNg9SGu {
-  box-shadow: 0 -2px 8px rgba(0, 128, 255, 0.4);
-  border-top: 1px solid rgba(0, 128, 255, 0.3);
+/* Perspective grid floor: two repeating line sets fading toward the horizon. */
+.LibraryHome,
+._3Sb2o_mQ30IDRh0C72QUUu {
+  background-image:
+    linear-gradient(rgba(95, 182, 255, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(95, 182, 255, 0.13) 1px, transparent 1px),
+    radial-gradient(900px 300px at 50% 0%, rgba(47, 123, 255, 0.14), transparent 70%);
+  background-size: 40px 40px, 40px 40px, auto;
+  background-position: center top, center top, center top;
 }
 
-/* Electric blue glow effect */
-._1VNuYHM6BPBOJspC6zPf5r:hover {
-  box-shadow: 0 4px 16px rgba(0, 191, 255, 0.7);
-  filter: brightness(1.2) saturate(1.5);
+.TopBar {
+  background: linear-gradient(180deg, rgba(2, 12, 20, 0.99), rgba(0, 3, 6, 0.99)) !important;
+  border-bottom: 1px solid rgba(95, 182, 255, 0.38);
 }
 
-/* Grid pattern overlay for Tron effect */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    linear-gradient(rgba(0, 191, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 191, 255, 0.03) 1px, transparent 1px);
-  background-size: 20px 20px;
-  pointer-events: none;
-  z-index: -1;
-} 
+.SuperNavMenu.Selected .MenuButton,
+.SuperNavMenu .MenuButton.Selected {
+  border-radius: 0;
+  box-shadow:
+    inset 0 -2px 0 var(--dp-accent-hi),
+    0 0 18px -4px var(--dp-glow);
+}
+
+/* Angular brackets on panels. */
+.AppDetailsSection,
+.PlayBar {
+  border-radius: 0;
+  border: 1px solid rgba(95, 182, 255, 0.28);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.6),
+    0 0 22px -10px var(--dp-glow);
+}
+
+.LibraryItemBox {
+  border-radius: 0;
+  box-shadow:
+    0 0 0 1px rgba(95, 182, 255, 0.24),
+    0 0 18px -8px rgba(95, 182, 255, 0.5);
+}
+
+.LibraryItemBox:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1px rgba(214, 239, 255, 0.7),
+    0 0 26px -4px rgba(95, 182, 255, 0.6);
+}
+
+.PlayButton,
+._3ydigb6zZAjJ0JCDgHwSYA.PlayButton {
+  border-radius: 0;
+  background: linear-gradient(180deg, #d6efff, #5fb6ff 60%, #2f7bff);
+  box-shadow:
+    0 0 0 1px rgba(214, 239, 255, 0.6),
+    0 0 26px -6px rgba(95, 182, 255, 0.8);
+}

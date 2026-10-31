@@ -1,0 +1,16 @@
+/* DENSITY — COMPACT
+   For 1080p and small windows: tighter stage and panel padding. */
+
+:root {
+  --dp-space: 0.78;
+  --dp-row-height: 48px;
+  --dp-sidebar-width: 250px;
+}
+
+.LibraryHome {
+  padding: 8px;
+}
+
+.AppDetailsSection {
+  padding: 10px;
+}

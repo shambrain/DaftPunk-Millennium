@@ -1,234 +1,901 @@
-/**
- * Daft Punk Millennium Collection CSS - Base Styles
- * @description This file provides base styling for all Daft Punk themes
- * [Steam, Settings, Properties, Popups, Dialogs, ...]
- * Based on Steam 2.0 Modular by Von-Amadeus
- */
+/* ============================================================================
+   DAFT PUNK MILLENNIUM — CORE MATERIAL SYSTEM
+   Base styles for the main Steam window.
 
-/* =============================================================================
-   BASE CSS VARIABLES (Will be overridden by theme files)
-   ============================================================================= */
+   Selectors below were verified against the installed Steam client
+   (changelist 11146165, CEF 126) and are scoped to desktop Steam surfaces.
+   Era files override tokens and add material-specific geometry.
+   ============================================================================ */
 
-/* NOTE: Color variables are now defined in individual theme files to prevent conflicts */
+:where(:root) {
+  /* --- Material --------------------------------------------------------- */
+  --dp-void: #050506;
+  --dp-black: #08080a;
+  --dp-ink: #0b0b0e;
+  --dp-panel: rgba(16, 16, 20, 0.86);
+  --dp-panel-solid: #101014;
+  --dp-panel-raised: rgba(25, 25, 31, 0.9);
+  --dp-panel-sunken: rgba(9, 9, 12, 0.72);
+  --dp-chrome-hi: #f4f6f9;
+  --dp-chrome-mid: #b9bfc9;
+  --dp-chrome-low: #626873;
+  --dp-line: rgba(255, 255, 255, 0.09);
+  --dp-line-strong: rgba(255, 255, 255, 0.18);
+  --dp-sheen: rgba(255, 255, 255, 0.06);
 
-/* =============================================================================
-   GAMELIST PANEL STYLING
-   ============================================================================= */
+  /* --- Ink -------------------------------------------------------------- */
+  --dp-text: #f3f4f6;
+  --dp-text-soft: #c9cdd4;
+  --dp-text-muted: #969ba5;
+  --dp-text-dim: #6b707a;
 
-/* HIDE GAMELIST CONTAINER */
-._9sPoVBFyE_vE87mnZJ5aB {
-   flex-shrink: 0;
-   display: flex;
-   flex-direction: row;
-   min-width: 2px !important;
-   width: 272px;
-   max-width: min(50%, 100% - 400px);
-   position: relative;
+  /* --- Era accent (overridden by themes/*.css) -------------------------- */
+  --dp-accent: #e8b341;
+  --dp-accent-hi: #ffd97a;
+  --dp-accent-soft: rgba(232, 179, 65, 0.16);
+  --dp-accent-line: rgba(232, 179, 65, 0.45);
+  --dp-secondary: #ff8a3d;
+  --dp-glow: rgba(232, 179, 65, 0.3);
+
+  /* Era-material hooks (overridden by themes/*.css) */
+  --dp-topbar-bg: linear-gradient(180deg, rgba(18, 18, 23, 0.98), rgba(8, 8, 10, 0.96));
+  --dp-sidebar-bg: linear-gradient(180deg, rgba(13, 13, 17, 0.97), rgba(6, 6, 8, 0.99));
+  --dp-wordmark-color: var(--dp-chrome-hi);
+  --dp-wordmark-glow: 0 0 18px var(--dp-glow);
+
+  /* --- Semantic colours (never erased) --------------------------------- */
+  --dp-online: #57d68d;
+  --dp-away: #f0b429;
+  --dp-offline: #7c828c;
+  --dp-busy: #ef6a6a;
+  --dp-warning: #f0b429;
+  --dp-danger: #ef6a6a;
+  --dp-success: #57d68d;
+
+  /* --- Geometry --------------------------------------------------------- */
+  --dp-radius: 8px;
+  --dp-radius-sm: 5px;
+  --dp-radius-lg: 14px;
+  --dp-radius-pill: 999px;
+  --dp-space: 1;
+  --dp-row-height: 56px;
+  --dp-sidebar-width: 280px;
+
+  /* --- Type ------------------------------------------------------------- */
+  --dp-font-display: "Daft Punk Helmet", "Chakra Petch", "Motiva Sans", sans-serif;
+  --dp-font-ui: "Daft Punk Helmet", "Chakra Petch", "Motiva Sans", "Segoe UI", sans-serif;
+  --dp-font-mono: "Chakra Petch", "Consolas", monospace;
+  --dp-display-weight: 700;
+  --dp-display-spacing: 0.09em;
+  --dp-display-transform: uppercase;
+  --dp-display-style: normal;
+
+  /* --- Motion ----------------------------------------------------------- */
+  --dp-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dp-fast: 120ms;
+  --dp-mid: 200ms;
+  --dp-slow: 380ms;
+  --dp-hover-lift: -2px;
+  --dp-shimmer: 0;
+
+  /* --- Frame ------------------------------------------------------------ */
+  --dp-frame-opacity: 1;
+  --dp-frame-inset: 0px;
+  --dp-frame-color: rgba(255, 255, 255, 0.16);
 }
 
-/* GAMELIST SPLITTER */
-._276E6ijBpjMA2_iTxNhhjc {
-   width: 1px;
-   background-color: var(--splitter-color);
-   min-width: 1px;
+/* ============================================================================
+   CANVAS
+   ============================================================================ */
+
+html,
+body {
+  background: var(--dp-void) !important;
+  color: var(--dp-text);
+  font-family: var(--dp-font-ui);
 }
 
-/* GAMELIST BACKGROUND */
-._3x1HklzyDs4TEjACrRO2tB {
-   background-image: var(--gamelist-gradient);
+html body.DesktopUI {
+  --color-text-body-title: var(--dp-text);
+  --color-text-body-subtitle: var(--dp-text-soft);
+  --color-text-body-body: var(--dp-text-soft);
+  --color-text-body-description: var(--dp-text-muted);
+  --color-text-body-note: var(--dp-text-dim);
+  background:
+    radial-gradient(1100px 620px at 12% -10%, var(--dp-accent-soft), transparent 62%),
+    radial-gradient(900px 540px at 100% 0%, rgba(255, 255, 255, 0.035), transparent 60%),
+    linear-gradient(180deg, var(--dp-black) 0%, var(--dp-void) 100%) !important;
 }
 
-._2TKEazUUS3TlniZfpc8OOe {
-   height: auto;
-   background-color: inherit;
-   box-shadow: none;
+body.DesktopUI #root,
+body.DesktopUI .Root {
+  background:
+    radial-gradient(1100px 620px at 12% -10%, var(--dp-accent-soft), transparent 62%),
+    radial-gradient(900px 540px at 100% 0%, rgba(255, 255, 255, 0.035), transparent 60%),
+    linear-gradient(180deg, var(--dp-black) 0%, var(--dp-void) 100%);
 }
 
-/* HIDE GAMELIST SVG ICONS */
-._1ooROmAgkhoBH_o65yl9dJ svg {
-   display: none;
+::selection {
+  background: var(--dp-accent);
+  color: #08080a;
 }
 
-/* =============================================================================
-   MAIN CONTENT AREA STYLING
-   ============================================================================= */
-
-/* GAMES BACKGROUND */
-._3Sb2o_mQ30IDRh0C72QUUu {
-   background-image: var(--games-gradient);
+/* Scrollbars: chrome rail with an era-coloured thumb. */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
 }
 
-/* GAMES SCROLLBAR */
-._2AUVZlzQq67qe3yhLZsPPB::-webkit-scrollbar {
-   background: var(--search-bg);
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-/* HEADER */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--dp-chrome-low), #2b2f36);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: var(--dp-radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--dp-accent), var(--dp-secondary));
+  background-clip: padding-box;
+}
+
+/* ============================================================================
+   IN-CLIENT WINDOW FRAME
+   A 1px chrome frame drawn inside the Steam web surface. It never replaces the
+   native Windows frame and never captures pointer input.
+   ============================================================================ */
+
+body.DesktopUI::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  pointer-events: none;
+  opacity: var(--dp-frame-opacity);
+  border: 1px solid var(--dp-frame-color);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 0 0 4px rgba(0, 0, 0, 0.18),
+    inset 0 0 90px rgba(0, 0, 0, 0.5);
+  transition: opacity var(--dp-mid) var(--dp-ease);
+}
+
+/* A soft visor light under the top bar, not an overlay. */
+body.DesktopUI::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 9001;
+  pointer-events: none;
+  opacity: var(--dp-frame-opacity);
+  background: linear-gradient(90deg, transparent, var(--dp-accent) 22%, var(--dp-chrome-hi) 50%, var(--dp-accent) 78%, transparent);
+  box-shadow: 0 0 22px var(--dp-glow);
+}
+
+/* ============================================================================
+   TOP BAR / SUPERNAV
+   ============================================================================ */
+
+.TopBar,
 ._3Z7VQ1IMk4E3HsHvrkLNgo {
-   background: none;
-   background-image: var(--secondary-gradient) !important;
+  position: relative;
+  background: var(--dp-topbar-bg) !important;
+  background-image: url("assets/visor-lines.svg"), var(--dp-topbar-bg) !important;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center bottom, center;
+  background-size: 100% 46px, cover;
+  border-bottom: 1px solid var(--dp-line);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
-/* FOOTER */
-._3vCzSrrXZzZjVJFZNg9SGu {
-   background: none !important;
-   background-image: var(--footer-gradient) !important;
+/* Era light line under the header, visible in every palette. */
+.TopBar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--dp-accent) 18%, var(--dp-chrome-hi) 50%, var(--dp-accent) 82%, transparent);
+  opacity: 0.55;
 }
 
-/* =============================================================================
-   HIDE NEWS/ACTIVITY PANEL
-   ============================================================================= */
-
-/* HIDE NEWSLIST */
-._17uEBe5Ri8TMsnfELvs8-N {
-   display: none !important;
+.OuterFrame,
+._3mz8wQ6Q44B8P7pzPP4Iyw {
+  background: transparent;
 }
 
-._5wILZhsLODVwGfcJ0hKmJ {
-   display: none !important;
+.SuperNavBar {
+  gap: 2px;
 }
 
-/* =============================================================================
-   DOWNLOADS SECTION STYLING
-   ============================================================================= */
-
-/* DOWNLOADS BACKGROUND */
-._1l0LmmqDUXH19SjfELddn7 {
-   background-image: var(--downloads-gradient);
+.SuperNav .MenuButton,
+.SuperNavMenu .MenuButton {
+  border-radius: var(--dp-radius-sm);
+  color: var(--dp-text-soft);
+  transition:
+    color var(--dp-fast) var(--dp-ease),
+    background var(--dp-fast) var(--dp-ease),
+    box-shadow var(--dp-fast) var(--dp-ease);
 }
 
-._3Mbhnlk1Go2j8yCdjthzc7.IbePLaw-vSvhG1GTenYFg._2KB3yVOsiRCK9qK6mwKl9c {
-   background-color: var(--search-bg);
+.SuperNav .MenuButton:hover,
+.SuperNavMenu .MenuButton:hover {
+  color: var(--dp-chrome-hi);
+  background: var(--dp-sheen);
 }
 
-/* =============================================================================
-   INTERACTIVE ELEMENTS (BUTTONS, DROPDOWNS, etc.)
-   ============================================================================= */
-
-/* HEADER DROPDOWNS AND INTERACTIVE ELEMENTS */
-button.DialogButton, 
-.DesktopUI .title-area-icon:hover, 
-.friendsui-container .title-area-icon:hover, 
-.DesktopUI .PP7LM0Ow1K5qkR8WElLpt, 
-._3qIuY9S_vXm3IQS-uE9SRS .PP7LM0Ow1K5qkR8WElLpt, 
-._1ABCOz8DSrl-YJdh1xD-m0, 
-._1ABCOz8DSrl-YJdh1xD-m0._1dDpSuaJBGZzS41s0SPk4c, 
-span._3nqxIgL0a0DbPZHRZRzWsp,
-._1-vlriAtKYDViAEunue4VO._2DpXjzK3WWsOtUWUrcuOG7, 
-._1Hye7o1wYIfc9TE9QKRW4T, 
-._3LLH_F43MTu6UtG4Z3kudv,
-._2mL2HfT5AkDXRi1YBnRWKa:focus,
-._3pSPluBgf0NeR1kkCLWMhR.eNLOx4LVceeMwRvTVWh3,
-._2sYIghGVXJr6tsQVvcryy8 {
-   background: none !important;
-   background-image: var(--dropdown-hover) !important;
-   border-radius: 5px;
-   transition: all 0.3s ease;
+.SuperNavMenu.Selected .MenuButton,
+.SuperNavMenu .MenuButton.Selected,
+.MenuWrapper.Selected .MenuButton,
+.SuperNavMenu._1gqEjB5QsKT_NftD1dEsdZ .MenuButton {
+  color: var(--dp-chrome-hi) !important;
+  background:
+    linear-gradient(180deg, var(--dp-accent-soft), rgba(255, 255, 255, 0.02));
+  box-shadow:
+    inset 0 -2px 0 var(--dp-accent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
-/* HOVER STATES FOR LIGHTER ELEMENTS */
-.DesktopUI ._1n7Wloe5jZ6fSuvV18NNWI:hover, 
-.DesktopUI ._1n7Wloe5jZ6fSuvV18NNWI._18z-3vkWndCBO5WJgFldRK, 
-._3qIuY9S_vXm3IQS-uE9SRS ._1n7Wloe5jZ6fSuvV18NNWI:hover, 
-._3qIuY9S_vXm3IQS-uE9SRS ._1n7Wloe5jZ6fSuvV18NNWI._18z-3vkWndCBO5WJgFldRK, 
-._1-vlriAtKYDViAEunue4VO:not(._2DpXjzK3WWsOtUWUrcuOG7):hover {
-   background: none !important;
-   background-image: var(--dropdown-light) !important;
-   border-radius: 5px;
-}        
-
-/* =============================================================================
-   GAME PROPERTIES AND DIALOGS
-   ============================================================================= */
-
-/* GAMES PROPERTIES */
-._30-E9De2BTSA_LQAluUDUI, 
-._2kwFFHckg8jvnwJfg9-la8, 
-.xSTLmzylFJdIfak7ZdhuA {
-   background-image: var(--properties-gradient) !important;
+.SuperNavMenu.Selected .MenuButton::after,
+.MenuWrapper.Selected .MenuButton::after {
+  background: var(--dp-accent) !important;
+  box-shadow: 0 0 10px var(--dp-glow);
 }
 
-.CFTLX2wIKOK3hNV-fS7_V.DesktopUI, 
-.DesktopUI .CFTLX2wIKOK3hNV-fS7_V, 
-._2YFL1GU5xTFr76S8Kw008E, 
-._1SVX5nVvig2xLYfeiThU-8, 
-._1SVX5nVvig2xLYfeiThU-8 > div, 
-._34dlBrUZP054ElsvOp5hQm ._1-ooPvEW2c6SHuhnz6SK3t .NP3DlSRiWZygPWZSLSVX, 
-._3e--AJv1pErMz7ete-Hprz, 
-._3vCzSrrXZzZjVJFZNg9SGu, 
-.RGNMWtyj73_-WdhflrmuY ._2CmrnGY-Amtd83ScJkFvx2 {
-   background-image: var(--footer-gradient);
+/* Steam wordmark becomes the original twin-visor chrome mark. */
+.SteamLogo,
+.SVGIcon_SteamLogo,
+.SteamLogoThrobber {
+  filter: drop-shadow(0 0 8px var(--dp-glow));
 }
 
-/* =============================================================================
-   SEARCH BAR STYLING
-   ============================================================================= */
+.SteamButton {
+  background: url("assets/mark-visor.svg") left center / 19px 19px no-repeat;
+  border-radius: var(--dp-radius-sm);
+}
 
-/* SEARCHBAR */
+.SteamButton svg.Logo {
+  opacity: 0;
+}
+
+/* The native menu bar stays functional but recedes into the chrome. */
+.RootMenuBar {
+  opacity: 0.62;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: opacity var(--dp-fast) var(--dp-ease);
+}
+
+.RootMenuBar:hover {
+  opacity: 1;
+}
+
+/* ============================================================================
+   LIBRARY SIDEBAR
+   ============================================================================ */
+
+.GameListHomeAndSearch,
+._2TKEazUUS3TlniZfpc8OOe {
+  background: linear-gradient(180deg, rgba(14, 14, 18, 0.96), rgba(7, 7, 9, 0.98));
+  border-right: 1px solid var(--dp-line);
+  box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.03);
+}
+
+/* Whole left rail (Home + game list). */
+.LeftListSizableContainer,
+._9sPoVBFyE_vE87mnZJ5aB {
+  position: relative;
+  background: var(--dp-sidebar-bg);
+  background-image: url("assets/spectrum.svg"), var(--dp-sidebar-bg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 18px bottom 14px, center;
+  background-size: 238px 44px, cover;
+  border-right: 1px solid var(--dp-line);
+  padding: 54px 10px 10px;
+}
+
+/* Wordmark: era typography, chrome rule, no interaction. */
+.LeftListSizableContainer::before,
+._9sPoVBFyE_vE87mnZJ5aB::before {
+  content: "DAFT PUNK";
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  font-family: var(--dp-font-display);
+  font-weight: var(--dp-display-weight);
+  font-size: 19px;
+  font-style: var(--dp-display-style);
+  letter-spacing: 0.16em;
+  color: var(--dp-wordmark-color);
+  text-shadow: var(--dp-wordmark-glow);
+  pointer-events: none;
+}
+
+.LeftListSizableContainer::after,
+._9sPoVBFyE_vE87mnZJ5aB::after {
+  content: "MILLENNIUM ARCHIVE";
+  position: absolute;
+  top: 35px;
+  left: 21px;
+  font-family: var(--dp-font-mono);
+  font-weight: 600;
+  font-size: 8px;
+  letter-spacing: 0.34em;
+  color: var(--dp-accent);
+  pointer-events: none;
+}
+
+/* A chrome dock around the primary navigation. */
+.SuperNavBar {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+  border: 1px solid var(--dp-line);
+  border-radius: var(--dp-radius-pill);
+  padding: 3px;
+}
+
+.LeftListSizableContainer .Container,
+._3x1HklzyDs4TEjACrRO2tB {
+  background: transparent !important;
+}
+
+.SectionHeaderContent,
+._3cV3O8FnPQqpJO5kIMUlLX {
+  border-radius: var(--dp-radius-sm);
+  padding: 6px 6px;
+  transition: background var(--dp-fast) var(--dp-ease);
+}
+
+.SectionHeaderContent:hover {
+  background: var(--dp-sheen);
+}
+
+.SectionName,
+._2mZ8LlvoUiyeEUtIWuTri {
+  font-family: var(--dp-font-display);
+  font-weight: var(--dp-display-weight);
+  font-size: 10.5px;
+  letter-spacing: var(--dp-display-spacing);
+  text-transform: var(--dp-display-transform);
+  color: var(--dp-accent);
+  opacity: 0.86;
+}
+
+.GameListHomeAndSearch .HomeBox,
+._3AhYljPF4e4E8LaBt-FoY0 .HomeBox {
+  border-radius: var(--dp-radius-sm);
+  transition: background var(--dp-fast) var(--dp-ease);
+}
+
+.GameListHomeAndSearch .HomeBox.Selected,
+.GameListHomeAndSearch .Bar.Selected,
+._3pSPluBgf0NeR1kkCLWMhR.Selected {
+  background: linear-gradient(90deg, var(--dp-accent-soft), transparent);
+  box-shadow: inset 2px 0 0 var(--dp-accent);
+  color: var(--dp-chrome-hi);
+}
+
+.GameListEntryContainer,
+._1vO6BoiVslZgs1kqDGdUs8 {
+  border-radius: var(--dp-radius-sm);
+  transition:
+    background var(--dp-fast) var(--dp-ease),
+    transform var(--dp-fast) var(--dp-ease);
+}
+
+.GameListEntryContainer:hover,
+._1vO6BoiVslZgs1kqDGdUs8:hover {
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.GameListEntryContainer.Container.Installed,
+._2-O4ZG0KrnSrzISHBKctFQ.Installed {
+  color: var(--dp-text-soft);
+}
+
+/* Selected library row (Steam marks it with the Focusable/selected state). */
+.GameListEntryContainer.Selected,
+._2-O4ZG0KrnSrzISHBKctFQ.Selected,
+.GameListEntryContainer:focus-visible {
+  background:
+    linear-gradient(90deg, var(--dp-accent-soft) 0%, rgba(255, 255, 255, 0.03) 70%);
+  box-shadow:
+    inset 2px 0 0 var(--dp-accent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  color: var(--dp-text);
+}
+
+.GameListEntryContainer .Label,
+.GameListHomeAndSearch .Label {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Sidebar search field. */
+.GameListHomeAndSearch input,
+._1bGewp3tfzqAF6fVTFFUOz input,
 ._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K {
-   background: var(--search-bg);
+  background: var(--dp-panel-sunken);
+  border: 1px solid var(--dp-line);
+  border-radius: var(--dp-radius-sm);
+  color: var(--dp-text);
 }
 
-/* =============================================================================
-   HIDE DRAGGABLE GAME PANELS
-   ============================================================================= */
-
-/* Draggable games panel */
-._3IWn-2rn7x98o5fDd0rAxb._2_dwxMdH27kBf-gQ3Wrk7z._3PAPBHNnHiNjIQiBr7Ya3t.-D43EUFy_hOQ6W8fjUSV3._3QGgg01wbY6hijd0UIbfaj.Focusable {
-  display: none !important;
+.GameListHomeAndSearch input:focus-visible,
+._1bGewp3tfzqAF6fVTFFUOz input:focus-visible {
+  border-color: var(--dp-accent-line);
+  box-shadow: 0 0 0 3px var(--dp-accent-soft);
+  outline: none;
 }
 
-/* =============================================================================
-   MANUAL TOGGLE CONTAINER SPACING
-   ============================================================================= */
+/* ============================================================================
+   LIBRARY HOME
+   ============================================================================ */
 
-/* Removed manual toggle container styles - no longer needed */
-
-/* =============================================================================
-   ADDITIONAL STEAM UI ENHANCEMENTS
-   ============================================================================= */
-
-/* Enhanced focus states */
-.gpfocus, 
-.gpfocuswithin, 
-.Focusable:focus {
-   background-image: var(--dropdown-hover) !important;
-   border-radius: 5px;
-   transition: all 0.3s ease;
+.LibraryHome,
+._3Sb2o_mQ30IDRh0C72QUUu {
+  background: transparent !important;
+  padding: calc(18px * var(--dp-space));
 }
 
-/* Improved readability for text elements */
-._1VNuYHM6BPBOJspC6zPf5r,
-._3oavRVhIS9tC3vBsFT4Ggi,
-._17M8gvakqjyaw_cLo6ntdl {
-   color: #ffffff;
-   text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+.LibraryHome .SectionHeader,
+.LibraryHome .Panel > h2 {
+  font-family: var(--dp-font-display);
+  font-weight: var(--dp-display-weight);
+  letter-spacing: var(--dp-display-spacing);
+  text-transform: var(--dp-display-transform);
+  color: var(--dp-chrome-hi);
 }
 
-/* Smooth transitions for all interactive elements */
-* {
-   transition: background-image 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+.LibraryHome .BoxCarousel {
+  border-radius: var(--dp-radius-lg);
 }
 
-/* Special hover effects for game tiles */
-._1VNuYHM6BPBOJspC6zPf5r:hover {
-   transform: scale(1.02);
-   filter: brightness(1.1);
+.LibraryHome .BoxCarouselContents {
+  padding-block: calc(4px * var(--dp-space));
 }
 
-/* =============================================================================
-   RESPONSIVE BEHAVIOR
-   ============================================================================= */
+.LibraryItemBox,
+.WYgDg9NyCcMIVuMyZ_NBC.LibraryItemBox {
+  border-radius: var(--dp-radius);
+  overflow: hidden;
+  background: var(--dp-panel-solid);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.07),
+    0 10px 24px rgba(0, 0, 0, 0.42);
+  transition:
+    transform var(--dp-mid) var(--dp-ease),
+    box-shadow var(--dp-mid) var(--dp-ease);
+}
 
-/* Ensure proper layout on smaller screens */
-@media (max-width: 1200px) {
-   ._9sPoVBFyE_vE87mnZJ5aB {
-       width: 200px;
-   }
+.LibraryItemBox:hover,
+.LibraryItemBox:focus-visible {
+  transform: translateY(var(--dp-hover-lift));
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.12),
+    0 16px 38px rgba(0, 0, 0, 0.55),
+    0 0 0 1px var(--dp-accent-line),
+    0 0 24px -6px var(--dp-glow);
+}
+
+.LibraryItemBox .Capsule,
+.LibraryItemBox .PortraitImage {
+  border-radius: calc(var(--dp-radius) - 2px) calc(var(--dp-radius) - 2px) 0 0;
+  overflow: hidden;
+}
+
+.LibraryItemBox .Capsule img,
+.LibraryItemBox .PortraitImage img {
+  border-radius: calc(var(--dp-radius) - 2px) calc(var(--dp-radius) - 2px) 0 0;
+}
+
+.LibraryItemBox .Capsule {
+  position: relative;
+}
+
+/* What's New / event cards. */
+.PartnerEventRowCapsule,
+.B-vCdL38RiJlhfSRgZv78.PartnerEventRowCapsule_Container,
+.SPz0ipLqfF1oAO7tdrkdY.PartnerEventRowCapsule_MainImageContainer,
+.PartnerEventRowCapsule_MainImage {
+  border-radius: var(--dp-radius);
+}
+
+.PartnerEventRowCapsule {
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 10px 24px rgba(0, 0, 0, 0.4);
+  transition: box-shadow var(--dp-mid) var(--dp-ease);
+}
+
+.PartnerEventRowCapsule:hover {
+  box-shadow:
+    0 0 0 1px var(--dp-accent-line),
+    0 16px 34px rgba(0, 0, 0, 0.5);
+}
+
+.HeaderPageControls .Name,
+.UpdatesContainer .Name {
+  font-family: var(--dp-font-display);
+  font-weight: var(--dp-display-weight);
+  letter-spacing: var(--dp-display-spacing);
+  text-transform: var(--dp-display-transform);
+  font-size: 11px;
+  color: var(--dp-accent-hi);
+}
+
+.HeaderPageControls .Name::before,
+.UpdatesContainer .Name::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  margin-right: 8px;
+  vertical-align: middle;
+  background: var(--dp-accent);
+  box-shadow: 0 0 8px var(--dp-glow);
+}
+
+/* Hover overlay: a thin visor line instead of a full white wash. */
+.LibraryItemBox .Capsule::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--dp-accent), transparent);
+  opacity: 0;
+  transition: opacity var(--dp-mid) var(--dp-ease);
+  pointer-events: none;
+}
+
+.LibraryItemBox:hover .Capsule::after {
+  opacity: 1;
+}
+
+.LibraryHome .AddShelfButton,
+.LibraryHome .AddShelf {
+  border: 1px dashed var(--dp-line-strong);
+  border-radius: var(--dp-radius);
+  color: var(--dp-text-muted);
+  background: transparent;
+}
+
+.LibraryHome .AddShelfButton:hover {
+  border-color: var(--dp-accent-line);
+  color: var(--dp-text);
+}
+
+/* ============================================================================
+   GAME DETAILS
+   ============================================================================ */
+
+.AppDetailsMain,
+._2Nq6ov7A1hGcHXVOXNt_OE.AppDetailsMain {
+  background: transparent;
+}
+
+.HeaderBackgroundImage {
+  filter: saturate(1.05) contrast(1.03);
+}
+
+.TopCapsule {
+  border-bottom: 1px solid var(--dp-line);
+}
+
+/* The scene scrim keeps Steam's hero art visible but unifies it with the era. */
+.HeaderBackgroundImage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(5, 5, 6, 0.05) 0%, rgba(5, 5, 6, 0.55) 68%, var(--dp-void) 100%),
+    linear-gradient(90deg, rgba(5, 5, 6, 0.55), transparent 55%);
+}
+
+.PlayBar,
+._3fLo166MlaNqP8r8tTyRz.PlayBar {
+  background:
+    linear-gradient(90deg, rgba(15, 15, 19, 0.96), rgba(9, 9, 12, 0.9)),
+    var(--dp-panel);
+  border: 1px solid var(--dp-line);
+  border-radius: var(--dp-radius);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 14px 34px rgba(0, 0, 0, 0.5);
+}
+
+.PlayBar.Glassy {
+  backdrop-filter: blur(14px) saturate(1.15);
+  -webkit-backdrop-filter: blur(14px) saturate(1.15);
+}
+
+.PlayButtonContainer.Green,
+.PlayButtonContainer {
+  border-radius: var(--dp-radius-sm);
+  overflow: hidden;
+}
+
+.PlayButton,
+._3ydigb6zZAjJ0JCDgHwSYA.PlayButton {
+  background: linear-gradient(160deg, var(--dp-accent-hi), var(--dp-accent) 55%, var(--dp-secondary));
+  color: #08080a;
+  border-radius: var(--dp-radius-sm);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 0 22px -4px var(--dp-glow);
+  transition:
+    filter var(--dp-fast) var(--dp-ease),
+    transform var(--dp-fast) var(--dp-ease);
+}
+
+.PlayButton:hover,
+._3ydigb6zZAjJ0JCDgHwSYA.PlayButton:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.PlayButton .ButtonText {
+  font-family: var(--dp-font-display);
+  font-weight: var(--dp-display-weight);
+  letter-spacing: var(--dp-display-spacing);
+  text-transform: var(--dp-display-transform);
+}
+
+.PlayBarGameIcon,
+._1R9r2OBCxAmtuUVrgBEUBw.PlayBarGameIcon {
+  border-radius: var(--dp-radius-sm);
+  box-shadow: 0 0 0 1px var(--dp-line-strong);
+}
+
+.AppDetailsSection,
+._2r4TK4BAuU-J4FuF_O7v_5.AppDetailsSection {
+  background:
+    linear-gradient(180deg, rgba(19, 19, 24, 0.72), rgba(11, 11, 14, 0.72));
+  border: 1px solid var(--dp-line);
+  border-radius: var(--dp-radius);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.AppDetailsSection .SectionHeader,
+.AppDetailsSection h2 {
+  font-family: var(--dp-font-display);
+  font-weight: var(--dp-display-weight);
+  letter-spacing: var(--dp-display-spacing);
+  text-transform: var(--dp-display-transform);
+  color: var(--dp-chrome-mid);
+}
+
+.AppDetailsMain a,
+.AppDetailsMain .Link {
+  color: var(--dp-accent-hi);
+}
+
+.AppDetailsMain a:hover,
+.AppDetailsMain .Link:hover {
+  color: var(--dp-chrome-hi);
+}
+
+.ActivityFeedContainer textarea,
+.ActivityFeedContainer input {
+  background: var(--dp-panel-sunken);
+  border: 1px solid var(--dp-line);
+  border-radius: var(--dp-radius-sm);
+  color: var(--dp-text);
+}
+
+/* ============================================================================
+   DIALOGS / SETTINGS / MENUS
+   ============================================================================ */
+
+.ModalPosition_Content,
+.DialogContent {
+  background:
+    linear-gradient(180deg, rgba(20, 20, 26, 0.98), rgba(10, 10, 13, 0.98));
+  border: 1px solid var(--dp-line-strong);
+  border-radius: var(--dp-radius-lg);
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  color: var(--dp-text);
+}
+
+.ModalOverlayBackground {
+  background: rgba(3, 3, 4, 0.78) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.ModalPosition_TopBar {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--dp-accent), transparent) !important;
+}
+
+.DialogHeader,
+.DialogSubHeader,
+.DialogLabel,
+.DialogLabelStrong,
+.DialogControlsSectionHeader {
+  color: var(--dp-text);
+}
+
+.DialogHeader {
+  font-family: var(--dp-font-display);
+  font-weight: var(--dp-display-weight);
+  letter-spacing: var(--dp-display-spacing);
+  text-transform: var(--dp-display-transform);
+}
+
+.DialogLabelExplainer,
+.DialogBodyText {
+  color: var(--dp-text-muted);
+}
+
+button.DialogButton,
+.DialogButton {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--dp-line-strong);
+  border-radius: var(--dp-radius-sm);
+  color: var(--dp-text);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition:
+    background var(--dp-fast) var(--dp-ease),
+    border-color var(--dp-fast) var(--dp-ease);
+}
+
+button.DialogButton:hover,
+.DialogButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--dp-accent-line);
+}
+
+.DialogButton.Primary,
+button.DialogButton.Primary {
+  background: linear-gradient(180deg, var(--dp-accent-hi), var(--dp-accent)) !important;
+  background-image: linear-gradient(180deg, var(--dp-accent-hi), var(--dp-accent)) !important;
+  border-color: var(--dp-accent) !important;
+  color: #08080a !important;
+}
+
+.DialogButton.Destructive,
+button.DialogButton.Destructive {
+  background: rgba(239, 106, 106, 0.14) !important;
+  border-color: rgba(239, 106, 106, 0.5) !important;
+  color: #ffb3b3 !important;
+}
+
+.DialogInput,
+.DialogTextInputBase,
+.DialogDropDown,
+.DialogDropDown_CurrentDisplay,
+.DialogInput_Wrapper {
+  background: var(--dp-panel-sunken);
+  border: 1px solid var(--dp-line);
+  border-radius: var(--dp-radius-sm);
+  color: var(--dp-text);
+}
+
+.DialogInput:focus,
+.DialogTextInputBase:focus,
+.DialogDropDown:focus-visible {
+  border-color: var(--dp-accent-line);
+  box-shadow: 0 0 0 3px var(--dp-accent-soft);
+  outline: none;
+}
+
+.DialogToggleField_Control,
+.DialogCheckbox_Container {
+  accent-color: var(--dp-accent);
+}
+
+.DialogSlider_Slider {
+  accent-color: var(--dp-accent);
+}
+
+.DialogProgressBar_ProgressBarContainer {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--dp-radius-pill);
+}
+
+.DialogProgressBar_Value {
+  background: linear-gradient(90deg, var(--dp-accent), var(--dp-accent-hi));
+}
+
+/* Context menus and popups. */
+.ContextMenuPopupBody,
+.contextMenu,
+.BasicUIContextMenu {
+  background: rgba(14, 14, 18, 0.98);
+  border: 1px solid var(--dp-line-strong);
+  border-radius: var(--dp-radius);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.65);
+  color: var(--dp-text);
+}
+
+.contextMenuItem,
+.contextMenuGameItem {
+  border-radius: var(--dp-radius-sm);
+  color: var(--dp-text-soft);
+}
+
+.contextMenuItem:hover,
+.contextMenuGameItem:hover {
+  background: var(--dp-accent-soft);
+  color: var(--dp-chrome-hi);
+}
+
+/* Notifications. */
+.notificationGeneralHeader,
+.notificationsChannelHeader {
+  font-family: var(--dp-font-display);
+  letter-spacing: var(--dp-display-spacing);
+  text-transform: var(--dp-display-transform);
+}
+
+/* Download bar: a chrome strip with an era-coloured progress line. */
+.DownloadsPage,
+._1l0LmmqDUXH19SjfELddn7 {
+  background: transparent;
+}
+
+.DownloadProgressBar,
+.DialogProgressBar_Value {
+  background: linear-gradient(90deg, var(--dp-accent), var(--dp-secondary)) !important;
+}
+
+/* ============================================================================
+   FOCUS & MOTION
+   ============================================================================ */
+
+.DialogButton:focus-visible,
+.PlayButton:focus-visible,
+.LibraryItemBox:focus-visible,
+.GameListEntryContainer:focus-visible,
+.SuperNav .MenuButton:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--dp-accent);
+  outline-offset: 2px;
+}
+
+button,
+a,
+[role="button"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .LibraryItemBox:hover {
+    transform: none;
+  }
+}
+
+/* Narrow windows: keep controls reachable, reduce decorative padding. */
+@media (max-width: 1100px) {
+  .LibraryHome {
+    padding: 12px;
+  }
 }
 
 @media (max-width: 900px) {
-   ._9sPoVBFyE_vE87mnZJ5aB {
-       width: 150px;
-   }
-} 
+  .LibraryHome .SectionHeader {
+    letter-spacing: 0.04em;
+  }
+}

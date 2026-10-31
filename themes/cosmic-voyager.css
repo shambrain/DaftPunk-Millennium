@@ -1,69 +1,100 @@
-/**
- * Cosmic Voyager Theme - Purple, violet, and deep purple gradients
- * Part of Daft Punk Millennium Collection
- * Based on Steam 2.0 Modular by Von-Amadeus
- */
-
-/* =============================================================================
-   COSMIC VOYAGER THEME COLORS
-   ============================================================================= */
+/* ERA 06 — COSMIC VOYAGER
+   Deep indigo space, violet instrumentation, a static starfield with a slow
+   twinkle only when Overdrive motion is selected. */
 
 :root {
-  /* Cosmic Voyager Theme - Purple and Violet */
-  --primary-gradient: linear-gradient(270deg, #9932CC 0%, #8A2BE2 50%, #4B0082 100%);
-  --secondary-gradient: linear-gradient(225deg, #9932CC 0%, #663399 30%, #301934 100%);
-  --gamelist-gradient: linear-gradient(270deg, #1A0A1A 0%, #140014 100%);
-  --games-gradient: linear-gradient(225deg, #330A33 0%, #1A051A 30%, #050205 100%);
-  --downloads-gradient: linear-gradient(225deg, #280A28 0%, #140514 100%);
-  --dropdown-hover: linear-gradient(270deg, #9932CCAA 0%, #8A2BE2AA 100%);
-  --dropdown-light: linear-gradient(270deg, #DDA0DDAA 0%, #D8BFD8A5 100%);
-  --properties-gradient: linear-gradient(270deg, #1A0A1A 0%, #140014 100%);
-  --footer-gradient: linear-gradient(225deg, #000000 0%, #1A051A 50%, #050205 100%);
-  --splitter-color: #1A0A1AC9;
-  --search-bg: #140014;
+  --dp-void: #04040f;
+  --dp-black: #060616;
+  --dp-ink: #0a0a20;
+  --dp-panel: rgba(15, 15, 40, 0.9);
+  --dp-panel-solid: #0d0d26;
+  --dp-panel-raised: rgba(24, 22, 58, 0.94);
+  --dp-panel-sunken: rgba(6, 6, 18, 0.85);
+  --dp-line: rgba(180, 170, 255, 0.16);
+  --dp-line-strong: rgba(180, 170, 255, 0.34);
+  --dp-text: #f1efff;
+  --dp-text-soft: #c8c2f2;
+  --dp-text-muted: #948cc4;
+  --dp-text-dim: #6b6596;
+  --dp-accent: #a78bfa;
+  --dp-accent-hi: #e2d9ff;
+  --dp-accent-soft: rgba(167, 139, 250, 0.16);
+  --dp-accent-line: rgba(167, 139, 250, 0.55);
+  --dp-secondary: #6d7cff;
+  --dp-glow: rgba(167, 139, 250, 0.4);
+  --dp-topbar-bg: linear-gradient(180deg, rgba(13,13,38,.98), rgba(4,4,15,.98));
+  --dp-sidebar-bg: linear-gradient(180deg, rgba(11,11,34,.97), rgba(4,4,15,.99));
+  --dp-wordmark-color: #e2d9ff;
+  --dp-wordmark-glow: 0 0 24px rgba(167,139,250,.6);
+  --dp-radius: 14px;
+  --dp-radius-sm: 9px;
+  --dp-radius-lg: 20px;
+  --dp-display-weight: 600;
+  --dp-display-spacing: 0.14em;
 }
 
-/* Import base styles AFTER defining variables */
-@import url("../libraryroot.custom.css");
-
-/* Cosmic-specific enhancements */
-._3Z7VQ1IMk4E3HsHvrkLNgo {
-  box-shadow: 0 2px 8px rgba(153, 50, 204, 0.5);
+body.DesktopUI #root,
+body.DesktopUI .Root {
+  background:
+    radial-gradient(2px 2px at 12% 18%, rgba(255, 255, 255, 0.7), transparent 55%),
+    radial-gradient(1.4px 1.4px at 34% 42%, rgba(255, 255, 255, 0.5), transparent 55%),
+    radial-gradient(2px 2px at 68% 12%, rgba(226, 217, 255, 0.6), transparent 55%),
+    radial-gradient(1.2px 1.2px at 82% 56%, rgba(255, 255, 255, 0.45), transparent 55%),
+    radial-gradient(1.6px 1.6px at 52% 78%, rgba(200, 194, 242, 0.5), transparent 55%),
+    radial-gradient(1000px 600px at 22% -14%, rgba(109, 124, 255, 0.22), transparent 62%),
+    radial-gradient(800px 500px at 88% 2%, rgba(167, 139, 250, 0.16), transparent 64%),
+    linear-gradient(180deg, #070718 0%, #03030c 100%);
 }
 
-._3vCzSrrXZzZjVJFZNg9SGu {
-  box-shadow: 0 -2px 8px rgba(138, 43, 226, 0.4);
+.LibraryHome,
+._3Sb2o_mQ30IDRh0C72QUUu {
+  background-image:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.09) 0 1.2px, transparent 1.6px),
+    radial-gradient(900px 300px at 60% -6%, rgba(167, 139, 250, 0.12), transparent 70%);
+  background-size: 120px 120px, auto;
 }
 
-/* Cosmic purple glow effect */
-._1VNuYHM6BPBOJspC6zPf5r:hover {
-  box-shadow: 0 4px 16px rgba(153, 50, 204, 0.7);
-  filter: brightness(1.2) saturate(1.4);
+.TopBar {
+  background: linear-gradient(180deg, rgba(13, 13, 34, 0.98), rgba(4, 4, 12, 0.98)) !important;
+  box-shadow:
+    inset 0 -1px 0 rgba(167, 139, 250, 0.26),
+    0 0 30px -16px rgba(167, 139, 250, 0.8);
 }
 
-/* Starfield animation for cosmic effect */
-@keyframes starfield {
-  0% { 
-    background-position: 0 0, 10px 10px, 20px 20px; 
-  }
-  100% { 
-    background-position: 100px 100px, 110px 110px, 120px 120px; 
-  }
+.SuperNavMenu.Selected .MenuButton,
+.SuperNavMenu .MenuButton.Selected {
+  border-radius: var(--dp-radius-pill);
+  box-shadow:
+    inset 0 0 0 1px rgba(226, 217, 255, 0.24),
+    0 0 20px -6px rgba(167, 139, 250, 0.6);
 }
 
-.cosmic-starfield::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(1px 1px at 20px 30px, rgba(153, 50, 204, 0.7), transparent),
-    radial-gradient(1px 1px at 40px 70px, rgba(138, 43, 226, 0.6), transparent),
-    radial-gradient(1px 1px at 90px 40px, rgba(75, 0, 130, 0.5), transparent);
-  background-size: 100px 100px, 120px 120px, 140px 140px;
-  animation: starfield 20s linear infinite;
-  pointer-events: none;
-  z-index: -1;
-} 
+.PlayButton,
+._3ydigb6zZAjJ0JCDgHwSYA.PlayButton {
+  border-radius: var(--dp-radius-pill);
+  background: linear-gradient(160deg, #e2d9ff, #a78bfa 55%, #6d7cff);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    0 0 24px -6px rgba(167, 139, 250, 0.7);
+}
+
+.LibraryItemBox {
+  box-shadow:
+    0 0 0 1px rgba(167, 139, 250, 0.2),
+    0 14px 32px rgba(0, 0, 0, 0.5);
+}
+
+.AppDetailsSection {
+  background: linear-gradient(180deg, rgba(20, 19, 48, 0.72), rgba(8, 8, 24, 0.74));
+  border-color: rgba(180, 170, 255, 0.18);
+}
+
+@keyframes dp-star-twinkle {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+
+.SteamLogo,
+.SVGIcon_SteamLogo {
+  animation: dp-star-twinkle var(--dp-star-duration, 6s) ease-in-out infinite;
+}

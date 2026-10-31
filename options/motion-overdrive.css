@@ -1,0 +1,36 @@
+/* MOTION — OVERDRIVE
+   Faster response, deeper lift, a slow chrome shimmer on the mark and a
+   single-pass visor sweep on the library stage. No infinite full-screen loops. */
+
+:root {
+  --dp-fast: 80ms;
+  --dp-mid: 160ms;
+  --dp-slow: 300ms;
+  --dp-hover-lift: -4px;
+  --dp-star-duration: 7s;
+  --dp-shimmer: 1;
+}
+
+.LibraryItemBox:hover {
+  box-shadow:
+    0 0 0 1px var(--dp-accent-line),
+    0 20px 46px rgba(0, 0, 0, 0.6),
+    0 0 34px -6px var(--dp-glow);
+}
+
+.SuperNavMenu.Selected .MenuButton,
+.SuperNavMenu .MenuButton.Selected {
+  animation: dp-visor-breathe 4.5s ease-in-out infinite;
+}
+
+@keyframes dp-visor-breathe {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.14); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .SuperNavMenu.Selected .MenuButton,
+  .SuperNavMenu .MenuButton.Selected {
+    animation: none;
+  }
+}

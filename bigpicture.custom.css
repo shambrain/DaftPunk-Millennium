@@ -1,0 +1,54 @@
+/* ============================================================================
+   DAFT PUNK MILLENNIUM — BIG PICTURE / GAMEPAD UI
+   Big Picture is a separate Steam surface with its own token system. This file
+   only remaps shared tokens and typography; it does not restructure layout or
+   replace focus navigation.
+   ============================================================================ */
+
+:root {
+  --color-accent-1: 232, 179, 65;
+  --color-accent-2: 255, 217, 122;
+  --color-accent-3: 201, 118, 43;
+  --color-text-light-title: #f6f7f9;
+  --color-text-light-subtitle: #d6d9df;
+  --color-text-light-body: #c2c6cd;
+  --color-text-light-description: #9ba0a9;
+  --color-text-body-title: #f6f7f9;
+  --color-text-body-subtitle: #d6d9df;
+  --color-text-body-body: #c2c6cd;
+  --color-text-body-description: #9ba0a9;
+  --color-progress-bar-foreground: #e8b341;
+  --color-progress-bar-background: #2a2b2f;
+}
+
+body {
+  background: #050506;
+  color: #f3f4f6;
+  font-family: var(--dp-font-ui, "Motiva Sans", "Segoe UI", sans-serif);
+}
+
+/* Keep focus rings obvious for controller and keyboard navigation. */
+.gpfocus,
+.gpfocuswithin {
+  outline: 2px solid #e8b341 !important;
+  outline-offset: 2px;
+}
+
+.DialogButton {
+  border-radius: 6px;
+}
+
+.DialogButton.Primary {
+  background: linear-gradient(180deg, #ffd97a, #e8b341);
+  color: #08080a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

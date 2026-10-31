@@ -1,0 +1,16 @@
+/* MOTION — STILL
+   No transitions, no lifts, no ambient animation. Instant state changes. */
+
+:root {
+  --dp-fast: 0ms;
+  --dp-mid: 0ms;
+  --dp-slow: 0ms;
+  --dp-hover-lift: 0px;
+  --dp-star-duration: 0s;
+  --dp-shimmer: 0;
+}
+
+.LibraryItemBox:hover,
+.PlayButton:hover {
+  transform: none;
+}

@@ -1,0 +1,8 @@
+/* DENSITY — STANDARD (default)
+   The composition as designed for 1440p and 1920p displays. */
+
+:root {
+  --dp-space: 1;
+  --dp-row-height: 56px;
+  --dp-sidebar-width: 280px;
+}

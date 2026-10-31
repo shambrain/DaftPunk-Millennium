@@ -1,62 +1,84 @@
-/**
- * Get Lucky Disco Theme - Hot pink, violet, and purple gradients
- * Part of Daft Punk Millennium Collection
- * Based on Steam 2.0 Modular by Von-Amadeus
- */
-
-/* =============================================================================
-   GET LUCKY DISCO THEME COLORS
-   ============================================================================= */
+/* ERA 02 — GET LUCKY DISCO
+   Champagne, mirror-ball pink and deep plum. Softer geometry, italic display,
+   dot-matrix mirror motif. Groove over grit. */
 
 :root {
-  /* Get Lucky Disco Theme - Hot Pink and Purple */
-  --primary-gradient: linear-gradient(270deg, #FF1493 0%, #DA70D6 50%, #8A2BE2 100%);
-  --secondary-gradient: linear-gradient(225deg, #FF69B4 0%, #DA70D6 30%, #4B0082 100%);
-  --gamelist-gradient: linear-gradient(270deg, #2A0A1A 0%, #1A0014 100%);
-  --games-gradient: linear-gradient(225deg, #3A1828 0%, #2A0A1A 30%, #0A0005 100%);
-  --downloads-gradient: linear-gradient(225deg, #2A1020 0%, #1A0A14 100%);
-  --dropdown-hover: linear-gradient(270deg, #FF69B4AA 0%, #DA70D6AA 100%);
-  --dropdown-light: linear-gradient(270deg, #FFB6C1AD 0%, #DDA0DDAA 100%);
-  --properties-gradient: linear-gradient(270deg, #2A0A1A 0%, #1A0014 100%);
-  --footer-gradient: linear-gradient(225deg, #000000 0%, #2A0A1A 50%, #0A0005 100%);
-  --splitter-color: #2A0A1AC9;
-  --search-bg: #1A0014;
+  --dp-void: #0a0510;
+  --dp-black: #0e0716;
+  --dp-ink: #150b20;
+  --dp-panel: rgba(32, 17, 44, 0.88);
+  --dp-panel-solid: #1b0f26;
+  --dp-panel-raised: rgba(45, 23, 60, 0.92);
+  --dp-panel-sunken: rgba(14, 7, 21, 0.8);
+  --dp-line: rgba(255, 190, 230, 0.14);
+  --dp-line-strong: rgba(255, 190, 230, 0.3);
+  --dp-text: #fff3fb;
+  --dp-text-soft: #e4c9de;
+  --dp-text-muted: #b393ac;
+  --dp-text-dim: #80627b;
+  --dp-accent: #ff5fa2;
+  --dp-accent-hi: #ffd1e6;
+  --dp-accent-soft: rgba(255, 95, 162, 0.16);
+  --dp-accent-line: rgba(255, 95, 162, 0.5);
+  --dp-secondary: #e8b341;
+  --dp-glow: rgba(255, 95, 162, 0.34);
+  --dp-topbar-bg: linear-gradient(180deg, rgba(42,18,56,.98), rgba(12,6,18,.98));
+  --dp-sidebar-bg: linear-gradient(180deg, rgba(30,15,42,.97), rgba(10,5,16,.99));
+  --dp-wordmark-color: #ffd1e6;
+  --dp-wordmark-glow: 0 0 22px rgba(255,95,162,.55);
+  --dp-radius: 16px;
+  --dp-radius-sm: 10px;
+  --dp-radius-lg: 22px;
+  --dp-display-weight: 700;
+  --dp-display-spacing: 0.06em;
+  --dp-display-style: italic;
 }
 
-/* Import base styles AFTER defining variables */
-@import url("../libraryroot.custom.css");
-
-/* Disco-specific enhancements */
-._3Z7VQ1IMk4E3HsHvrkLNgo {
-  box-shadow: 0 2px 8px rgba(255, 20, 147, 0.4);
+body.DesktopUI #root,
+body.DesktopUI .Root {
+  background:
+    radial-gradient(900px 600px at 12% -12%, rgba(255, 95, 162, 0.18), transparent 62%),
+    radial-gradient(800px 500px at 100% 10%, rgba(232, 179, 65, 0.12), transparent 64%),
+    linear-gradient(180deg, #0f0717 0%, #08040d 100%);
 }
 
-._3vCzSrrXZzZjVJFZNg9SGu {
-  box-shadow: 0 -2px 8px rgba(218, 112, 214, 0.3);
+/* Mirror-ball dot matrix, static and very low contrast. */
+.LibraryHome,
+._3Sb2o_mQ30IDRh0C72QUUu {
+  background-image:
+    radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.1) 1px, transparent 1.6px),
+    radial-gradient(900px 360px at 70% -10%, rgba(255, 95, 162, 0.18), transparent 70%);
+  background-size: 18px 18px, auto;
 }
 
-/* Pink disco glow effect */
-._1VNuYHM6BPBOJspC6zPf5r:hover {
-  box-shadow: 0 4px 16px rgba(255, 105, 180, 0.5);
-  filter: brightness(1.2) saturate(1.3);
+.TopBar {
+  background:
+    linear-gradient(180deg, rgba(38, 20, 52, 0.98), rgba(12, 6, 18, 0.98)) !important;
+  box-shadow:
+    inset 0 -1px 0 rgba(255, 95, 162, 0.24),
+    0 1px 0 rgba(0, 0, 0, 0.6);
 }
 
-/* Sparkle animation for disco effect */
-@keyframes disco-sparkle {
-  0%, 100% { 
-    filter: brightness(1) hue-rotate(0deg); 
-  }
-  25% { 
-    filter: brightness(1.3) hue-rotate(90deg); 
-  }
-  50% { 
-    filter: brightness(1.1) hue-rotate(180deg); 
-  }
-  75% { 
-    filter: brightness(1.3) hue-rotate(270deg); 
-  }
+.SuperNavMenu.Selected .MenuButton,
+.SuperNavMenu .MenuButton.Selected {
+  border-radius: var(--dp-radius-pill);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 209, 230, 0.28),
+    0 0 20px -6px var(--dp-glow);
 }
 
-.disco-sparkle {
-  animation: disco-sparkle 4s ease-in-out infinite;
-} 
+.PlayButton,
+._3ydigb6zZAjJ0JCDgHwSYA.PlayButton {
+  border-radius: var(--dp-radius-pill);
+}
+
+.LibraryItemBox {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 220, 240, 0.12),
+    0 14px 30px rgba(0, 0, 0, 0.45);
+}
+
+.AppDetailsSection {
+  background:
+    linear-gradient(180deg, rgba(38, 21, 50, 0.7), rgba(18, 9, 26, 0.72));
+}

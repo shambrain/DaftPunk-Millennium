@@ -1,61 +1,94 @@
-/**
- * Cyan Visor Theme - Cyan, turquoise, and teal gradients
- * Part of Daft Punk Millennium Collection
- * Based on Steam 2.0 Modular by Von-Amadeus
- */
-
-/* =============================================================================
-   CYAN VISOR THEME COLORS
-   ============================================================================= */
+/* ERA 03 — CYAN VISOR
+   Cold laboratory cyan, horizontal visor scanlines, thin chrome edges.
+   Precise, quiet, machine-like. */
 
 :root {
-  /* Cyan Visor Theme - Cyan and Teal */
-  --primary-gradient: linear-gradient(270deg, #00FFFF 0%, #00CED1 50%, #008B8B 100%);
-  --secondary-gradient: linear-gradient(225deg, #00FFFF 0%, #20B2AA 30%, #2F4F4F 100%);
-  --gamelist-gradient: linear-gradient(270deg, #0A1A1A 0%, #001414 100%);
-  --games-gradient: linear-gradient(225deg, #003333 0%, #001A1A 30%, #000505 100%);
-  --downloads-gradient: linear-gradient(225deg, #002828 0%, #001414 100%);
-  --dropdown-hover: linear-gradient(270deg, #00FFFFAA 0%, #00CED1AA 100%);
-  --dropdown-light: linear-gradient(270deg, #AFEEEEAA 0%, #B0E0E6A5 100%);
-  --properties-gradient: linear-gradient(270deg, #0A1A1A 0%, #001414 100%);
-  --footer-gradient: linear-gradient(225deg, #000000 0%, #001A1A 50%, #000505 100%);
-  --splitter-color: #0A1A1AC9;
-  --search-bg: #001414;
+  --dp-void: #02080b;
+  --dp-black: #030c10;
+  --dp-ink: #05141a;
+  --dp-panel: rgba(7, 25, 31, 0.88);
+  --dp-panel-solid: #08191f;
+  --dp-panel-raised: rgba(12, 35, 43, 0.92);
+  --dp-panel-sunken: rgba(3, 12, 16, 0.82);
+  --dp-line: rgba(120, 240, 255, 0.13);
+  --dp-line-strong: rgba(120, 240, 255, 0.3);
+  --dp-text: #eafcff;
+  --dp-text-soft: #b8dde4;
+  --dp-text-muted: #7ea7b0;
+  --dp-text-dim: #567780;
+  --dp-accent: #4fe3ee;
+  --dp-accent-hi: #b8fbfd;
+  --dp-accent-soft: rgba(79, 227, 238, 0.14);
+  --dp-accent-line: rgba(79, 227, 238, 0.52);
+  --dp-secondary: #1f8fa8;
+  --dp-glow: rgba(79, 227, 238, 0.3);
+  --dp-topbar-bg: linear-gradient(180deg, rgba(10,36,44,.98), rgba(2,9,12,.98));
+  --dp-sidebar-bg: linear-gradient(180deg, rgba(7,25,31,.97), rgba(2,8,11,.99));
+  --dp-wordmark-color: #b8fbfd;
+  --dp-wordmark-glow: 0 0 22px rgba(79,227,238,.55);
+  --dp-radius: 4px;
+  --dp-radius-sm: 3px;
+  --dp-radius-lg: 8px;
+  --dp-display-weight: 600;
+  --dp-display-spacing: 0.17em;
 }
 
-/* Import base styles AFTER defining variables */
-@import url("../libraryroot.custom.css");
-
-/* Cyan visor-specific enhancements */
-._3Z7VQ1IMk4E3HsHvrkLNgo {
-  box-shadow: 0 2px 8px rgba(0, 255, 255, 0.4);
+body.DesktopUI #root,
+body.DesktopUI .Root {
+  background:
+    radial-gradient(900px 520px at 50% -10%, rgba(79, 227, 238, 0.12), transparent 62%),
+    linear-gradient(180deg, #041116 0%, #02080b 100%);
 }
 
-._3vCzSrrXZzZjVJFZNg9SGu {
-  box-shadow: 0 -2px 8px rgba(0, 206, 209, 0.3);
+/* Visor scanlines across the library stage. */
+.LibraryHome,
+._3Sb2o_mQ30IDRh0C72QUUu {
+  background-image:
+    repeating-linear-gradient(180deg, rgba(120, 240, 255, 0.06) 0 1px, transparent 1px 4px),
+    radial-gradient(1100px 320px at 50% -8%, rgba(79, 227, 238, 0.18), transparent 70%);
 }
 
-/* Cyan glow effect */
-._1VNuYHM6BPBOJspC6zPf5r:hover {
-  box-shadow: 0 4px 16px rgba(0, 255, 255, 0.6);
-  filter: brightness(1.1) saturate(1.4);
+.TopBar {
+  background:
+    linear-gradient(180deg, rgba(10, 36, 44, 0.98), rgba(2, 9, 12, 0.98)) !important;
+  box-shadow:
+    inset 0 -1px 0 rgba(79, 227, 238, 0.28),
+    inset 0 -8px 24px -18px rgba(79, 227, 238, 0.8);
 }
 
-/* Scanline effect for visor aesthetic */
-@keyframes scanline {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
-}
-
-.scanline-effect::after {
-  content: '';
-  position: fixed;
-  top: 0;
+/* A visor band glints along the header. */
+.TopBar::after {
+  content: "";
+  position: absolute;
   left: 0;
   right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #00FFFF, transparent);
-  animation: scanline 3s linear infinite;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184, 251, 253, 0.7), transparent);
   pointer-events: none;
-  z-index: 1000;
-} 
+}
+
+.SuperNavMenu.Selected .MenuButton,
+.SuperNavMenu .MenuButton.Selected {
+  box-shadow:
+    inset 0 -2px 0 var(--dp-accent),
+    inset 0 0 0 1px rgba(79, 227, 238, 0.18);
+  text-shadow: 0 0 10px rgba(79, 227, 238, 0.55);
+}
+
+.LibraryItemBox {
+  box-shadow:
+    inset 0 1px 0 rgba(184, 251, 253, 0.12),
+    0 10px 22px rgba(0, 0, 0, 0.55);
+}
+
+.LibraryItemBox:hover {
+  box-shadow:
+    0 0 0 1px rgba(79, 227, 238, 0.55),
+    0 0 28px -6px rgba(79, 227, 238, 0.5),
+    0 14px 30px rgba(0, 0, 0, 0.6);
+}
+
+.AppDetailsSection {
+  border-color: rgba(120, 240, 255, 0.16);
+}

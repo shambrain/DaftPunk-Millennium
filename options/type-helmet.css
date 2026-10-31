@@ -1,0 +1,33 @@
+/* TYPOGRAPHY — HELMET DISPLAY
+   Bundled Chakra Petch TTF files (SIL Open Font License 1.1).
+   Paths are relative to this CSS file, which Millennium serves from the theme. */
+
+@font-face {
+  font-family: "Daft Punk Helmet";
+  src: url("../assets/fonts/ChakraPetch-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Daft Punk Helmet";
+  src: url("../assets/fonts/ChakraPetch-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Daft Punk Helmet";
+  src: url("../assets/fonts/ChakraPetch-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --dp-font-display: "Daft Punk Helmet", "Chakra Petch", "Motiva Sans", sans-serif;
+  --dp-font-ui: "Daft Punk Helmet", "Chakra Petch", "Motiva Sans", "Segoe UI", sans-serif;
+  --dp-font-mono: "Daft Punk Helmet", "Consolas", monospace;
+}

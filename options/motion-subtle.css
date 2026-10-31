@@ -1,0 +1,11 @@
+/* MOTION — SUBTLE
+   Quiet fades and a one-pixel lift. Default for low-power machines. */
+
+:root {
+  --dp-fast: 90ms;
+  --dp-mid: 150ms;
+  --dp-slow: 240ms;
+  --dp-hover-lift: -1px;
+  --dp-star-duration: 0s;
+  --dp-shimmer: 0;
+}

@@ -1,0 +1,6 @@
+/* VISOR FRAME — OFF
+   Removes the decorative frame and visor light, leaving the plain Steam edge. */
+
+:root {
+  --dp-frame-opacity: 0;
+}
